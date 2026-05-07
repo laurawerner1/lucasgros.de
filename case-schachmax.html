@@ -1,0 +1,418 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SchachMax – TV-Show & Formatentwicklung | Dr. Lucas Gros</title>
+<meta name="description" content="Dr. Lucas Gros konzipierte für Max von Milland und RAI Südtirol das TV-Format 'SchachMax' – von der ersten Idee bis zur erfolgreichen Formatentwicklung.">
+<meta name="author" content="Dr. Lucas Gros">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://www.lucasgros.de/case-schachmax.html">
+
+<meta property="og:title" content="SchachMax – TV-Show & Formatentwicklung | Dr. Lucas Gros">
+<meta property="og:description" content="Konzeption und Storytelling für eines der spannendsten TV-Formate Südtirols. Ein Case von Dr. Lucas Gros, München.">
+<meta property="og:image" content="https://www.lucasgros.de/images/CaseSchachMax/schachmax-header.jpg">
+<meta property="og:url" content="https://www.lucasgros.de/case-schachmax.html">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="de_DE">
+
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="SchachMax – TV-Show & Formatentwicklung | Dr. Lucas Gros">
+<meta name="twitter:description" content="Konzeption und Storytelling für das TV-Format von Max von Milland auf RAI Südtirol.">
+<meta name="twitter:image" content="https://www.lucasgros.de/images/CaseSchachMax/schachmax-header.jpg">
+
+<style>
+:root{--black:#0c0c0c;--white:#f5f5f2;--border:#dddbd6;--mid:#888;--light:#bbb;--faint:#e8e6e1;}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+html{scroll-behavior:smooth;}
+body{font-family:'Helvetica Neue',Arial,sans-serif;background:var(--white);color:var(--black);font-size:15px;line-height:1.55;overflow-x:hidden;cursor:none;}
+
+/* Cursor */
+.cursor{width:16px;height:16px;border:1.5px solid var(--black);border-radius:50%;background:transparent;position:fixed;top:0;left:0;pointer-events:none;z-index:9000;transform:translate(-50%,-50%);transition:width .18s,height .18s,background .18s,opacity .18s;}
+.cursor.hover{width:44px;height:44px;}
+.cursor.zoom{width:52px;height:52px;background:rgba(12,12,12,.05);}
+
+/* Nav */
+nav{position:fixed;top:0;left:0;right:0;z-index:200;background:var(--white);display:flex;justify-content:space-between;align-items:center;height:70px;padding:0 2rem;}
+.nav-logo-box{width:45px;height:55px;display:flex;align-items:center;justify-content:center;overflow:hidden;text-decoration:none;border:none;margin-top:5px;}
+.nav-logo-box img{width:100%;height:100%;object-fit:contain;display:block;}
+.nav-links{display:flex;list-style:none;gap:2.5rem;align-items:center;}
+.nav-links a{font-size:.68rem;font-weight:400;letter-spacing:.1em;text-transform:uppercase;color:var(--mid);text-decoration:none;transition:color .15s;}
+.nav-links a:hover{color:var(--black);}
+
+/* Case Header */
+.case-header{padding-top:70px;}
+.case-cover{width:100%;aspect-ratio:16/8;object-fit:cover;object-position:center;display:block;filter:grayscale(15%);transition:filter .5s;}
+.case-cover:hover{filter:grayscale(0%);}
+.case-meta{display:grid;grid-template-columns:repeat(4,1fr);border-top:1px solid var(--border);border-bottom:1px solid var(--border);}
+.meta-cell{padding:1.25rem 2rem;border-right:1px solid var(--border);}
+.meta-cell:last-child{border-right:0;}
+.meta-label{font-size:.58rem;font-weight:500;letter-spacing:.18em;text-transform:uppercase;color:var(--light);margin-bottom:.4rem;}
+.meta-value{font-size:.85rem;font-weight:700;text-transform:uppercase;letter-spacing:.02em;color:var(--black);}
+
+/* Intro */
+.case-intro{display:grid;grid-template-columns:1fr 1fr;padding:5rem 2rem;gap:4rem;}
+.case-eyebrow{font-size:.6rem;font-weight:500;letter-spacing:.2em;text-transform:uppercase;color:var(--mid);margin-bottom:1.25rem;}
+.case-title{font-size:clamp(2.5rem,6vw,7rem);font-weight:700;text-transform:uppercase;line-height:.88;letter-spacing:-.025em;color:var(--black);margin-bottom:3rem;}
+.case-section-label {
+    font-size: .6rem;
+    font-weight: 500;
+    letter-spacing: .2em;
+    text-transform: uppercase;
+    color: var(--mid);
+    margin-bottom: 0.5rem; 
+}
+.case-body{font-size:1.5rem;font-weight:300;line-height:1.7;color:#444; margin-bottom: 1rem}
+.case-tags{display:flex;flex-wrap:wrap;gap:.4rem;margin-top:2rem;}
+.tag{font-size:.6rem;font-weight:500;letter-spacing:.1em;text-transform:uppercase;color:var(--mid);border:1px solid var(--border);padding:.3rem .75rem;}
+
+
+/* Video Section */
+.case-video{padding:2rem 2rem 4rem;display:flex;flex-direction:column;align-items:center;}
+.yt-wrap{width:100%;max-width:1000px;aspect-ratio:16/9;position:relative;background:#000;overflow:hidden;}
+.yt-thumb{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:10;}
+.yt-play{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:1rem;z-index:11;}
+.yt-play-circle{width:72px;height:72px;border:1.5px solid rgba(245,245,242,.5);border-radius:50%;display:flex;align-items:center;justify-content:center;background:rgba(0,0,0,.35);backdrop-filter:blur(4px);}
+.yt-play-icon{width:0;height:0;border-top:10px solid transparent;border-bottom:10px solid transparent;border-left:18px solid rgba(245,245,242,.9);margin-left:4px;}
+
+/* Video Controls */
+.sr-controls{position:absolute;bottom:0;left:0;right:0;padding:1.5rem 2rem;display:none;align-items:center;gap:1.5rem;background:linear-gradient(transparent,rgba(12,12,12,.5));z-index:12;opacity:0;transition:opacity .3s;}
+.yt-wrap:hover .sr-controls{opacity:1;}
+.sr-playpause, .sr-mute, .sr-fullscreen{background:none;border:none;color:var(--white);cursor:none;display:flex;align-items:center;justify-content:center;}
+.sr-pause-icon{display:flex;gap:3px;}
+.sr-pause-bar{width:2.5px;height:14px;background:var(--white);}
+.sr-play-icon-ctrl{width:0;height:0;border-top:7px solid transparent;border-bottom:7px solid transparent;border-left:12px solid var(--white);}
+.sr-progress{flex:1;height:2px;background:rgba(245,245,242,.2);position:relative;cursor:none;}
+.sr-progress-fill{position:absolute;top:0;left:0;height:100%;background:var(--white);width:0%;}
+
+/* ——— CHAPTER SECTIONS ——— */
+.community-section{padding:4rem 2rem 0;display:flex;flex-direction:column;gap:20px;max-width:calc(1000px + 4rem);margin:0 auto;width:100%;}
+.community-header{display:grid;grid-template-columns:1fr 1fr;align-items:end;gap:4rem;margin-bottom:.5rem;}
+.community-title-group{}
+.community-overline{font-size:.58rem;font-weight:500;letter-spacing:.2em;text-transform:uppercase;color:var(--light);margin-bottom:.75rem;}
+.community-title{font-size:clamp(1.8rem,4vw,4rem);font-weight:700;text-transform:uppercase;line-height:.9;letter-spacing:-.02em;color:var(--black);}
+.community-sub{font-size:1rem;font-weight:300;color:var(--mid);margin-top:1rem;line-height:1.6;max-width:400px;}
+
+.community-gallery{display:grid;grid-template-columns:1fr 1fr;gap:40px;margin-bottom:.5rem;}
+.gallery-item{overflow:hidden;position:relative;cursor:none;aspect-ratio:16/9; background: #eee;}
+.gallery-item img{width:100%;height:100%;object-fit:cover;display:block;filter:grayscale(10%);transition:filter .4s,transform .5s;}
+.gallery-item:hover img{filter:grayscale(0%);transform:scale(1.03);}
+
+/* Captions */
+.community-caption{display:grid;grid-template-columns:48px 1fr;align-items:start;gap:0;padding:0 0 5rem;}
+.cc-index{font-size:.58rem;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:var(--light);border-top:1px solid var(--border);padding-top:.9rem;padding-right:1rem;}
+.cc-body{border-top:1px solid var(--black);padding-top:.9rem;}
+.cc-label{font-size:.58rem;font-weight:500;letter-spacing:.2em;text-transform:uppercase;color:var(--light);margin-bottom:.5rem;}
+.cc-text{font-size:1.15rem;font-weight:300;line-height:1.55;color:#444;max-width:560px;}
+
+/* More Cases & Footer */
+.more-cases{margin-top:5rem;}
+.more-header{display:flex;justify-content:space-between;align-items:center;padding:0 2rem 1.5rem;}
+.more-label{font-size:.6rem;font-weight:500;letter-spacing:.2em;text-transform:uppercase;color:var(--mid);}
+.more-all{font-size:.65rem;font-weight:400;letter-spacing:.1em;text-transform:uppercase;color:var(--mid);text-decoration:none;transition:color .15s;}
+.project-row{display:grid;grid-template-columns:36px 1fr 200px 140px;align-items:center;gap:1.5rem;padding:1.1rem 2rem;border-top:1px solid var(--border);text-decoration:none;color:var(--black);position:relative;overflow:hidden;cursor:none;}
+.project-row::before{content:'';position:absolute;inset:0;background:var(--black);transform:translateX(-100%);transition:transform .3s cubic-bezier(.4,0,.2,1);z-index:0;}
+.project-row:hover::before{transform:translateX(0);}
+.project-row:hover{color:var(--white);}
+.project-row>*{position:relative;z-index:1;}
+.pr-index{font-size:.62rem;color:var(--light);font-weight:300;}
+.pr-title{font-size:clamp(1.05rem,2vw,1.65rem);font-weight:700;text-transform:uppercase;letter-spacing:-.01em;}
+.pr-client{font-size:.68rem;font-weight:400;color:var(--mid);text-transform:uppercase;letter-spacing:.08em;}
+.pr-type{font-size:.65rem;font-weight:300;color:var(--mid);text-align:right;letter-spacing:.06em;}
+
+/* Lightbox */
+.lightbox{position:fixed;inset:0;z-index:8000;background:rgba(12,12,12,.95);display:flex;align-items:center;justify-content:center;opacity:0;pointer-events:none;transition:opacity .3s;}
+.lightbox.open{opacity:1;pointer-events:all;}
+.lightbox img{max-width:92vw;max-height:90vh;object-fit:contain;display:block;}
+.lightbox-close{position:absolute;top:1.5rem;right:2rem;font-size:1.5rem;color:var(--white);background:none;border:none;}
+.lightbox-nav{position:absolute;top:50%;transform:translateY(-50%);font-size:1.2rem;color:rgba(245,245,242,0.5);background:none;border:none;padding:1rem;}
+.lightbox-prev{left:1rem;} .lightbox-next{right:1rem;}
+.lightbox-counter{position:absolute;bottom:1.75rem;left:50%;transform:translateX(-50%);font-size:.6rem;color:rgba(245,245,242,.4);letter-spacing:.18em;}
+
+/* Contact */
+.case-contact{display:grid;grid-template-columns:1fr 1fr;margin-top:6rem;padding:0 2rem 6rem;}
+.contact-h2{font-size:clamp(2.8rem,7vw,8rem);font-weight:700;text-transform:uppercase;line-height:.88;letter-spacing:-.025em;}
+.case-contact-right{padding-left:1rem;display:flex;flex-direction:column;justify-content:flex-end;gap:1.75rem;}
+.contact-sub{font-size:.88rem;font-weight:300;line-height:1.75;color:#666;}
+.contact-email{font-size:clamp(1rem,2vw,1.6rem);font-weight:700;text-transform:uppercase;color:var(--black);text-decoration:none;transition:opacity .2s;}
+.contact-email:hover{opacity:.4;}
+
+footer{display:flex;justify-content:space-between;align-items:center;padding:2rem 2rem 2.5rem;}
+.footer-copy{font-size:.68rem;font-weight:300;color:var(--mid);}
+
+@media(max-width:768px){
+    .case-intro, .community-header, .case-contact{grid-template-columns:1fr; gap:2rem;}
+    .community-gallery{grid-template-columns:1fr; gap:20px;}
+    .project-row{grid-template-columns:1fr auto;}
+    .pr-index, .pr-client, .pr-type{display:none;}
+}
+</style>
+</head>
+<body>
+
+<div class="cursor" id="cursor"></div>
+
+<div class="lightbox" id="lightbox">
+  <button class="lightbox-close" id="lb-close">×</button>
+  <button class="lightbox-nav lightbox-prev" id="lb-prev">←</button>
+  <img src="" alt="" id="lb-img">
+  <button class="lightbox-nav lightbox-next" id="lb-next">→</button>
+  <span class="lightbox-counter" id="lb-counter"></span>
+</div>
+
+<nav>
+  <a href="index.html" class="nav-logo-box">
+    <img src="images/logo.png" alt="Dr. Lucas Gros">
+  </a>
+  <ul class="nav-links">
+    <li><a href="work.html">← Cases</a></li>
+    <li><a href="mailto:info@lucasgros.de">Contact</a></li>
+  </ul>
+</nav>
+
+<div class="case-header">
+  <img class="case-cover" src="images/CaseSchachMax/schachmax-header.jpg" alt="SchachMax – TV-Show Konzeption von Dr. Lucas Gros" loading="eager" fetchpriority="high">
+  <div class="case-meta">
+    <div class="meta-cell"><div class="meta-label">Role</div><div class="meta-value">Konzept</div></div>
+    <div class="meta-cell"><div class="meta-label">Client</div><div class="meta-value">Max von Milland</div></div>
+    <div class="meta-cell"><div class="meta-label">Type</div><div class="meta-value">TV-Show</div></div>
+    <div class="meta-cell"><div class="meta-label">For</div><div class="meta-value">RAI Südtirol</div></div>
+  </div>
+</div>
+
+<div class="case-intro">
+  <div>
+    <p class="case-eyebrow">Max von Milland</p>
+    <h1 class="case-title">SCHACH<br>MAX</h1>
+    <div class="case-tags">
+        <span class="tag">Konzeption</span>
+        <span class="tag">Personal Branding</span>
+        <span class="tag">TV-Show</span>
+        <span class="tag">Storytelling</span>
+        <span class="tag">Format-Development</span>
+    </div>
+  </div>
+  <div>
+   <p class="case-section-label">Die Story</p> <p class="case-body">Südtirol ist bekannt für Berge, Skifahren und tolles Essen. Aber Südtirol ist so viel mehr.</p>
+ <p class="case-body">Das zeigt der Südtiroler Musiker Max von Milland in seiner Show „SchachMax“, die ich für ihn und RAI Südtirol konzipiert habe. Darin stellt er sich spannenden Challenges, die Südtirol mal von einer anderen Seite zeigen.</p>
+  </div>
+</div>
+
+<div class="case-video">
+  <div class="yt-wrap" id="yt-wrap">
+    <div id="preview-layer" style="position:absolute; inset:0; z-index:20;">
+        <img class="yt-thumb" src="images/CaseSchachMax/schachmax-video-thumb.jpg" alt="SchachMax Trailer Vorschau">
+        <div class="yt-play" id="start-video-trigger">
+          <div class="yt-play-circle"><div class="yt-play-icon"></div></div>
+        </div>
+    </div>
+    <video id="main-video" src="images/CaseSchachMax/schachmax-trailer.mp4" playsinline preload="metadata" style="width:100%; height:100%; object-fit: cover; display: none;"></video>
+    
+    <div class="sr-controls" id="video-controls">
+        <button class="sr-playpause" id="play-pause-btn">
+            <span class="sr-pause-icon" id="pause-icon"><span class="sr-pause-bar"></span><span class="sr-pause-bar"></span></span>
+            <span class="sr-play-icon-ctrl" id="play-icon-ctrl" style="display:none"></span>
+        </button>
+        <div class="sr-progress" id="progress-bar"><div class="sr-progress-fill" id="progress-fill"></div></div>
+        <button class="sr-mute" id="mute-btn">
+            <svg viewBox="0 0 24 24" style="width:18px; height:18px; fill:none; stroke:currentColor; stroke-width:2;"><path d="M11 5L6 9H2v6h4l5 4V5z"/><path d="M19.07 4.93a10 10 0 0 1 0 14.14"/><path d="M15.54 8.46a5 5 0 0 1 0 7.07"/></svg>
+        </button>
+        <button class="sr-fullscreen" id="fullscreen-btn">
+            <svg viewBox="0 0 24 24" style="width:18px; height:18px; fill:none; stroke:currentColor; stroke-width:2;"><path d="M8 3H5a2 2 0 0 0-2 2v3m18 0V5a2 2 0 0 0-2-2h-3m0 18h3a2 2 0 0 0 2-2v-3M3 16v3a2 2 0 0 0 2 2h3"/></svg>
+        </button>
+    </div>
+  </div>
+</div>
+
+<div class="community-caption" style="max-width: 1000px; margin: 0 auto;">
+    <span class="cc-index">01</span>
+    <div class="cc-body">
+      <p class="cc-label">Das Konzept</p>
+      <p class="cc-text">„SchachMax“ fragt in jeder Folge: Schafft Max das, was andere Südtiroler:innen jeden Tag an Besonderem leisten? Eine Challenge zwischen Para-Eishockey, Matura und Survival in den Bergen.</p>
+    </div>
+</div>
+
+<div class="community-section">
+  <div class="community-header">
+    <div class="community-title-group">
+      <p class="community-overline">Der Start</p>
+      <h2 class="community-title">Staffel 01</h2>
+      <p class="community-sub">Max spielt Para-Eishockey, schreibt die Matura, wird Comedian und raced mit den Öffis zum westlichsten Ort Südtirols.</p>
+    </div>
+  </div>
+
+  <div class="community-gallery">
+    <div class="gallery-item" data-lb><img src="images/CaseSchachMax/schachmax-1.jpg" alt="SchachMax Staffel 01 - Para-Eishockey"></div>
+    <div class="gallery-item" data-lb><img src="images/CaseSchachMax/schachmax-2.jpg" alt="SchachMax Staffel 01 - Matura Challenge"></div>
+    <div class="gallery-item" data-lb><img src="images/CaseSchachMax/schachmax-3.jpg" alt="SchachMax Staffel 01 - Comedy"></div>
+    <div class="gallery-item" data-lb><img src="images/CaseSchachMax/schachmax-4.jpg" alt="SchachMax Staffel 01 - Unterwegs in Südtirol"></div>
+  </div>
+
+  <div class="community-caption">
+    <span class="cc-index">02</span>
+    <div class="cc-body">
+      <p class="cc-label">Insight</p>
+      <p class="cc-text">In der ersten Staffel ist die Sendung Teil des bestehenden Formats „Erlebnis Südtirol“.</p>
+    </div>
+  </div>
+</div>
+
+<div class="community-section">
+  <div class="community-header">
+    <div class="community-title-group">
+      <p class="community-overline">Die Eigenständigkeit</p>
+      <h2 class="community-title">Staffel 02</h2>
+      <p class="community-sub">Max übernachtet im Wald, wird zum Rennfahrer, Schuhplattler und sogar zum Bildenden Künstler.</p>
+    </div>
+  </div>
+
+  <div class="community-gallery">
+    <div class="gallery-item" data-lb><img src="images/CaseSchachMax/schachmax-5.jpg" alt="SchachMax Staffel 02 - Survival im Wald"></div>
+    <div class="gallery-item" data-lb><img src="images/CaseSchachMax/schachmax-6.jpg" alt="SchachMax Staffel 02 - Rennfahrer"></div>
+    <div class="gallery-item" data-lb><img src="images/CaseSchachMax/schachmax-7.jpg" alt="SchachMax Staffel 02 - Schuhplatteln"></div>
+    <div class="gallery-item" data-lb><img src="images/CaseSchachMax/schachmax-8.jpg" alt="SchachMax Staffel 02 - Kunst"></div>
+  </div>
+
+  <div class="community-caption">
+    <span class="cc-index">03</span>
+    <div class="cc-body">
+      <p class="cc-label">Insight</p>
+      <p class="cc-text">Die Sendung kriegt ihren eigenen Sendeplatz - und eine dritte Staffel ist schon abgedreht.</p>
+    </div>
+  </div>
+</div>
+
+<div class="more-cases">
+  <div class="more-header">
+    <span class="more-label">Weitere Cases</span>
+    <a href="work.html" class="more-all">Alle Cases →</a>
+  </div>
+  <a class="project-row" href="case-bmw-ixperience.html"><span class="pr-index">01</span><span class="pr-title">The BMW Ixperience</span><span class="pr-client">BMW</span><span class="pr-type">Digital</span></a>
+  <a class="project-row" href="case-prefa.html"><span class="pr-index">02</span><span class="pr-title">Jetzt ein Dach</span><span class="pr-client">Prefa</span><span class="pr-type">TV Commercial</span></a>
+  <a class="project-row" href="case-andere-eltern-s2.html"><span class="pr-index">03</span><span class="pr-title">Wir können alles</span><span class="pr-client">TNT Comedy, Andere Eltern</span><span class="pr-type">Campaign</span></a>
+</div>
+
+<div class="case-contact">
+  <div class="case-contact-left">
+    <h2 class="contact-h2">HAT'S<br>AHA<br>GEMACHT?</h2>
+  </div>
+  <div class="case-contact-right">
+    <p class="contact-sub">Egal ob dieser spezielle Case, eine konkrete Idee oder eine aktuelle Herausforderung — ich freue mich über den persönlichen Austausch.</p>
+    <a href="mailto:info@lucasgros.de" class="contact-email">MAIL ME.</a>
+  </div>
+</div>
+
+<footer>
+  <address style="font-style:normal;display:contents;"><span class="footer-copy">© 2026 <a href="https://www.lucasgros.de" rel="author" style="color:inherit;text-decoration:none;">Dr. Lucas Gros</a>, München</span></address>
+</footer>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "CreativeWork",
+  "name": "SchachMax – TV-Show & Formatentwicklung",
+  "url": "https://www.lucasgros.de/case-schachmax.html",
+  "description": "Dr. Lucas Gros konzipierte für Max von Milland und RAI Südtirol das TV-Format 'SchachMax' – eine TV-Show über Challenges und die Identität Südtirols.",
+  "keywords": ["TV-Show", "Formatentwicklung", "Konzeption", "Personal Branding", "Storytelling", "RAI Südtirol", "Max von Milland"],
+  "inLanguage": "de",
+  "author": {
+    "@type": "Person",
+    "name": "Dr. Lucas Gros",
+    "url": "https://www.lucasgros.de",
+    "email": "info@lucasgros.de",
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "München",
+      "addressCountry": "DE"
+    },
+    "sameAs": "https://linkedin.com/in/lucasvgros"
+  },
+  "provider": {
+    "@type": "Organization",
+    "name": "RAI Südtirol",
+    "url": "https://www.raisuedtirol.rai.it"
+  }
+}
+</script>
+
+<script>
+(function() {
+  // Cursor
+  var cursor = document.getElementById('cursor');
+  document.addEventListener('mousemove', function(e) {
+    cursor.style.left = e.clientX + 'px';
+    cursor.style.top = e.clientY + 'px';
+  });
+  document.querySelectorAll('a, button, .gallery-item, .project-row, .yt-wrap').forEach(function(el) {
+    el.addEventListener('mouseenter', function() {
+      cursor.classList.add(el.tagName === 'A' || el.tagName === 'BUTTON' ? 'hover' : 'zoom');
+    });
+    el.addEventListener('mouseleave', function() {
+      cursor.classList.remove('hover', 'zoom');
+    });
+  });
+
+  // Video Logic
+  var preview = document.getElementById('preview-layer');
+  var video = document.getElementById('main-video');
+  var controls = document.getElementById('video-controls');
+  var start = document.getElementById('start-video-trigger');
+  var ppBtn = document.getElementById('play-pause-btn');
+  var pauseIcon = document.getElementById('pause-icon');
+  var playIcon = document.getElementById('play-icon-ctrl');
+  var progressFill = document.getElementById('progress-fill');
+  var progressBar = document.getElementById('progress-bar');
+  var muteBtn = document.getElementById('mute-btn');
+  var fsBtn = document.getElementById('fullscreen-btn');
+
+  if(start) {
+    start.onclick = function() {
+        preview.style.display = 'none';
+        video.style.display = 'block';
+        controls.style.display = 'flex';
+        video.play();
+    };
+  }
+
+  ppBtn.onclick = function() {
+    if (video.paused) { video.play(); pauseIcon.style.display='flex'; playIcon.style.display='none'; }
+    else { video.pause(); pauseIcon.style.display='none'; playIcon.style.display='block'; }
+  };
+
+  video.ontimeupdate = function() {
+    progressFill.style.width = (video.currentTime / video.duration * 100) + '%';
+  };
+
+  progressBar.onclick = function(e) {
+    var rect = progressBar.getBoundingClientRect();
+    video.currentTime = ((e.clientX - rect.left) / rect.width) * video.duration;
+  };
+
+  muteBtn.onclick = function() { video.muted = !video.muted; muteBtn.style.opacity = video.muted ? '0.5' : '1'; };
+  fsBtn.onclick = function() { if (video.requestFullscreen) video.requestFullscreen(); else if (video.webkitRequestFullscreen) video.webkitRequestFullscreen(); };
+
+  // Lightbox
+  var lightbox = document.getElementById('lightbox'), lbImg = document.getElementById('lb-img'), lbCtr = document.getElementById('lb-counter');
+  var items = Array.from(document.querySelectorAll('.gallery-item[data-lb]'));
+  var current = 0;
+
+  function updateLb() {
+    var img = items[current].querySelector('img');
+    lbImg.src = img.src;
+    lbCtr.textContent = (current + 1) + ' / ' + items.length;
+  }
+
+  items.forEach(function(el, i) {
+    el.onclick = function() {
+      current = i; updateLb(); lightbox.classList.add('open');
+      document.body.style.overflow = 'hidden';
+    };
+  });
+
+  document.getElementById('lb-close').onclick = function() { lightbox.classList.remove('open'); document.body.style.overflow = ''; };
+  document.getElementById('lb-prev').onclick = function() { current = (current - 1 + items.length) % items.length; updateLb(); };
+  document.getElementById('lb-next').onclick = function() { current = (current + 1) % items.length; updateLb(); };
+})();
+</script>
+</body>
+</html>

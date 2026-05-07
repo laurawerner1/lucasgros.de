@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Work – Dr. Lucas Gros</title>
+<style>
+:root{--black:#0c0c0c;--white:#f5f5f2;--border:#dddbd6;--mid:#888;--light:#bbb;--faint:#e8e6e1;}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+html{scroll-behavior:smooth;}
+body{font-family:'Helvetica Neue',Arial,sans-serif;background:var(--white);color:var(--black);font-size:15px;line-height:1.55;overflow-x:hidden;cursor:none;}
+
+.cursor{width:16px;height:16px;border:1.5px solid var(--black);border-radius:50%;background:transparent;position:fixed;top:0;left:0;pointer-events:none;z-index:9999;transform:translate(-50%,-50%);transition:width .18s,height .18s,background .18s,opacity .18s;}
+.cursor.hover{width:44px;height:44px;}
+
+nav{position:fixed;top:0;left:0;right:0;z-index:200;background:var(--white);display:flex;justify-content:space-between;align-items:center;height:70px;padding:0 2rem;}
+.nav-logo-box{width:45px;height:55px;display:flex;align-items:center;justify-content:center;text-decoration:none;margin-top:5px;}
+.nav-logo-box img{width:100%;height:100%;object-fit:contain;display:block;}
+.nav-links{display:flex;list-style:none;gap:2.5rem;align-items:center;}
+.nav-links a{font-size:.68rem;font-weight:400;letter-spacing:.1em;text-transform:uppercase;color:var(--mid);text-decoration:none;transition:color .15s;}
+.nav-links a:hover{color:var(--black);}
+
+/* PAGE HEADER */
+.page-header{padding-top:50px;}
+.page-inner{padding:5.5rem 2rem 1rem;}
+.page-label{font-size:.62rem;font-weight:400;letter-spacing:.18em;text-transform:uppercase;color:var(--mid);margin-bottom:1.5rem;}
+.page-h1{font-size:clamp(3.5rem,9vw,11rem);font-weight:700;line-height:.9;letter-spacing:-.025em;text-transform:uppercase;color:var(--black);margin-bottom:2rem;}
+
+/* FILTER BAR — aus Dokument 2 */
+.filter-bar{display:flex;flex-wrap:wrap;gap:.45rem;padding:0 2rem 3rem;}
+.filter-btn{font-size:.6rem;font-weight:500;letter-spacing:.1em;text-transform:uppercase;color:var(--mid);background:none;border:1px solid var(--border);cursor:none;padding:.35rem .9rem;transition:background .15s,color .15s,border-color .15s;}
+.filter-btn:hover{color:var(--black);border-color:var(--black);}
+.filter-btn.active{background:var(--black);color:var(--white);border-color:var(--black);}
+
+/* PROJECT ROWS */
+.project-row{display:grid;grid-template-columns:36px 1fr 200px 180px;align-items:center;gap:1.5rem;padding:1.1rem 2rem;border-top:1px solid var(--border);text-decoration:none;color:var(--black);position:relative;overflow:hidden;cursor:none;}
+.project-row::before{content:'';position:absolute;inset:0;background:var(--black);transform:translateX(-100%);transition:transform .3s cubic-bezier(.4,0,.2,1);z-index:0;}
+.project-row:hover::before{transform:translateX(0);}
+.project-row:hover{color:var(--white);}
+.project-row:hover .pr-index,.project-row:hover .pr-client,.project-row:hover .pr-type{color:rgba(245,245,242,.38);}
+.project-row>*{position:relative;z-index:1;}
+.pr-index{font-size:.62rem;color:var(--light);font-weight:300;}
+.pr-title{font-size:clamp(1.05rem,2vw,1.65rem);font-weight:700;text-transform:uppercase;letter-spacing:-.01em;}
+.pr-client{font-size:.68rem;font-weight:400;color:var(--mid);text-transform:uppercase;letter-spacing:.08em;}
+.pr-type{font-size:.65rem;font-weight:300;color:var(--mid);text-align:right;letter-spacing:.06em;}
+
+/* CONTACT */
+.work-contact{display:grid;grid-template-columns:1fr 1fr;margin-top:6rem;padding:0 2rem 6rem;border-top:0px solid var(--border);padding-top:6rem;}
+.work-contact-left{padding-right:4rem;}
+.contact-h2{font-size:clamp(2.8rem,7vw,8rem);font-weight:700;text-transform:uppercase;line-height:.88;letter-spacing:-.025em;color:var(--black);}
+.work-contact-right{padding-left:1rem;display:flex;flex-direction:column;justify-content:flex-end;gap:1.75rem;}
+.contact-sub{font-size:.88rem;font-weight:300;line-height:1.75;color:#666;}
+.contact-email{font-size:clamp(1rem,2vw,1.6rem);font-weight:700;text-transform:uppercase;letter-spacing:-.01em;color:var(--black);text-decoration:none;transition:opacity .2s;}
+.contact-email:hover{opacity:.4;}
+
+/* FOOTER — aus Dokument 2 */
+footer{display:flex;justify-content:space-between;align-items:center;padding:2rem 2rem 2.5rem;border-top:0px solid var(--border);}
+.footer-copy{font-size:.68rem;font-weight:300;color:var(--mid);}
+.footer-links{display:flex;gap:1.75rem;list-style:none;}
+.footer-links a{font-size:.68rem;color:var(--mid);text-decoration:none;text-transform:uppercase;letter-spacing:.08em;transition:color .15s;}
+.footer-links a:hover{color:var(--black);}
+
+@media(max-width:768px){
+  nav{padding:0 1.25rem;}
+  .page-inner{padding:4.5rem 1.25rem 3rem;}
+  .filter-bar{padding:0 1.25rem 2.5rem;}
+  .project-row{grid-template-columns:1fr auto;gap:.75rem;padding:1rem 1.25rem;}
+  .pr-index,.pr-type{display:none;}
+  footer{padding:2rem 1.25rem;flex-direction:column;gap:.75rem;}
+  .work-contact{grid-template-columns:1fr;margin-top:4rem;padding:0 1.25rem 4rem;}
+  .work-contact-left{padding-right:0;padding-bottom:2.5rem;}
+  .work-contact-right{padding-left:0;}
+}
+</style>
+</head>
+<body>
+
+<div class="cursor" id="cursor"></div>
+
+<nav>
+  <div class="nav-logo-placeholder">
+    <a href="index.html" class="nav-logo-box"><img src="images/logo.png" alt="Logo"></a>
+  </div>
+  <ul class="nav-links">
+    <li><a href="https://linkedin.com/in/lucasvgros" target="_blank">Connect</a></li>
+    <li><a href="mailto:info@lucasgros.de">Contact</a></li>
+  </ul>
+</nav>
+
+<div class="page-header">
+  <div class="page-inner">
+    <p class="page-label">Dr. Lucas Gros · Creative | Strategist · München</p>
+    <h1 class="page-h1">CASES</h1>
+  </div>
+  <div class="filter-bar">
+    <button class="filter-btn active" data-filter="all">Alle</button>
+    <button class="filter-btn" data-filter="creative">Creative</button>
+    <button class="filter-btn" data-filter="strategy">Strategy</button>
+  </div>
+</div>
+
+<div id="cases-list">
+  <a class="project-row" href="case-andere-eltern-s1.html" data-type="creative"><span class="pr-index"></span><span class="pr-title">Eltern an die Macht</span><span class="pr-client">TNT Comedy, Andere Eltern</span><span class="pr-type">Campaign</span></a>
+  <a class="project-row" href="case-andere-eltern-s2.html" data-type="creative"><span class="pr-index"></span><span class="pr-title">Wir können alles</span><span class="pr-client">TNT Comedy, Andere Eltern</span><span class="pr-type">Campaign</span></a>
+  <a class="project-row" href="case-audi-mq.html" data-type="creative"><span class="pr-index"></span><span class="pr-title">Never stop questioning</span><span class="pr-client">Audi MQ!</span><span class="pr-type">Experiential</span></a>
+  <a class="project-row" href="case-bmw-ixperience.html" data-type="creative"><span class="pr-index"></span><span class="pr-title">The BMW iXperience</span><span class="pr-client">BMW</span><span class="pr-type">Digital</span></a>
+  <a class="project-row" href="case-finstral.html" data-type="creative"><span class="pr-index"></span><span class="pr-title">Das ist kein Fenster</span><span class="pr-client">Finstral</span><span class="pr-type">Campaign</span></a>
+  <a class="project-row" href="case-invest-in-bavaria.html" data-type="creative"><span class="pr-index"></span><span class="pr-title">Don't believe everything</span><span class="pr-client">Invest in Bavaria</span><span class="pr-type">Campaign</span></a>
+  <a class="project-row" href="case-mini-paulsmith.html" data-type="creative"><span class="pr-index"></span><span class="pr-title">Every day is a new beginning</span><span class="pr-client">MINI x Paul Smith</span><span class="pr-type">Digital</span></a>
+  <a class="project-row" href="case-oddset.html" data-type="creative"><span class="pr-index"></span><span class="pr-title">Steckt der Titel in dir?</span><span class="pr-client">Oddset</span><span class="pr-type">Campaign</span></a>
+  <a class="project-row" href="case-porsche-slush.html" data-type="creative"><span class="pr-index"></span><span class="pr-title">The Future in your Hands</span><span class="pr-client">Porsche</span><span class="pr-type">Experiential</span></a>
+  <a class="project-row" href="case-prefa.html" data-type="creative"><span class="pr-index"></span><span class="pr-title">Jetzt ein Dach</span><span class="pr-client">Prefa</span><span class="pr-type">Campaign</span></a>
+  <a class="project-row" href="case-raffles.html" data-type="creative"><span class="pr-index"></span><span class="pr-title">You can have it all</span><span class="pr-client">Raffles Residences</span><span class="pr-type">Campaign</span></a>
+  <a class="project-row" href="case-schachmax.html" data-type="creative"><span class="pr-index"></span><span class="pr-title">Schachmax</span><span class="pr-client">RAI Südtirol</span><span class="pr-type">TV-Show</span></a>
+  <a class="project-row" href="case-volkswagen.html" data-type="creative"><span class="pr-index"></span><span class="pr-title">Electric for all</span><span class="pr-client">Volkswagen</span><span class="pr-type">Campaign</span></a>
+  <a class="project-row" href="case-wacker.html" data-type="creative"><span class="pr-index"></span><span class="pr-title">Taking chances together</span><span class="pr-client">Wacker Digital</span><span class="pr-type">Campaign</span></a>
+  <a class="project-row" href="case-yfood-vegang.html" data-type="creative"><span class="pr-index"></span><span class="pr-title">Willkommen in der #Vegang</span><span class="pr-client">yfood</span><span class="pr-type">Campaign</span></a>
+  <a class="project-row" href="case-yfood-hotbowls.html" data-type="creative"><span class="pr-index"></span><span class="pr-title">Hot. Hotter. yfood.</span><span class="pr-client">yfood</span><span class="pr-type">Campaign</span></a>
+  <a class="project-row" href="case-bosch-ifa23.html" data-type="creative"><span class="pr-index"></span><span class="pr-title">Planet Care</span><span class="pr-client">Bosch</span><span class="pr-type">Experiential</span></a>
+  <a class="project-row" href="case-bosch-ifa24.html" data-type="creative"><span class="pr-index"></span><span class="pr-title">Welcome Home</span><span class="pr-client">Bosch</span><span class="pr-type">Experiential</span></a>
+
+  <a class="project-row" href="case-allianzarena.html" data-type="strategy"><span class="pr-index"></span><span class="pr-title">Jeder Tag ein Heimspiel</span><span class="pr-client">Allianz Arena</span><span class="pr-type">Brand Positioning</span></a>
+  <a class="project-row" href="case-bmw-coldplay.html" data-type="strategy"><span class="pr-index"></span><span class="pr-title">The power of action</span><span class="pr-client">BMW x Coldplay</span><span class="pr-type">Brand Partnership</span></a>
+  <a class="project-row" href="case-bmw-drivehive.html" data-type="strategy"><span class="pr-index"></span><span class="pr-title">The Drive Hive</span><span class="pr-client">BMW</span><span class="pr-type">Brand Community</span></a>
+  <a class="project-row" href="case-cartier.html" data-type="strategy"><span class="pr-index"></span><span class="pr-title">Cartier</span><span class="pr-client">Cartier</span><span class="pr-type">Corporate Language</span></a>
+  <a class="project-row" href="case-cws.html" data-type="strategy"><span class="pr-index"></span><span class="pr-title">Clean. Well. Safe.</span><span class="pr-client">CWS</span><span class="pr-type">Brand Positioning</span></a>
+  <a class="project-row" href="case-mini-redbull.html" data-type="strategy"><span class="pr-index"></span><span class="pr-title">Drive The Culture</span><span class="pr-client">MINI x Redbull</span><span class="pr-type">Brand Partnership</span></a>
+  <a class="project-row" href="case-monstershack.html" data-type="strategy"><span class="pr-index"></span><span class="pr-title">Monstermässige Lebensfreude</span><span class="pr-client">MonsterShack</span><span class="pr-type">Brand Positioning</span></a>
+  <a class="project-row" href="case-nio-houses.html" data-type="strategy"><span class="pr-index"></span><span class="pr-title">NIO Houses Opening</span><span class="pr-client">NIO</span><span class="pr-type">Comms Strategy</span></a>
+  <a class="project-row" href="case-porsche-communities.html" data-type="strategy"><span class="pr-index"></span><span class="pr-title">Porsche Circles</span><span class="pr-client">Porsche</span><span class="pr-type">Brand Community</span></a>
+  <a class="project-row" href="case-rathgeber.html" data-type="strategy"><span class="pr-index"></span><span class="pr-title">Rathgeber verbindet</span><span class="pr-client">Rathgeber</span><span class="pr-type">Brand Positioning</span></a>
+  <a class="project-row" href="case-zeiss.html" data-type="strategy"><span class="pr-index"></span><span class="pr-title">Employer Branding</span><span class="pr-client">ZEISS</span><span class="pr-type">PR Strategy</span></a>
+</div>
+
+<div class="work-contact">
+  <div class="work-contact-left">
+    <h2 class="contact-h2">HAT'S<br>AHA<br>GEMACHT?</h2>
+  </div>
+  <div class="work-contact-right">
+    <p class="contact-sub">Dann freue ich mich auf einen persönlichen Austausch. Für Projekte, Kollaborationen oder ein gutes Gespräch.</p>
+    <a href="mailto:info@lucasgros.de" class="contact-email">MAIL ME.</a>
+  </div>
+</div>
+
+<footer>
+  <span class="footer-copy">© 2026 Dr. Lucas Gros, München</span>
+  <ul class="footer-links">
+    <li><a href="Impressum.html">Impressum</a></li>
+  </ul>
+</footer>
+
+<script>
+(function() {
+  const cursor = document.getElementById('cursor');
+  document.addEventListener('mousemove', e => { 
+    cursor.style.left = e.clientX + 'px'; 
+    cursor.style.top = e.clientY + 'px'; 
+  });
+  
+  const container = document.getElementById('cases-list');
+  const btns = document.querySelectorAll('.filter-btn');
+
+  function updateList(filter) {
+    const rows = Array.from(container.querySelectorAll('.project-row'));
+
+    rows.sort((a, b) => {
+      const clientA = a.querySelector('.pr-client').textContent.trim().toLowerCase();
+      const clientB = b.querySelector('.pr-client').textContent.trim().toLowerCase();
+      const titleA = a.querySelector('.pr-title').textContent.trim().toLowerCase();
+      const titleB = b.querySelector('.pr-title').textContent.trim().toLowerCase();
+
+      if (clientA < clientB) return -1;
+      if (clientA > clientB) return 1;
+      if (titleA < titleB) return -1;
+      if (titleA > titleB) return 1;
+      return 0;
+    });
+
+    let count = 1;
+    rows.forEach(row => {
+      const type = row.getAttribute('data-type');
+      const isVisible = (filter === 'all' || type === filter);
+      row.style.display = isVisible ? 'grid' : 'none';
+      if (isVisible) {
+        row.querySelector('.pr-index').textContent = String(count++).padStart(2, '0');
+      }
+      container.appendChild(row);
+    });
+  }
+
+  btns.forEach(btn => {
+    btn.addEventListener('click', () => {
+      btns.forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      updateList(btn.getAttribute('data-filter'));
+    });
+  });
+
+  updateList('all');
+
+  document.querySelectorAll('a, button').forEach(el => {
+    el.addEventListener('mouseenter', () => cursor.classList.add('hover'));
+    el.addEventListener('mouseleave', () => cursor.classList.remove('hover'));
+  });
+})();
+</script>
+</body>
+</html>

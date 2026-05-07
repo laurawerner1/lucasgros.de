@@ -1,0 +1,440 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Bosch IFA 2023 „Planet Care“ – Konzept & Copywriting | Dr. Lucas Gros</title>
+<meta name="description" content="Für Bosch entwickelte Dr. Lucas Gros das Storytelling und Copywriting der IFA 2023 unter dem Motto „Planet Care“. Ausgezeichnet mit Gold beim German Design Award.">
+<meta name="author" content="Dr. Lucas Gros">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://www.lucasgros.de/case-bosch-ifa23.html">
+<meta property="og:title" content="Bosch IFA 2023 „Planet Care“ – Konzept & Copywriting | Dr. Lucas Gros">
+<meta property="og:description" content="Konzept und Markenerlebnis für Bosch auf der IFA. Ein preisgekrönter Case von Dr. Lucas Gros in Zusammenarbeit mit Blackspace.">
+<meta property="og:image" content="https://www.lucasgros.de/images/CaseBoschIFA23/bosch-ifa23-header.jpg">
+<meta property="og:url" content="https://www.lucasgros.de/case-bosch-ifa23.html">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="de_DE">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Bosch IFA 2023 „Planet Care“ – Konzept & Copywriting | Dr. Lucas Gros">
+<meta name="twitter:description" content="Storytelling und Messe-Kommunikation für Bosch. Über 10 Mio. Impressions und 182k Besucher.">
+<meta name="twitter:image" content="https://www.lucasgros.de/images/CaseBoschIFA23/bosch-ifa23-header.jpg">
+<style>
+:root{--black:#0c0c0c;--white:#f5f5f2;--border:#dddbd6;--mid:#888;--light:#bbb;--faint:#e8e6e1;}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+html{scroll-behavior:smooth;}
+body{font-family:'Helvetica Neue',Arial,sans-serif;background:var(--white);color:var(--black);font-size:15px;line-height:1.55;overflow-x:hidden;cursor:none;}
+
+/* Cursor */
+.cursor{width:16px;height:16px;border:1.5px solid var(--black);border-radius:50%;background:transparent;position:fixed;top:0;left:0;pointer-events:none;z-index:9000;transform:translate(-50%,-50%);transition:width .18s,height .18s,background .18s,opacity .18s;}
+.cursor.hover{width:44px;height:44px;}
+.cursor.zoom{width:52px;height:52px;background:rgba(12,12,12,.05);}
+
+/* Nav */
+nav{position:fixed;top:0;left:0;right:0;z-index:200;background:var(--white);display:flex;justify-content:space-between;align-items:center;height:70px;padding:0 2rem;}
+.nav-logo-box{width:45px;height:55px;display:flex;align-items:center;justify-content:center;overflow:hidden;text-decoration:none;border:none;margin-top:5px;}
+.nav-logo-box img{width:100%;height:100%;object-fit:contain;display:block;}
+.nav-links{display:flex;list-style:none;gap:2.5rem;align-items:center;}
+.nav-links a{font-size:.68rem;font-weight:400;letter-spacing:.1em;text-transform:uppercase;color:var(--mid);text-decoration:none;transition:color .15s;}
+.nav-links a:hover{color:var(--black);}
+
+/* Case Header */
+.case-header{padding-top:70px;}
+.case-cover{width:100%;aspect-ratio:16/8;object-fit:cover;object-position:center;display:block;filter:grayscale(15%);transition:filter .5s;}
+.case-cover:hover{filter:grayscale(0%);}
+.case-meta{display:grid;grid-template-columns:repeat(7,1fr);border-top:1px solid var(--border);border-bottom:1px solid var(--border);}
+.meta-cell{padding:1.25rem 2rem;border-right:1px solid var(--border);}
+.meta-cell:last-child{border-right:0;}
+.meta-label{font-size:.58rem;font-weight:500;letter-spacing:.18em;text-transform:uppercase;color:var(--light);margin-bottom:.4rem;}
+.meta-value{font-size:.85rem;font-weight:700;text-transform:uppercase;letter-spacing:.02em;color:var(--black);}
+.meta-value a{color:var(--black);text-decoration:none;border-bottom:1px solid var(--border);transition:border-color .15s;}
+.meta-value a:hover{border-color:var(--black);}
+a.meta-cell{text-decoration:none;transition:background .15s;cursor:none;}
+a.meta-cell:hover{background:var(--faint);}
+
+/* Intro & Stats */
+.case-intro{display:grid;grid-template-columns:1fr 1fr;padding:5rem 2rem;gap:4rem;}
+.case-eyebrow{font-size:.6rem;font-weight:500;letter-spacing:.2em;text-transform:uppercase;color:var(--mid);margin-bottom:1.25rem;}
+.case-title{font-size:clamp(2.5rem,6vw,7rem);font-weight:700;text-transform:uppercase;line-height:.88;letter-spacing:-.025em;color:var(--black);margin-bottom:3rem;}
+.case-tags{display:flex;flex-wrap:wrap;gap:.4rem;}
+.tag{font-size:.6rem;font-weight:500;letter-spacing:.1em;text-transform:uppercase;color:var(--mid);border:1px solid var(--border);padding:.3rem .75rem;}
+.case-details{display:flex;flex-direction:column;gap:.5rem;padding-top:.5rem;}
+.case-section-label{font-size:.6rem;font-weight:500;letter-spacing:.2em;text-transform:uppercase;color:var(--mid);margin-bottom:.2rem;}
+.case-body{font-size:1.5rem;font-weight:300;line-height:1.7;color:#444;}
+.case-body+.case-body{margin-top:.65rem;}
+.case-stats{display:grid;grid-template-columns:repeat(3,1fr);border-top:1px solid var(--border);border-bottom:1px solid var(--border);}
+.stat-cell{padding:2.5rem 2rem;border-right:1px solid var(--border);}
+.stat-cell:last-child{border-right:0;}
+.stat-number{font-size:clamp(1.8rem,4vw,3.5rem);font-weight:700;text-transform:uppercase;letter-spacing:-.02em;color:var(--black);margin-bottom:.4rem;}
+.stat-label{font-size:.68rem;font-weight:300;color:var(--mid);line-height:1.5;}
+
+/* Video Module */
+.video-module{padding:4rem 2rem 0;display:flex;justify-content:center;}
+.yt-wrap{width:100%;max-width:1000px;aspect-ratio:16/9;position:relative;background:#000;overflow:hidden;}
+.yt-thumb{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:10;}
+.yt-play{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;z-index:11;}
+.yt-play-circle{width:72px;height:72px;border:1.5px solid rgba(245,245,242,.5);border-radius:50%;display:flex;align-items:center;justify-content:center;background:rgba(0,0,0,.35);backdrop-filter:blur(4px);transition: background 0.2s;}
+.yt-play-icon{width:0;height:0;border-top:10px solid transparent;border-bottom:10px solid transparent;border-left:18px solid rgba(245,245,242,.9);margin-left:4px;}
+.main-video{width:100%;height:100%;object-fit:cover;display:none;}
+
+.video-controls{position:absolute;bottom:0;left:0;right:0;padding:1.5rem 2rem;display:none;align-items:center;gap:1.5rem;background:linear-gradient(transparent,rgba(12,12,12,0.6));z-index:12;opacity:0;transition:opacity .3s;}
+.yt-wrap:hover .video-controls{opacity:1;}
+.ctrl-playpause, .sr-mute, .sr-fullscreen{background:none;border:none;color:var(--white);cursor:none;display:flex;align-items:center;justify-content:center;}
+.sr-pause-icon{display:flex;gap:3px;}
+.sr-pause-bar{width:3px;height:14px;background:var(--white);}
+.sr-play-icon-ctrl{width:0;height:0;border-top:7px solid transparent;border-bottom:7px solid transparent;border-left:12px solid var(--white);}
+.video-progress{flex:1;height:2px;background:rgba(255,255,255,0.2);position:relative;cursor:pointer;}
+.video-progress-fill{position:absolute;top:0;left:0;height:100%;background:#fff;width:0%;}
+.sr-mute svg, .sr-fullscreen svg { width: 18px; height: 18px; fill: none; stroke: currentColor; stroke-width: 2; }
+
+/* Captions */
+.caption-outer{padding:0 2rem;display:flex;justify-content:center;}
+.group-caption{width:100%;max-width:1000px;display:grid;grid-template-columns:48px 1fr;align-items:start;gap:0;padding:1.75rem 0 4rem;}
+.gc-index{font-size:.58rem;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:var(--light);border-top:1px solid var(--border);padding-top:.9rem;}
+.gc-body{border-top:1px solid var(--black);padding-top:.9rem;}
+.gc-label{font-size:.58rem;font-weight:500;letter-spacing:.2em;text-transform:uppercase;color:var(--light);margin-bottom:.5rem;}
+.gc-text{font-size:1.15rem;font-weight:300;line-height:1.55;color:#444;max-width:560px;}
+
+/* Gallery 7 Bilder */
+.gallery-outer{padding:2rem 2rem 0;display:flex;justify-content:center;}
+.gallery-grid{width:100%;max-width:1000px;display:grid;grid-template-columns:1fr 1fr;gap:40px;}
+.gallery-item{overflow:hidden;aspect-ratio:16/9;position:relative;background:var(--faint);cursor:none;}
+.gallery-item img{width:100%;height:100%;object-fit:cover;display:block;filter:grayscale(10%);transition:filter .4s,transform .5s;}
+.gallery-item:hover img{filter:grayscale(0%);transform:scale(1.015);}
+.gallery-item.full{grid-column:1/-1;}
+
+/* Lightbox */
+.lightbox{position:fixed;inset:0;z-index:8000;background:rgba(12,12,12,.95);display:flex;align-items:center;justify-content:center;opacity:0;pointer-events:none;transition:opacity .3s;}
+.lightbox.open{opacity:1;pointer-events:all;}
+.lightbox img{max-width:92vw;max-height:90vh;object-fit:contain;display:block;}
+.lightbox-close, .lightbox-nav{position:absolute;background:none;border:none;color:white;cursor:none;transition:opacity .2s;}
+.lightbox-close{top:1.5rem;right:2rem;font-size:1.5rem;font-weight:300;color:rgba(245,245,242,.7);}
+.lightbox-nav{top:50%;transform:translateY(-50%);font-size:1.2rem;font-weight:300;color:rgba(245,245,242,.5);padding:1rem;}
+.lightbox-prev{left:1rem;}
+.lightbox-next{right:1rem;}
+.lightbox-counter{position:absolute;bottom:1.75rem;left:50%;transform:translateX(-50%);font-size:.6rem;color:rgba(245,245,242,.4);letter-spacing:.18em;text-transform:uppercase;}
+
+/* More Cases Sektion */
+.more-cases{margin-top:6rem;}
+.more-header{display:flex;justify-content:space-between;align-items:center;padding:0 2rem 1.5rem;}
+.more-label{font-size:.6rem;font-weight:500;letter-spacing:.2em;text-transform:uppercase;color:var(--mid);}
+.more-all{font-size:.65rem;font-weight:400;letter-spacing:.1em;text-transform:uppercase;color:var(--mid);text-decoration:none;transition:color .15s;}
+.project-row{display:grid;grid-template-columns:36px 1fr 200px 140px;align-items:center;gap:1.5rem;padding:1.1rem 2rem;border-top:1px solid var(--border);text-decoration:none;color:var(--black);position:relative;overflow:hidden;cursor:none;}
+.project-row::before{content:'';position:absolute;inset:0;background:var(--black);transform:translateX(-100%);transition:transform .3s cubic-bezier(.4,0,.2,1);z-index:0;}
+.project-row:hover::before{transform:translateX(0);}
+.project-row:hover{color:var(--white);}
+.project-row>*{position:relative;z-index:1;}
+.pr-index{font-size:.62rem;color:var(--light);font-weight:300;}
+.pr-title{font-size:clamp(1.05rem,2vw,1.65rem);font-weight:700;text-transform:uppercase;}
+.pr-client{font-size:.68rem;text-transform:uppercase;color:var(--mid);}
+.pr-type{font-size:.65rem;text-align:right;color:var(--mid);}
+
+/* Contact & Footer */
+.case-contact{display:grid;grid-template-columns:1fr 1fr;margin-top:6rem;padding:0 2rem 6rem;}
+.contact-h2{font-size:clamp(2.8rem,7vw,8rem);font-weight:700;text-transform:uppercase;line-height:.88;letter-spacing:-.025em;}
+.case-contact-right{padding-left:1rem;display:flex;flex-direction:column;justify-content:flex-end;gap:1.75rem;}
+.contact-sub{font-size:.88rem;font-weight:300;line-height:1.75;color:#666;}
+.contact-email{font-size:clamp(1rem,2vw,1.6rem);font-weight:700;text-transform:uppercase;color:var(--black);text-decoration:none;}
+footer{display:flex;justify-content:space-between;align-items:center;padding:2rem 2rem 2.5rem;border-top:1px solid var(--border);}
+.footer-copy{font-size:.68rem;color:var(--mid);}
+.footer-links{display:flex;gap:1.75rem;list-style:none;}
+.footer-links a{font-size:.68rem;color:var(--mid);text-decoration:none;text-transform:uppercase;}
+
+.sr-only{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;}
+
+@media(max-width:768px){
+    .case-meta{grid-template-columns:repeat(2,1fr);}
+    .gallery-grid{grid-template-columns:1fr;gap:20px;}
+    .case-contact{grid-template-columns:1fr;}
+    .project-row{grid-template-columns:1fr auto;}
+    .pr-index,.pr-type{display:none;}
+}
+</style>
+</head>
+<body>
+
+<div class="cursor" id="cursor"></div>
+
+<div class="lightbox" id="lightbox">
+    <button class="lightbox-close" id="lb-close">×</button>
+    <button class="lightbox-nav lightbox-prev" id="lb-prev">←</button>
+    <img src="" alt="" id="lb-img">
+    <button class="lightbox-nav lightbox-next" id="lb-next">→</button>
+    <span class="lightbox-counter" id="lb-counter"></span>
+</div>
+
+<nav>
+    <a href="index.html" class="nav-logo-box"><img src="images/logo.png" alt="Dr. Lucas Gros"></a>
+    <ul class="nav-links">
+        <li><a href="work.html">← Cases</a></li>
+        <li><a href="mailto:info@lucasgros.de">Contact</a></li>
+    </ul>
+</nav>
+
+<div class="case-header">
+    <img class="case-cover" src="images/CaseBoschIFA23/bosch-ifa23-header.jpg" alt="Bosch IFA 2023 Planet Care Messestand – Konzept von Dr. Lucas Gros" loading="eager" fetchpriority="high">
+    <div class="case-meta">
+        <div class="meta-cell"><div class="meta-label">Role</div><div class="meta-value">Konzept, Text</div></div>
+        <div class="meta-cell"><div class="meta-label">For</div><div class="meta-value"><a href="https://blackspace.com/" target="_blank">Blackspace</a></div></div>
+        <div class="meta-cell"><div class="meta-label">Type</div><div class="meta-value">Messe</div></div>
+        <div class="meta-cell"><div class="meta-label">Client</div><div class="meta-value">Bosch</div></div>
+        <a class="meta-cell" href="https://www.german-design-award.com/galerie/detail/fair-and-exhibition/bosch-auf-der-ifa-2023" target="_blank"><div class="meta-label">Award</div><div class="meta-value"> Gold, German Design Award</div></a>
+        <a class="meta-cell" href="https://ifdesign.com/en/winner-ranking/project/bosch-at-ifa-2023/670968" target="_blank"><div class="meta-label">Award</div><div class="meta-value">Winner, iF Design</div></a>
+        <a class="meta-cell" href="https://brand-ex.org/project2025/bosch-auf-der-ifa-2023/" target="_blank"><div class="meta-label">Award</div><div class="meta-value">Bronze, BrandEx</div></a>
+    </div>
+</div>
+
+<div class="case-intro">
+    <div>
+        <p class="case-eyebrow">Bosch</p>
+        <h1 class="sr-only">Bosch IFA 2023 Planet Care – Konzept & Storytelling von Dr. Lucas Gros</h1>
+        <p class="case-title" aria-hidden="true">PLANET<br>CARE</p>
+        <div class="case-tags"><span class="tag">Konzept</span><span class="tag">Copywriting</span><span class="tag">Storytelling</span></div>
+    </div>
+    <div class="case-details">
+        <p class="case-section-label">Die Story</p>
+        <p class="case-body">Bosch ermöglicht seinen Kundinnen und Kunden ein gesünderes und nachhaltigeres Leben. Diese Botschaft haben wir im Rahmen der IFA 2023 unter dem Motto „Planet Care” kommuniziert – und damit einen Ort kreiert, wo Selbstfürsorge, aber auch Fürsorge für den Planeten und die Mitmenschen entscheidend sind.</p>
+    </div>
+</div>
+
+<div class="case-stats">
+  <div class="stat-cell"><div class="stat-number">28</div><div class="stat-label">Shows auf dem Stand</div></div>
+  <div class="stat-cell"><div class="stat-number">182k</div><div class="stat-label">Besucher:innen</div></div>
+  <div class="stat-cell"><div class="stat-number">10M+</div><div class="stat-label">Impressions</div></div>
+</div>
+
+<div class="video-module">
+    <div class="yt-wrap">
+        <div id="preview-layer" style="position:absolute;inset:0;z-index:20;">
+            <img class="yt-thumb" src="images/CaseBoschIFA23/bosch-ifa23-preview.jpg" alt="Vorschau Video Bosch IFA 2023">
+            <div class="yt-play" id="start-video">
+                <div class="yt-play-circle"><div class="yt-play-icon"></div></div>
+            </div>
+        </div>
+        <video class="main-video" id="main-video" src="images/CaseBoschIFA23/bosch-ifa23.mp4" playsinline></video>
+        <div class="video-controls" id="video-controls">
+            <button class="ctrl-playpause" id="play-pause-btn" aria-label="Play/Pause">
+                <span class="sr-pause-icon" id="pause-icon"><span class="sr-pause-bar"></span><span class="sr-pause-bar"></span></span>
+                <span class="sr-play-icon-ctrl" id="play-icon" style="display:none"></span>
+            </button>
+            <div class="video-progress" id="progress-bar"><div class="video-progress-fill" id="progress-fill"></div></div>
+            <button class="sr-mute" id="mute-btn" aria-label="Stummschalten">
+                <svg id="icon-sound" viewBox="0 0 24 24"><path d="M11 5L6 9H2v6h4l5 4V5z"/><path d="M19.07 4.93a10 10 0 0 1 0 14.14"/><path d="M15.54 8.46a5 5 0 0 1 0 7.07"/></svg>
+                <svg id="icon-muted" viewBox="0 0 24 24" style="display:none"><path d="M11 5L6 9H2v6h4l5 4V5z"/><line x1="23" y1="9" x2="17" y2="15"/><line x1="17" y1="9" x2="23" y2="15"/></svg>
+            </button>
+            <button class="sr-fullscreen" id="fullscreen-btn" aria-label="Vollbild"><svg viewBox="0 0 24 24"><path d="M8 3H5a2 2 0 0 0-2 2v3m18 0V5a2 2 0 0 0-2-2h-3m0 18h3a2 2 0 0 0 2-2v-3M3 16v3a2 2 0 0 0 2 2h3"/></svg></button>
+        </div>
+    </div>
+</div>
+
+<div class="caption-outer">
+    <div class="group-caption">
+        <span class="gc-index">01</span>
+        <div class="gc-body">
+            <p class="gc-label">Konzept</p>
+            <p class="gc-text">Bosch glaubt daran, dass jede einzelne Entscheidung zählt. Dass jede von ihnen einen echten Einfluss hat. Auf unsere Ernährung und unsere Gesundheit. Auf den Erhalt der knappen Ressourcen unseres Planeten. Und auf die Sauberkeit sowie den Wohlfühlfaktor zuhause. Dafür steht der „Planet Care“.</p>
+        </div>
+    </div>
+</div>
+
+<div class="gallery-outer">
+    <div class="gallery-grid">
+        <div class="gallery-item full" data-lb-src="images/CaseBoschIFA23/bosch-ifa23-1.jpg">
+            <img src="images/CaseBoschIFA23/bosch-ifa23-1.jpg" alt="Bosch IFA 2023 Planet Care Standübersicht" loading="lazy">
+        </div>
+        <div class="gallery-item" data-lb-src="images/CaseBoschIFA23/bosch-ifa23-2.jpg"><img src="images/CaseBoschIFA23/bosch-ifa23-2.jpg" alt="Bosch IFA 2023 Detail Exponat 1" loading="lazy"></div>
+        <div class="gallery-item" data-lb-src="images/CaseBoschIFA23/bosch-ifa23-3.jpg"><img src="images/CaseBoschIFA23/bosch-ifa23-3.jpg" alt="Bosch IFA 2023 Detail Exponat 2" loading="lazy"></div>
+        <div class="gallery-item" data-lb-src="images/CaseBoschIFA23/bosch-ifa23-4.jpg"><img src="images/CaseBoschIFA23/bosch-ifa23-4.jpg" alt="Bosch IFA 2023 Impressionen" loading="lazy"></div>
+        <div class="gallery-item" data-lb-src="images/CaseBoschIFA23/bosch-ifa23-5.jpg"><img src="images/CaseBoschIFA23/bosch-ifa23-5.jpg" alt="Bosch IFA 2023 Live Show" loading="lazy"></div>
+        <div class="gallery-item" data-lb-src="images/CaseBoschIFA23/bosch-ifa23-6.jpg"><img src="images/CaseBoschIFA23/bosch-ifa23-6.jpg" alt="Bosch IFA 2023 Besucher" loading="lazy"></div>
+        <div class="gallery-item" data-lb-src="images/CaseBoschIFA23/bosch-ifa23-7.jpg"><img src="images/CaseBoschIFA23/bosch-ifa23-7.jpg" alt="Bosch IFA 2023 Markenbotschaft" loading="lazy"></div>
+    </div>
+</div>
+
+<div class="caption-outer">
+    <div class="group-caption">
+        <span class="gc-index">02</span>
+        <div class="gc-body">
+            <p class="gc-label">Impressionen</p>
+            <p class="gc-text">Die Exponate und Aktvierungen auf dem Stand zielen darauf ab, Kundinnen und Kunden dabei zu unterstützen, die richtigen Entscheidungen zu treffen: Mit Innovationen, die den Unterschied machen.</p>
+        </div>
+    </div>
+</div>
+
+<div class="more-cases">
+    <div class="more-header">
+        <span class="more-label">Weitere Cases</span>
+        <a href="work.html" class="more-all">Alle Cases →</a>
+      </div>
+    <a class="project-row" href="case-bosch-ifa23.html"><span class="pr-index">01</span><span class="pr-title">Welcome Home</span><span class="pr-client">Bosch</span><span class="pr-type">Experiential</span></a>
+    <a class="project-row" href="case-audi-mq.html"><span class="pr-index">02</span><span class="pr-title">Never stop questioning</span><span class="pr-client">Audi MQ!</span><span class="pr-type">Experiential</span></a>
+    <a class="project-row" href="case-yfood-hotbowls.html"><span class="pr-index">03</span><span class="pr-title">Hot. Hotter. Yfood.</span><span class="pr-client">yfood</span><span class="pr-type">Campaign</span></a>
+</div>
+
+<div class="case-contact">
+    <div class="case-contact-left">
+        <h2 class="contact-h2">HAT'S<br>AHA<br>GEMACHT?</h2>
+    </div>
+    <div class="case-contact-right">
+        <p class="contact-sub">Egal ob dieser spezielle Case oder eine aktuelle Herausforderung — ich freue mich über den persönlichen Austausch.</p>
+        <a href="mailto:info@lucasgros.de" class="contact-email">MAIL ME.</a>
+    </div>
+</div>
+
+<footer>
+    <address style="font-style:normal;display:contents;"><span class="footer-copy">© 2026 <a href="https://www.lucasgros.de" rel="author" style="color:inherit;text-decoration:none;">Dr. Lucas Gros</a>, München</span></address>
+    <ul class="footer-links">
+        <li><a href="impressum.html">Impressum</a></li>
+    </ul>
+</footer>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "CreativeWork",
+  "name": "Bosch auf der IFA 2023 – Planet Care",
+  "url": "https://www.lucasgros.de/case-bosch-ifa23.html",
+  "description": "Storytelling, Konzept und Copywriting für den Bosch Messestand auf der IFA 2023. Ein Projekt von Dr. Lucas Gros für Blackspace, ausgezeichnet mit dem German Design Award Gold.",
+  "keywords": ["Konzept", "Copywriting", "Storytelling", "Messe", "IFA 2023", "Bosch", "Planet Care", "München"],
+  "inLanguage": "de",
+  "author": {
+    "@type": "Person",
+    "name": "Dr. Lucas Gros",
+    "url": "https://www.lucasgros.de",
+    "email": "info@lucasgros.de",
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "München",
+      "addressCountry": "DE"
+    },
+    "sameAs": "https://linkedin.com/in/lucasvgros"
+  },
+  "provider": {
+    "@type": "Organization",
+    "name": "Bosch",
+    "url": "https://www.bosch-home.com"
+  },
+  "award": ["Gold, German Design Award", "Winner, iF Design", "Bronze, BrandEx"]
+}
+</script>
+
+<script>
+(function() {
+    const cursor = document.getElementById('cursor');
+    document.addEventListener('mousemove', e => {
+        cursor.style.left = e.clientX + 'px';
+        cursor.style.top = e.clientY + 'px';
+    });
+
+    document.querySelectorAll('a, button, .gallery-item, .yt-wrap, .project-row').forEach(el => {
+        el.addEventListener('mouseenter', () => cursor.classList.add(el.classList.contains('gallery-item') || el.classList.contains('yt-wrap') ? 'zoom' : 'hover'));
+        el.addEventListener('mouseleave', () => cursor.classList.remove('hover', 'zoom'));
+    });
+
+    const video = document.getElementById('main-video');
+    const startBtn = document.getElementById('start-video');
+    const controls = document.getElementById('video-controls');
+    const progressFill = document.getElementById('progress-fill');
+    const playPauseBtn = document.getElementById('play-pause-btn');
+    const pauseIcon = document.getElementById('pause-icon');
+    const playIcon = document.getElementById('play-icon');
+
+    if(startBtn) {
+        startBtn.addEventListener('click', () => {
+            document.getElementById('preview-layer').style.display = 'none';
+            video.style.display = 'block';
+            controls.style.display = 'flex';
+            video.play();
+        });
+    }
+
+    if(playPauseBtn) {
+        playPauseBtn.addEventListener('click', () => {
+            if (video.paused) {
+                video.play();
+                pauseIcon.style.display = 'flex';
+                playIcon.style.display = 'none';
+            } else {
+                video.pause();
+                pauseIcon.style.display = 'none';
+                playIcon.style.display = 'block';
+            }
+        });
+    }
+
+    document.getElementById('mute-btn').addEventListener('click', () => {
+        video.muted = !video.muted;
+        document.getElementById('icon-sound').style.display = video.muted ? 'none' : 'block';
+        document.getElementById('icon-muted').style.display = video.muted ? 'block' : 'none';
+    });
+
+    document.getElementById('fullscreen-btn').addEventListener('click', () => {
+        if (video.requestFullscreen) video.requestFullscreen();
+        else if (video.webkitRequestFullscreen) video.webkitRequestFullscreen();
+        else if (video.msRequestFullscreen) video.msRequestFullscreen();
+    });
+
+    video.addEventListener('timeupdate', () => {
+        if(video.duration) {
+            const pct = (video.currentTime / video.duration) * 100;
+            progressFill.style.width = pct + '%';
+        }
+    });
+
+    // ── Lightbox Logik ────────────────────────────────────────────────
+    var lightbox = document.getElementById('lightbox');
+    var lbImg    = document.getElementById('lb-img');
+    var lbCtr    = document.getElementById('lb-counter');
+    var lbItems  = Array.from(document.querySelectorAll('[data-lb-src]'));
+    var current = 0;
+
+    function updateLb() {
+        var targetData = lbItems[current].dataset.lbSrc;
+        var targetAlt  = (lbItems[current].querySelector('img') || {}).alt || '';
+        lbImg.src = targetData;
+        lbImg.alt = targetAlt;
+        if (lbCtr) lbCtr.textContent = (current + 1) + ' / ' + lbItems.length;
+    }
+
+    lbItems.forEach(function(el, i) {
+        el.addEventListener('click', function() {
+            current = i; 
+            updateLb();
+            lightbox.classList.add('open');
+            document.body.style.overflow = 'hidden';
+        });
+    });
+
+    document.getElementById('lb-close').addEventListener('click', function() {
+        lightbox.classList.remove('open'); 
+        document.body.style.overflow = '';
+    });
+
+    document.getElementById('lb-prev').addEventListener('click', function(e) {
+        e.stopPropagation();
+        current = (current - 1 + lbItems.length) % lbItems.length;
+        updateLb();
+    });
+
+    document.getElementById('lb-next').addEventListener('click', function(e) {
+        e.stopPropagation();
+        current = (current + 1) % lbItems.length;
+        updateLb();
+    });
+
+    lightbox.addEventListener('click', function(e) {
+        if (e.target === lightbox) { 
+            lightbox.classList.remove('open'); 
+            document.body.style.overflow = ''; 
+        }
+    });
+
+    document.addEventListener('keydown', function(e) {
+        if (!lightbox.classList.contains('open')) return;
+        if (e.key === 'Escape') { lightbox.classList.remove('open'); document.body.style.overflow = ''; }
+        if (e.key === 'ArrowRight') { current = (current + 1) % lbItems.length; updateLb(); }
+        if (e.key === 'ArrowLeft') { current = (current - 1 + lbItems.length) % lbItems.length; updateLb(); }
+    });
+})();
+</script>
+</body>
+</html>

@@ -1,0 +1,491 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Invest in Bavaria – Don't believe everything | Dr. Lucas Gros</title>
+<meta name="description" content="Für Invest in Bavaria konzipierte Dr. Lucas Gros eine globale Kampagne, die mit bayerischen Klischees aufräumt und den Freistaat als idealen Standort für Start-ups präsentiert.">
+<meta name="author" content="Dr. Lucas Gros">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://www.lucasgros.de/case-invest-in-bavaria.html">
+<meta property="og:title" content="Invest in Bavaria – Don't believe everything | Dr. Lucas Gros">
+<meta property="og:description" content="Globale Kampagne für die Ansiedlungsagentur Bayerns. Ein Case von Dr. Lucas Gros, München.">
+<meta property="og:image" content="https://www.lucasgros.de/images/CaseInvestInBavaria/iib-header.jpg">
+<meta property="og:url" content="https://www.lucasgros.de/case-invest-in-bavaria.html">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="de_DE">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Invest in Bavaria – Don't believe everything | Dr. Lucas Gros">
+<meta name="twitter:description" content="Klischee trifft Fakt: Die Start-up-Kampagne für den Wirtschaftsstandort Bayern.">
+<meta name="twitter:image" content="https://www.lucasgros.de/images/CaseInvestInBavaria/iib-header.jpg">
+<style>
+:root{--black:#0c0c0c;--white:#f5f5f2;--border:#dddbd6;--mid:#888;--light:#bbb;--faint:#e8e6e1;}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+html{scroll-behavior:smooth;}
+body{font-family:'Helvetica Neue',Arial,sans-serif;background:var(--white);color:var(--black);font-size:15px;line-height:1.55;overflow-x:hidden;cursor:none;}
+
+/* Cursor */
+.cursor{width:16px;height:16px;border:1.5px solid var(--black);border-radius:50%;background:transparent;position:fixed;top:0;left:0;pointer-events:none;z-index:9000;transform:translate(-50%,-50%);transition:width .18s,height .18s,background .18s,opacity .18s;}
+.cursor.hover{width:44px;height:44px;}
+.cursor.zoom{width:52px;height:52px;background:rgba(12,12,12,.05);}
+
+/* Nav */
+nav{position:fixed;top:0;left:0;right:0;z-index:200;background:var(--white);display:flex;justify-content:space-between;align-items:center;height:70px;padding:0 2rem;}
+.nav-logo-box{width:45px;height:55px;display:flex;align-items:center;justify-content:center;overflow:hidden;text-decoration:none;border:none;margin-top:5px;}
+.nav-logo-box img{width:100%;height:100%;object-fit:contain;display:block;}
+.nav-links{display:flex;list-style:none;gap:2.5rem;align-items:center;}
+.nav-links a{font-size:.68rem;font-weight:400;letter-spacing:.1em;text-transform:uppercase;color:var(--mid);text-decoration:none;transition:color .15s;}
+.nav-links a:hover{color:var(--black);}
+
+/* Case Header & Meta */
+.case-header{padding-top:70px;}
+.case-cover{width:100%;aspect-ratio:16/8;object-fit:cover;object-position:center;display:block;filter:grayscale(15%);transition:filter .5s;}
+.case-cover:hover{filter:grayscale(0%);}
+.case-meta{display:grid;grid-template-columns:repeat(4,1fr);border-top:1px solid var(--border);border-bottom:1px solid var(--border);}
+.meta-cell{padding:1.25rem 2rem;border-right:1px solid var(--border);}
+.meta-cell:last-child{border-right:0;}
+.meta-label{font-size:.58rem;font-weight:500;letter-spacing:.18em;text-transform:uppercase;color:var(--light);margin-bottom:.4rem;}
+.meta-value{font-size:.85rem;font-weight:700;text-transform:uppercase;letter-spacing:.02em;color:var(--black);}
+.meta-value a{color:var(--black);text-decoration:none;border-bottom:1px solid var(--border);transition:border-color .15s;}
+.meta-value a:hover{border-color:var(--black);}
+
+/* Intro */
+.case-intro{display:grid;grid-template-columns:1fr 1fr;padding:5rem 2rem;gap:4rem;}
+.case-eyebrow{font-size:.6rem;font-weight:500;letter-spacing:.2em;text-transform:uppercase;color:var(--mid);margin-bottom:1.25rem;}
+.case-title{font-size:clamp(2.5rem,6vw,7rem);font-weight:700;text-transform:uppercase;line-height:.88;letter-spacing:-.025em;color:var(--black);margin-bottom:3rem;}
+.case-tags{display:flex;flex-wrap:wrap;gap:.4rem;}
+.tag{font-size:.6rem;font-weight:500;letter-spacing:.1em;text-transform:uppercase;color:var(--mid);border:1px solid var(--border);padding:.3rem .75rem;}
+.case-details{display:flex;flex-direction:column;gap:2.5rem;padding-top:.5rem;}
+.case-section-label{font-size:.6rem;font-weight:500;letter-spacing:.2em;text-transform:uppercase;color:var(--mid);margin-bottom:.65rem;}
+.case-body{font-size:1.5rem;font-weight:300;line-height:1.7;color:#444;}
+.case-body+.case-body{margin-top:.65rem;}
+
+/* ——— IMAGE / VIDEO BLOCKS ——— */
+.img-section{padding:0 2rem 0;}
+.img-wrap{max-width:calc(1000px + 4rem);margin:0 auto;width:100%;display:flex;flex-direction:column;gap:2px;}
+.img-group{display:flex;flex-direction:column;gap:40px;margin-bottom:20px;}
+.img-grid-1{display:grid;grid-template-columns:1fr;gap:0px;}
+.img-grid-2{display:grid;grid-template-columns:1fr 1fr;gap:40px;}
+.img-grid-3-portrait{display:grid;grid-template-columns:1fr 1fr;gap:40px;margin-top:40px;}
+
+.img-item{overflow:hidden;position:relative;cursor:none;}
+.img-item img{width:100%;height:100%;object-fit:cover;display:block;filter:grayscale(10%);transition:filter .4s,transform .5s;}
+.img-item:hover img{filter:grayscale(0%);transform:scale(1.03);}
+.img-item.ratio-wide{aspect-ratio:16/9;}
+.img-item.ratio-portrait{aspect-ratio:3/4;}
+
+/* VIDEO MODUL */
+.case-video{padding:0 2rem 0;display:flex;flex-direction:column;align-items:center;}
+.yt-wrap{width:100%;max-width:calc(1000px + 4rem);aspect-ratio:32/13;position:relative;background:#000;overflow:hidden;}
+.yt-thumb{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block;filter:grayscale(10%);transition:filter .3s;z-index:10;}
+.yt-play{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:1rem;z-index:11;}
+.yt-play-circle{width:72px;height:72px;border:1.5px solid rgba(245,245,242,.5);border-radius:50%;display:flex;align-items:center;justify-content:center;background:rgba(0,0,0,.35);backdrop-filter:blur(4px);transition:background .2s,border-color .2s;}
+.yt-play-circle:hover{background:rgba(0,0,0,.55);border-color:rgba(245,245,242,.9);}
+.yt-play-icon{width:0;height:0;border-top:10px solid transparent;border-bottom:10px solid transparent;border-left:18px solid rgba(245,245,242,.9);margin-left:4px;}
+.main-video{width:100%;height:100%;object-fit:cover;display:none;}
+.sr-controls{position:absolute;bottom:0;left:0;right:0;padding:1.5rem 2rem;display:none;align-items:center;gap:1.5rem;background:linear-gradient(transparent,rgba(12,12,12,.5));z-index:12;opacity:0;transition:opacity .3s;}
+.yt-wrap:hover .sr-controls{opacity:1;}
+.sr-playpause,.sr-mute,.sr-fullscreen{background:none;border:none;color:var(--white);cursor:none;display:flex;align-items:center;justify-content:center;}
+.sr-pause-icon{display:flex;gap:3px;}
+.sr-pause-bar{width:2.5px;height:14px;background:var(--white);}
+.sr-play-icon-ctrl{width:0;height:0;border-top:7px solid transparent;border-bottom:7px solid transparent;border-left:12px solid var(--white);}
+.sr-progress{flex:1;height:2px;background:rgba(245,245,242,.2);position:relative;cursor:pointer;}
+.sr-progress-fill{position:absolute;top:0;left:0;height:100%;background:var(--white);width:0%;}
+.sr-mute svg,.sr-fullscreen svg{width:18px;height:18px;fill:none;stroke:currentColor;stroke-width:2;}
+
+/* Caption */
+.group-caption{display:grid;grid-template-columns:48px 1fr;align-items:start;gap:0;padding:1.75rem 0 4rem;}
+.gc-index{font-size:.58rem;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:var(--light);border-top:1px solid var(--border);padding-top:.9rem;padding-right:1rem;}
+.gc-body{border-top:1px solid var(--black);padding-top:.9rem;}
+.gc-label{font-size:.58rem;font-weight:500;letter-spacing:.2em;text-transform:uppercase;color:var(--light);margin-bottom:.5rem;}
+.gc-text{font-size:1.15rem;font-weight:300;line-height:1.55;color:#444;max-width:560px;}
+
+/* More Cases */
+.more-header{display:flex;justify-content:space-between;align-items:center;padding:0 2rem 1.5rem;}
+.more-label{font-size:.6rem;font-weight:500;letter-spacing:.2em;text-transform:uppercase;color:var(--mid);}
+.more-all{font-size:.65rem;font-weight:400;letter-spacing:.1em;text-transform:uppercase;color:var(--mid);text-decoration:none;transition:color .15s;}
+.project-row{display:grid;grid-template-columns:36px 1fr 200px 140px;align-items:center;gap:1.5rem;padding:1.1rem 2rem;border-top:1px solid var(--border);text-decoration:none;color:var(--black);position:relative;overflow:hidden;cursor:none;}
+.project-row::before{content:'';position:absolute;inset:0;background:var(--black);transform:translateX(-100%);transition:transform .3s cubic-bezier(.4,0,.2,1);z-index:0;}
+.project-row:hover::before{transform:translateX(0);}
+.project-row:hover{color:var(--white);}
+.project-row>*{position:relative;z-index:1;}
+.pr-index{font-size:.62rem;color:var(--light);font-weight:300;}
+.pr-title{font-size:clamp(1.05rem,2vw,1.65rem);font-weight:700;text-transform:uppercase;letter-spacing:-.01em;}
+.pr-client{font-size:.68rem;font-weight:400;color:var(--mid);text-transform:uppercase;letter-spacing:.08em;}
+.pr-type{font-size:.65rem;font-weight:300;color:var(--mid);text-align:right;letter-spacing:.06em;}
+
+/* Lightbox */
+.lightbox{position:fixed;inset:0;z-index:8000;background:rgba(12,12,12,.98);display:flex;align-items:center;justify-content:center;opacity:0;pointer-events:none;transition:opacity .3s;}
+.lightbox.open{opacity:1;pointer-events:all;}
+.lightbox img{max-width:92vw;max-height:90vh;object-fit:contain;display:block;}
+.lightbox-close{position:absolute;top:1.5rem;right:2rem;font-size:1.5rem;font-weight:300;color:rgba(245,245,242,.7);background:none;border:none;cursor:none;}
+.lightbox-nav{position:absolute;top:50%;transform:translateY(-50%);font-size:1.2rem;font-weight:300;color:rgba(245,245,242,.5);background:none;border:none;cursor:none;padding:.75rem 1.25rem;}
+.lightbox-prev{left:1rem;}
+.lightbox-next{right:1rem;}
+.lightbox-counter{position:absolute;bottom:1.75rem;left:50%;transform:translateX(-50%);font-size:.6rem;color:rgba(245,245,242,.4);letter-spacing:.18em;text-transform:uppercase;}
+
+/* Contact & Footer */
+.case-contact{display:grid;grid-template-columns:1fr 1fr;margin-top:6rem;padding:0 2rem 6rem;}
+.contact-h2{font-size:clamp(2.8rem,7vw,8rem);font-weight:700;text-transform:uppercase;line-height:.88;letter-spacing:-.025em;}
+.case-contact-right{padding-left:1rem;display:flex;flex-direction:column;justify-content:flex-end;gap:1.75rem;}
+.contact-sub{font-size:.88rem;font-weight:300;line-height:1.75;color:#666;}
+.contact-email{font-size:clamp(1rem,2vw,1.6rem);font-weight:700;text-transform:uppercase;color:var(--black);text-decoration:none;transition:opacity .2s;}
+.contact-email:hover{opacity:.4;}
+footer{display:flex;justify-content:space-between;align-items:center;padding:2rem 2rem 2.5rem;}
+.footer-copy{font-size:.68rem;font-weight:300;color:var(--mid);}
+.footer-links{display:flex;gap:1.75rem;list-style:none;}
+.footer-links a{font-size:.68rem;color:var(--mid);text-decoration:none;text-transform:uppercase;letter-spacing:.08em;}
+
+/* Accessibility helper */
+.sr-only{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;}
+
+@media(max-width:768px){
+  .case-meta{grid-template-columns:repeat(2,1fr);}
+  .case-intro{grid-template-columns:1fr;padding:3rem 1.25rem;gap:2.5rem;}
+  .img-grid-2{grid-template-columns:1fr;}
+  .img-grid-3-portrait{grid-template-columns:1fr;}
+  .project-row{grid-template-columns:1fr auto;padding:1rem 1.25rem;}
+  .pr-index,.pr-type{display:none;}
+  .case-contact{grid-template-columns:1fr;}
+  .case-contact-right{padding-left:0;margin-top:2rem;}
+}
+</style>
+</head>
+<body>
+
+<div class="cursor" id="cursor"></div>
+
+<div class="lightbox" id="lightbox">
+  <button class="lightbox-close" id="lb-close">×</button>
+  <button class="lightbox-nav lightbox-prev" id="lb-prev">←</button>
+  <img src="" alt="" id="lb-img">
+  <button class="lightbox-nav lightbox-next" id="lb-next">→</button>
+  <span class="lightbox-counter" id="lb-counter"></span>
+</div>
+
+<nav>
+  <a href="index.html" class="nav-logo-box">
+    <img src="images/logo.png" alt="Dr. Lucas Gros">
+  </a>
+  <ul class="nav-links">
+    <li><a href="work.html">← Cases</a></li>
+    <li><a href="https://linkedin.com/in/lucasvgros" target="_blank" rel="noopener">Connect</a></li>
+    <li><a href="mailto:hallo@lucasgros.de">Contact</a></li>
+  </ul>
+</nav>
+
+<div class="case-header">
+  <img class="case-cover" src="images/CaseInvestInBavaria/iib-header.jpg" alt="Invest in Bavaria Kampagne – Don't believe everything von Dr. Lucas Gros" loading="eager" fetchpriority="high">
+  <div class="case-meta">
+    <div class="meta-cell"><div class="meta-label">Role</div><div class="meta-value">Text, Konzept</div></div>
+    <div class="meta-cell"><div class="meta-label">For</div><div class="meta-value"><a href="https://hello-muenchen.de" target="_blank" rel="noopener">Hello</a></div></div>
+    <div class="meta-cell"><div class="meta-label">Type</div><div class="meta-value">Kampagne</div></div>
+    <div class="meta-cell"><div class="meta-label">Client</div><div class="meta-value">Invest in Bavaria</div></div>
+  </div>
+</div>
+
+<div class="case-intro">
+  <div>
+    <p class="case-eyebrow">Invest in Bavaria</p>
+    <h1 class="sr-only">Invest in Bavaria Kampagne – Strategie & Text von Dr. Lucas Gros</h1>
+    <p class="case-title" aria-hidden="true">Don't<br>believe<br>everything</p>
+    <div class="case-tags">
+      <span class="tag">Konzept</span>
+      <span class="tag">Text</span>
+      <span class="tag">Kampagne</span>
+      <span class="tag">Digital</span>
+    </div>
+  </div>
+  <div class="case-details">
+    <div>
+      <p class="case-section-label">Die Story</p>
+      <p class="case-body">Invest in Bavaria ist die Ansiedlungsagentur des Freistaates. Seit 1999 hilft sie Firmen, ihr Geschäft nach Bayern zu verlegen, zu expandieren oder hier zu gründen.</p>
+      <p class="case-body">Unsere Kampagne richtete sich an Start-ups weltweit – und spielte mit den Klischees, die es über Bayern gibt. Unser Ziel: Damit aufzuräumen und ein wahrhaftiges Bild des Freistaates zu zeichnen.</p>
+    </div>
+  </div>
+</div>
+
+<div class="case-video">
+  <div class="yt-wrap" id="yt-wrap">
+    <div id="preview-layer" style="position:absolute;inset:0;z-index:20;">
+      <img class="yt-thumb" src="images/CaseInvestInBavaria/iib-video-poster.jpg" alt="Invest in Bavaria Kampagnenfilm Vorschau">
+      <div class="yt-play" id="start-video">
+        <div class="yt-play-circle"><div class="yt-play-icon"></div></div>
+      </div>
+    </div>
+    <video class="main-video" id="main-video" src="images/CaseInvestInBavaria/iib-kampagne.mp4" playsinline preload="metadata"></video>
+    <div class="sr-controls" id="video-controls">
+      <button class="sr-playpause" id="play-pause-btn">
+        <span class="sr-pause-icon" id="pause-icon"><span class="sr-pause-bar"></span><span class="sr-pause-bar"></span></span>
+        <span class="sr-play-icon-ctrl" id="play-icon" style="display:none"></span>
+      </button>
+      <div class="sr-progress" id="progress-bar"><div class="sr-progress-fill" id="progress-fill"></div></div>
+      <button class="sr-mute" id="mute-btn">
+        <svg id="icon-sound" viewBox="0 0 24 24"><path d="M11 5L6 9H2v6h4l5 4V5z"/><path d="M19.07 4.93a10 10 0 0 1 0 14.14"/><path d="M15.54 8.46a5 5 0 0 1 0 7.07"/></svg>
+        <svg id="icon-muted" viewBox="0 0 24 24" style="display:none"><path d="M11 5L6 9H2v6h4l5 4V5z"/><line x1="23" y1="9" x2="17" y2="15"/><line x1="17" y1="9" x2="23" y2="15"/></svg>
+      </button>
+      <button class="sr-fullscreen" id="fullscreen-btn"><svg viewBox="0 0 24 24"><path d="M8 3H5a2 2 0 0 0-2 2v3m18 0V5a2 2 0 0 0-2-2h-3m0 18h3a2 2 0 0 0 2-2v-3M3 16v3a2 2 0 0 0 2 2h3"/></svg></button>
+    </div>
+  </div>
+</div>
+
+<div class="img-section" style="padding-bottom:0;">
+  <div class="img-wrap">
+    <div class="group-caption">
+      <span class="gc-index">01</span>
+      <div class="gc-body">
+        <p class="gc-label">Kampagnenfilm</p>
+        <p class="gc-text">Der Kampagnenfilm spielt mit den bekanntesten Klischees über Bayern – und räumt sie eines nach dem anderen mit echten Fakten vom Tisch.</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="img-section">
+  <div class="img-wrap">
+    <div class="img-group">
+      <div class="img-grid-1">
+        <div class="img-item ratio-wide" data-lb-src="images/CaseInvestInBavaria/iib-social-1.jpg">
+          <img src="images/CaseInvestInBavaria/iib-social-1.jpg" alt="Invest in Bavaria Social Mockup – Content Strategie Dr. Lucas Gros" loading="lazy">
+        </div>
+      </div>
+      <div class="img-grid-1" style="margin-top:2px;">
+        <div class="img-item ratio-wide" data-lb-src="images/CaseInvestInBavaria/iib-social-2.jpg">
+          <img src="images/CaseInvestInBavaria/iib-social-2.jpg" alt="Invest in Bavaria Social Ad – Kampagnentext Dr. Lucas Gros" loading="lazy">
+        </div>
+      </div>
+      <div class="group-caption">
+        <span class="gc-index">02</span>
+        <div class="gc-body">
+          <p class="gc-label">Social Media</p>
+          <p class="gc-text">Die Social-Media-Motive übersetzen die Kampagnenmechanik ins Einzelformat: Klischee trifft Fakt – prägnant und auf den Punkt.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="img-group">
+      <div class="img-grid-1">
+        <div class="img-item ratio-wide" data-lb-src="images/CaseInvestInBavaria/iib-web-1.mp4">
+          <img src="images/CaseInvestInBavaria/iib-web-1.mp4" alt="Invest in Bavaria Website – Digital Branding Dr. Lucas Gros" loading="lazy">
+        </div>
+      </div>
+      <div class="img-grid-2 img-grid-3-portrait">
+        <div class="img-item ratio-portrait" data-lb-src="images/CaseInvestInBavaria/iib-web-2.jpg">
+          <img src="images/CaseInvestInBavaria/iib-web-2.jpg" alt="Invest in Bavaria Mobile Story – Dr. Lucas Gros" loading="lazy">
+        </div>
+        <div class="img-item ratio-portrait" data-lb-src="images/CaseInvestInBavaria/iib-web-3.jpg">
+          <img src="images/CaseInvestInBavaria/iib-web-3.jpg" alt="Invest in Bavaria Story Format – Dr. Lucas Gros" loading="lazy">
+        </div>
+      </div>
+      <div class="group-caption">
+        <span class="gc-index">03</span>
+        <div class="gc-body">
+          <p class="gc-label">Website</p>
+          <p class="gc-text">Die Website stellte die wichtigsten Zahlen zur bayerischen Start-up-Szene in den Mittelpunkt. Und lieferte beeindruckende Success Stories aus der Unternehmertum.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="img-group">
+      <div class="img-grid-1">
+        <div class="img-item ratio-wide" data-lb-src="images/CaseInvestInBavaria/iib-blog.jpg">
+          <img src="images/CaseInvestInBavaria/iib-blog.jpg" alt="Invest in Bavaria Blog – Redaktionelles Design Dr. Lucas Gros" loading="lazy">
+        </div>
+      </div>
+      <div class="group-caption">
+        <span class="gc-index">04</span>
+        <div class="gc-body">
+          <p class="gc-label">Blog</p>
+          <p class="gc-text">Ergänzt wurde die Kommunikation durch spezifische Deep Dives: Blogartikel über Technologie und bayerische Lebensart.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="more-cases">
+  <div class="more-header">
+    <span class="more-label">Weitere Cases</span>
+    <a href="work.html" class="more-all">Alle Cases →</a>
+  </div>
+  <a class="project-row" href="case-volkswagen.html"><span class="pr-index">01</span><span class="pr-title">Electric for all</span><span class="pr-client">Volkswagen</span><span class="pr-type">Campaign</span></a>
+  <a class="project-row" href="case-yfood-vegang.html"><span class="pr-index">02</span><span class="pr-title">Willkommen in der #Vegang</span><span class="pr-client">yfood</span><span class="pr-type">Campaign</span></a>
+  <a class="project-row" href="case-oddset.html"><span class="pr-index">03</span><span class="pr-title">Steckt der Titel auch in dir?</span><span class="pr-client">Oddset</span><span class="pr-type">Campaign</span></a>
+</div>
+
+<div class="case-contact">
+  <div class="case-contact-left"><h2 class="contact-h2">HAT'S<br>AHA<br>GEMACHT?</h2></div>
+  <div class="case-contact-right">
+    <p class="contact-sub">Egal ob dieser spezielle Case oder eine aktuelle Herausforderung — ich freue mich über den persönlichen Austausch.</p>
+    <a href="mailto:hallo@lucasgros.de" class="contact-email">MAIL ME.</a>
+  </div>
+</div>
+
+<footer>
+  <address style="font-style:normal;display:contents;"><span class="footer-copy">© 2026 <a href="https://www.lucasgros.de" rel="author" style="color:inherit;text-decoration:none;">Dr. Lucas Gros</a>, München</span></address>
+  <ul class="footer-links"><li><a href="impressum.html">Impressum</a></li></ul>
+</footer>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "CreativeWork",
+  "name": "Invest in Bavaria – Don't believe everything",
+  "url": "https://www.lucasgros.de/case-invest-in-bavaria.html",
+  "description": "Dr. Lucas Gros entwickelte für Invest in Bavaria eine internationale Kampagne für Start-ups, die bayerische Klischees nutzt, um den Wirtschaftsstandort authentisch zu präsentieren.",
+  "keywords": ["Kampagne", "Konzept", "Text", "Invest in Bavaria", "Standortmarketing", "Start-up Marketing"],
+  "inLanguage": "de",
+  "author": {
+    "@type": "Person",
+    "name": "Dr. Lucas Gros",
+    "url": "https://www.lucasgros.de",
+    "email": "hallo@lucasgros.de",
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "München",
+      "addressCountry": "DE"
+    },
+    "sameAs": "https://linkedin.com/in/lucasvgros"
+  },
+  "provider": {
+    "@type": "Organization",
+    "name": "Invest in Bavaria",
+    "url": "https://www.invest-in-bavaria.com"
+  }
+}
+</script>
+
+<script>
+(function() {
+  // ── Cursor ────────────────────────────────────────────────────────
+  var cursor = document.getElementById('cursor');
+  document.addEventListener('mousemove', function(e) {
+    cursor.style.left = e.clientX + 'px';
+    cursor.style.top  = e.clientY + 'px';
+  });
+
+  // Cursor Hover Logik
+  function updateHovers() {
+    document.querySelectorAll('a, button, .img-item, .yt-wrap, .project-row').forEach(function(el) {
+      el.addEventListener('mouseenter', function() {
+        if (el.classList.contains('img-item') || el.classList.contains('yt-wrap') || el.classList.contains('project-row')) {
+          cursor.classList.add('zoom');
+        } else {
+          cursor.classList.add('hover');
+        }
+      });
+      el.addEventListener('mouseleave', function() { 
+        cursor.classList.remove('hover','zoom'); 
+      });
+    });
+  }
+  updateHovers();
+
+  // ── Video Player ──────────────────────────────────────────────────
+  var preview  = document.getElementById('preview-layer');
+  var video    = document.getElementById('main-video');
+  var controls = document.getElementById('video-controls');
+  var startBtn = document.getElementById('start-video');
+  var pauseIcon = document.getElementById('pause-icon');
+  var playIcon  = document.getElementById('play-icon');
+  var progressFill = document.getElementById('progress-fill');
+  var progressBar  = document.getElementById('progress-bar');
+
+  if(startBtn) {
+    startBtn.addEventListener('click', function() {
+      preview.style.display = 'none';
+      video.style.display = 'block';
+      controls.style.display = 'flex';
+      video.play();
+    });
+  }
+
+  document.getElementById('play-pause-btn').addEventListener('click', function() {
+    if (video.paused) {
+      video.play();
+      playIcon.style.display = 'none';
+      pauseIcon.style.display = 'flex';
+    } else {
+      video.pause();
+      playIcon.style.display = 'block';
+      pauseIcon.style.display = 'none';
+    }
+  });
+
+  document.getElementById('mute-btn').addEventListener('click', function() {
+    video.muted = !video.muted;
+    document.getElementById('icon-sound').style.display = video.muted ? 'none' : 'block';
+    document.getElementById('icon-muted').style.display = video.muted ? 'block' : 'none';
+  });
+
+  video.addEventListener('timeupdate', function() {
+    if (video.duration) {
+      progressFill.style.width = (video.currentTime / video.duration * 100) + '%';
+    }
+  });
+
+  // ── Lightbox & Galerie ──────────────────────────────────────────
+  var lightbox = document.getElementById('lightbox');
+  var lbImg    = document.getElementById('lb-img');
+  var lbCtr    = document.getElementById('lb-counter');
+  
+  var lbItems  = Array.from(document.querySelectorAll('[data-lb-src]'));
+  var srcs     = lbItems.map(function(el) {
+    return { 
+      src: el.getAttribute('data-lb-src'), 
+      alt: (el.querySelector('img') || {}).alt || '' 
+    };
+  });
+  var current = 0;
+
+  function updateLb() {
+    if(srcs.length === 0) return;
+    lbImg.src = srcs[current].src;
+    lbImg.alt = srcs[current].alt;
+    lbCtr.textContent = (current + 1) + ' / ' + srcs.length;
+  }
+
+  lbItems.forEach(function(el, i) {
+    el.addEventListener('click', function() {
+      current = i; 
+      updateLb();
+      lightbox.classList.add('open');
+      document.body.style.overflow = 'hidden';
+    });
+  });
+
+  document.getElementById('lb-close').addEventListener('click', function() {
+    lightbox.classList.remove('open'); 
+    document.body.style.overflow = '';
+  });
+
+  document.getElementById('lb-prev').addEventListener('click', function(e) {
+    e.stopPropagation();
+    current = (current - 1 + srcs.length) % srcs.length; 
+    updateLb();
+  });
+
+  document.getElementById('lb-next').addEventListener('click', function(e) {
+    e.stopPropagation();
+    current = (current + 1) % srcs.length; 
+    updateLb();
+  });
+
+  lightbox.addEventListener('click', function(e) {
+    if (e.target === lightbox) { 
+      lightbox.classList.remove('open'); 
+      document.body.style.overflow = ''; 
+    }
+  });
+
+  document.addEventListener('keydown', function(e) {
+    if (!lightbox.classList.contains('open')) return;
+    if (e.key === 'Escape') { lightbox.classList.remove('open'); document.body.style.overflow = ''; }
+    if (e.key === 'ArrowLeft') { current = (current - 1 + srcs.length) % srcs.length; updateLb(); }
+    if (e.key === 'ArrowRight') { current = (current + 1) % srcs.length; updateLb(); }
+  });
+
+})();
+</script>
+</body>
+</html>

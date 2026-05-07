@@ -1,0 +1,466 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Oddset WM 2018 – Kampagne & Konzept | Dr. Lucas Gros</title>
+<meta name="description" content="Dr. Lucas Gros entwickelte für Oddset die WM 2018 Kampagne – von OOH-Motiven über Social Media Activation bis hin zu Funkspots.">
+<meta name="author" content="Dr. Lucas Gros">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://www.lucasgros.de/case-oddset.html">
+
+<meta property="og:title" content="Oddset WM 2018 – Kampagne & Konzept | Dr. Lucas Gros">
+<meta property="og:description" content="Konzept und Text für die Oddset Weltmeisterschafts-Kampagne 2018. Ein Case von Dr. Lucas Gros, München.">
+<meta property="og:image" content="https://www.lucasgros.de/images/CaseOddset/oddset-header.jpg">
+<meta property="og:url" content="https://www.lucasgros.de/case-oddset.html">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="de_DE">
+
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Oddset WM 2018 – Kampagne & Konzept | Dr. Lucas Gros">
+<meta name="twitter:description" content="Konzept und Text für die Oddset Weltmeisterschafts-Kampagne 2018.">
+<meta name="twitter:image" content="https://www.lucasgros.de/images/CaseOddset/oddset-header.jpg">
+
+<style>
+:root{--black:#0c0c0c;--white:#f5f5f2;--border:#dddbd6;--mid:#888;--light:#bbb;--faint:#e8e6e1;}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+html{scroll-behavior:smooth;}
+body{font-family:'Helvetica Neue',Arial,sans-serif;background:var(--white);color:var(--black);font-size:15px;line-height:1.55;overflow-x:hidden;cursor:none;}
+
+/* Cursor */
+.cursor{width:16px;height:16px;border:1.5px solid var(--black);border-radius:50%;background:transparent;position:fixed;top:0;left:0;pointer-events:none;z-index:9000;transform:translate(-50%,-50%);transition:width .18s,height .18s,background .18s,opacity .18s;}
+.cursor.hover{width:44px;height:44px;}
+.cursor.zoom{width:52px;height:52px;background:rgba(12,12,12,.05);}
+
+/* Nav */
+nav{position:fixed;top:0;left:0;right:0;z-index:200;background:var(--white);display:flex;justify-content:space-between;align-items:center;height:70px;padding:0 2rem;}
+.nav-logo-box{width:45px;height:55px;display:flex;align-items:center;justify-content:center;overflow:hidden;text-decoration:none;border:none;margin-top:5px;}
+.nav-logo-box img{width:100%;height:100%;object-fit:contain;display:block;}
+.nav-links{display:flex;list-style:none;gap:2.5rem;align-items:center;}
+.nav-links a{font-size:.68rem;font-weight:400;letter-spacing:.1em;text-transform:uppercase;color:var(--mid);text-decoration:none;transition:color .15s;}
+.nav-links a:hover{color:var(--black);}
+
+/* Case Header & Meta */
+.case-header{padding-top:70px;}
+.case-cover{width:100%;aspect-ratio:16/8;object-fit:cover;object-position:center;display:block;filter:grayscale(15%);transition:filter .5s;}
+.case-cover:hover{filter:grayscale(0%);}
+.case-meta{display:grid;grid-template-columns:repeat(4,1fr);border-top:1px solid var(--border);border-bottom:1px solid var(--border);}
+.meta-cell{padding:1.25rem 2rem;border-right:1px solid var(--border);}
+.meta-cell:last-child{border-right:0;}
+.meta-label{font-size:.58rem;font-weight:500;letter-spacing:.18em;text-transform:uppercase;color:var(--light);margin-bottom:.4rem;}
+.meta-value{font-size:.85rem;font-weight:700;text-transform:uppercase;letter-spacing:.02em;color:var(--black);}
+.meta-value a{color:var(--black);text-decoration:none;border-bottom:1px solid var(--border);transition:border-color .15s;}
+.meta-value a:hover{border-color:var(--black);}
+
+/* Intro */
+.case-intro{display:grid;grid-template-columns:1fr 1fr;padding:5rem 2rem;gap:4rem;}
+.case-eyebrow{font-size:.6rem;font-weight:500;letter-spacing:.2em;text-transform:uppercase;color:var(--mid);margin-bottom:1.25rem;}
+.case-title{font-size:clamp(2.5rem,6vw,7rem);font-weight:700;text-transform:uppercase;line-height:.88;letter-spacing:-.025em;color:var(--black);margin-bottom:3rem;}
+.case-tags{display:flex;flex-wrap:wrap;gap:.4rem;}
+.tag{font-size:.6rem;font-weight:500;letter-spacing:.1em;text-transform:uppercase;color:var(--mid);border:1px solid var(--border);padding:.3rem .75rem;}
+.case-details{display:flex;flex-direction:column;gap:2.5rem;padding-top:.5rem;}
+.case-section-label{font-size:.6rem;font-weight:500;letter-spacing:.2em;text-transform:uppercase;color:var(--mid);margin-bottom:.65rem;}
+.case-body{font-size:1.5rem;font-weight:300;line-height:1.7;color:#444;}
+.case-body+.case-body{margin-top:.65rem;}
+
+/* ——— IMAGE BLOCKS ——— */
+.img-section{padding:0 2rem 0;}
+.img-wrap{max-width:calc(1000px + 4rem);margin:0 auto;width:100%;display:flex;flex-direction:column;gap:2px;}
+.img-group{display:flex;flex-direction:column;gap:40px;margin-bottom:20px;}
+.img-grid-2{display:grid;grid-template-columns:1fr 1fr;gap:40px;}
+.img-grid-1{display:grid;grid-template-columns:1fr;gap:0px;}
+.img-item{overflow:hidden;position:relative;cursor:none;}
+.img-item img{width:100%;height:100%;object-fit:cover;display:block;filter:grayscale(10%);transition:filter .4s,transform .5s;}
+.img-item:hover img{filter:grayscale(0%);transform:scale(1.03);}
+.img-item.ratio-wide{aspect-ratio:16/9;}
+.img-item.ratio-square{aspect-ratio:1/1;}
+.img-item.ratio-full{aspect-ratio:16/9;}
+
+/* Caption below a group */
+.group-caption{display:grid;grid-template-columns:48px 1fr;align-items:start;gap:0;padding:1.75rem 0 4rem;}
+.gc-index{font-size:.58rem;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:var(--light);border-top:1px solid var(--border);padding-top:.9rem;padding-right:1rem;}
+.gc-body{border-top:1px solid var(--black);padding-top:.9rem;}
+.gc-label{font-size:.58rem;font-weight:500;letter-spacing:.2em;text-transform:uppercase;color:var(--light);margin-bottom:.5rem;}
+.gc-text{font-size:1.15rem;font-weight:300;line-height:1.55;color:#444;max-width:560px;}
+
+/* Audio Player Styles */
+.audio-section {padding: 0 2rem 6rem;}
+.audio-wrap {max-width: calc(1000px + 4rem); margin: 0 auto; width: 100%; display: grid; grid-template-columns: 48px 1fr; align-items: start; gap: 0;}
+.audio-index {font-size: .58rem; font-weight: 700; letter-spacing: .2em; text-transform: uppercase; color: var(--light); border-top: 1px solid var(--border); padding-top: .9rem; padding-right: 1rem;}
+.audio-content-area {border-top: 1px solid var(--black); padding-top: .9rem;}
+.audio-section-label {font-size: .58rem; font-weight: 500; letter-spacing: .2em; text-transform: uppercase; color: var(--light); margin-bottom: 1.5rem;}
+.audio-player {display: flex; align-items: center; gap: 1.75rem; padding-bottom: 1.5rem;}
+.audio-play-btn {width: 42px; height: 42px; border: 1.5px solid var(--black); border-radius: 50%; background: transparent; display: flex; align-items: center; justify-content: center; cursor: none; flex-shrink: 0; transition: background .2s, border-color .2s;}
+.audio-play-btn:hover { background: var(--black); }
+.audio-play-btn:hover .play-icon { fill: var(--white); }
+.play-icon { fill: var(--black); transition: fill .2s; margin-left: 2px; }
+.pause-icon { fill: var(--black); transition: fill .2s; display: none; }
+.audio-play-btn:hover .pause-icon { fill: var(--white); }
+.audio-play-btn.playing .play-icon { display: none; }
+.audio-play-btn.playing .pause-icon { display: block; }
+.audio-info { flex: 1; min-width: 0; }
+.audio-title { font-size: .78rem; font-weight: 700; text-transform: uppercase; letter-spacing: .08em; color: var(--black); margin-bottom: .3rem; }
+.audio-meta { font-size: .62rem; font-weight: 400; letter-spacing: .12em; text-transform: uppercase; color: var(--light); }
+.audio-progress-wrap { flex: 2; display: flex; flex-direction: column; gap: .45rem; }
+.audio-track { width: 100%; height: 1px; background: var(--border); position: relative; cursor: none; }
+.audio-track-fill { height: 100%; background: var(--black); width: 0%; transition: width .1s linear; }
+.audio-times { display: flex; justify-content: space-between; }
+.audio-time { font-size: .58rem; font-weight: 400; letter-spacing: .1em; color: var(--light); }
+.audio-vol { display: flex; align-items: center; gap: .75rem; flex-shrink: 0; }
+.vol-icon { width: 14px; height: 14px; opacity: .45; }
+.vol-slider { -webkit-appearance: none; appearance: none; width: 60px; height: 1px; background: var(--border); outline: none; cursor: none; }
+.vol-slider::-webkit-slider-thumb { -webkit-appearance: none; width: 10px; height: 10px; border-radius: 50%; background: var(--black); cursor: none; }
+
+/* More Cases */
+.more-cases{margin-top:2rem;}
+.more-header{display:flex;justify-content:space-between;align-items:center;padding:0 2rem 1.5rem;}
+.more-label{font-size:.6rem;font-weight:500;letter-spacing:.2em;text-transform:uppercase;color:var(--mid);}
+.more-all{font-size:.65rem;font-weight:400;letter-spacing:.1em;text-transform:uppercase;color:var(--mid);text-decoration:none;transition:color .15s;}
+.project-row{display:grid;grid-template-columns:36px 1fr 200px 140px;align-items:center;gap:1.5rem;padding:1.1rem 2rem;border-top:1px solid var(--border);text-decoration:none;color:var(--black);position:relative;overflow:hidden;cursor:none;}
+.project-row::before{content:'';position:absolute;inset:0;background:var(--black);transform:translateX(-100%);transition:transform .3s cubic-bezier(.4,0,.2,1);z-index:0;}
+.project-row:hover::before{transform:translateX(0);}
+.project-row:hover{color:var(--white);}
+.project-row>*{position:relative;z-index:1;}
+.pr-index{font-size:.62rem;color:var(--light);font-weight:300;}
+.pr-title{font-size:clamp(1.05rem,2vw,1.65rem);font-weight:700;text-transform:uppercase;letter-spacing:-.01em;}
+.pr-client{font-size:.68rem;font-weight:400;color:var(--mid);text-transform:uppercase;letter-spacing:.08em;}
+.pr-type{font-size:.65rem;font-weight:300;color:var(--mid);text-align:right;letter-spacing:.06em;}
+.project-row:hover .pr-index,.project-row:hover .pr-client,.project-row:hover .pr-type{color:rgba(245,245,242,.38);}
+
+/* Lightbox */
+.lightbox{position:fixed;inset:0;z-index:8000;background:rgba(12,12,12,.95);display:flex;align-items:center;justify-content:center;opacity:0;pointer-events:none;transition:opacity .3s;}
+.lightbox.open{opacity:1;pointer-events:all;}
+.lightbox img{max-width:92vw;max-height:90vh;object-fit:contain;display:block;}
+.lightbox-close, .lightbox-nav{position:absolute;background:none;border:none;color:white;cursor:none;transition:opacity .2s;}
+.lightbox-close{top:1.5rem;right:2rem;font-size:1.5rem;font-weight:300;}
+.lightbox-nav{top:50%;transform:translateY(-50%);font-size:1.2rem;padding:1rem;}
+.lightbox-prev{left:1rem;}
+.lightbox-next{right:1rem;}
+.lightbox-counter{position:absolute;bottom:1.75rem;left:50%;transform:translateX(-50%);font-size:.6rem;color:rgba(255,255,255,0.4);letter-spacing:.18em;text-transform:uppercase;}
+
+/* Contact & Footer */
+.case-contact{display:grid;grid-template-columns:1fr 1fr;margin-top:6rem;padding:0 2rem 6rem;}
+.contact-h2{font-size:clamp(2.8rem,7vw,8rem);font-weight:700;text-transform:uppercase;line-height:.88;letter-spacing:-.025em;}
+.case-contact-right{padding-left:1rem;display:flex;flex-direction:column;justify-content:flex-end;gap:1.75rem;}
+.contact-sub{font-size:.88rem;font-weight:300;line-height:1.75;color:#666;}
+.contact-email{font-size:clamp(1rem,2vw,1.6rem);font-weight:700;text-transform:uppercase;color:var(--black);text-decoration:none;transition:opacity .2s;}
+.contact-email:hover{opacity:.4;}
+footer{display:flex;justify-content:space-between;align-items:center;padding:2rem 2rem 2.5rem;}
+.footer-copy{font-size:.68rem;font-weight:300;color:var(--mid);}
+.footer-links{display:flex;gap:1.75rem;list-style:none;}
+.footer-links a{font-size:.68rem;color:var(--mid);text-decoration:none;text-transform:uppercase;letter-spacing:.08em;}
+
+.sr-only{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;}
+@media(max-width:768px){
+  .case-meta{grid-template-columns:repeat(2,1fr);}
+  .case-intro{grid-template-columns:1fr;padding:3rem 1.25rem;gap:2.5rem;}
+  .img-grid-2{grid-template-columns:1fr;}
+  .project-row{grid-template-columns:1fr auto;padding:1rem 1.25rem;}
+  .pr-index,.pr-type{display:none;}
+  .case-contact{grid-template-columns:1fr;}
+  .case-contact-right{padding-left:0;margin-top:2rem;}
+  .audio-vol{display:none;}
+}
+</style>
+</head>
+<body>
+
+<div class="cursor" id="cursor"></div>
+
+<div class="lightbox" id="lightbox">
+  <button class="lightbox-close" id="lb-close">×</button>
+  <button class="lightbox-nav lightbox-prev" id="lb-prev">←</button>
+  <img src="" alt="" id="lb-img">
+  <button class="lightbox-nav lightbox-next" id="lb-next">→</button>
+  <span class="lightbox-counter" id="lb-counter"></span>
+</div>
+
+<nav>
+  <a href="index.html" class="nav-logo-box">
+    <img src="images/logo.png" alt="Dr. Lucas Gros">
+  </a>
+  <ul class="nav-links">
+    <li><a href="work.html">← Cases</a></li>
+    <li><a href="https://linkedin.com/in/lucasvgros" target="_blank" rel="noopener">Connect</a></li>
+    <li><a href="mailto:info@lucasgros.de">Contact</a></li>
+  </ul>
+</nav>
+
+<div class="case-header">
+  <img class="case-cover" src="images/CaseOddset/oddset-header.jpg" alt="Oddset WM 2018 Kampagne – Konzept und Text von Dr. Lucas Gros" loading="eager" fetchpriority="high">
+  <div class="case-meta">
+    <div class="meta-cell"><div class="meta-label">Role</div><div class="meta-value">Konzept, Text</div></div>
+    <div class="meta-cell"><div class="meta-label">For</div><div class="meta-value">Hello</div></div>
+    <div class="meta-cell"><div class="meta-label">Type</div><div class="meta-value">Kampagne</div></div>
+    <div class="meta-cell"><div class="meta-label">Client</div><div class="meta-value">Oddset</div></div>
+  </div>
+</div>
+
+<div class="case-intro">
+  <div>
+    <p class="case-eyebrow">Oddset</p>
+    <h1 class="sr-only">Oddset WM 2018 – Kampagne & Konzept von Dr. Lucas Gros</h1>
+    <p class="case-title" aria-hidden="true">STECKT DER<br>TITEL AUCH<br>IN DIR?</p>
+    <div class="case-tags">
+      <span class="tag">Konzept</span>
+      <span class="tag">Text</span>
+      <span class="tag">Kampagne</span>
+      <span class="tag">WM 2018</span>
+    </div>
+  </div>
+  <div class="case-details">
+    <div>
+      <p class="case-section-label">Die Story</p>
+      <p class="case-body">Jede Fußball-Weltmeisterschaft ist aufs Neue eine Wundertüte. Und alle Fans fragen sich: Was steckt dieses Mal drin? An Geschichten. An Überraschungen. An Spannung.</p>
+      <p class="case-body">Passend zum Gastgeber haben wir diese Stimmung in ein Bild übersetzt: Jenes der für Russland so typischen Matrjoschka, die sich wie ein roter Faden durch die Bewerbung des gesamten Turniers zog.</p>
+    </div>
+  </div>
+</div>
+
+<div class="img-section">
+  <div class="img-wrap">
+    <div class="img-group">
+      <div class="img-grid-1">
+        <div class="img-item ratio-full" data-lb>
+          <img src="images/CaseOddset/oddset-1.jpg" alt="Oddset WM 2018 Kampagne OOH" loading="lazy">
+        </div>
+      </div>
+      <div class="img-grid-2" style="margin-top:2px;">
+        <div class="img-item ratio-wide" data-lb>
+          <img src="images/CaseOddset/oddset-2.jpg" alt="Oddset Outdoor Poster Mockup" loading="lazy">
+        </div>
+        <div class="img-item ratio-wide" data-lb>
+          <img src="images/CaseOddset/oddset-3.jpg" alt="Oddset Social Mockup" loading="lazy">
+        </div>
+      </div>
+      <div class="img-grid-1" style="margin-top:2px;">
+        <div class="img-item ratio-full" data-lb>
+          <img src="images/CaseOddset/oddset-4.mp4" alt="Oddset Kampagne Detailansicht" loading="lazy">
+        </div>
+      </div>
+      <div class="group-caption">
+        <span class="gc-index">01</span>
+        <div class="gc-body">
+          <p class="gc-label">Kampagne</p>
+          <p class="gc-text">Die Kampagnenmotive wurden OOH sowie auf Social Media und in relevanten Printmedien ausgespielt. Hier siehst du die gesamte Mechanik im Überblick.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="img-group">
+      <div class="img-grid-1">
+        <div class="img-item ratio-full" data-lb>
+          <img src="images/CaseOddset/oddset-5.jpg" alt="Oddset Bierdeckel Shazam WM" loading="lazy">
+        </div>
+      </div>
+      <div class="img-grid-1" style="margin-top:2px;">
+        <div class="img-item ratio-full" data-lb>
+          <img src="images/CaseOddset/oddset-6.mp4" alt="Oddset Social Mockup GIF" loading="lazy">
+        </div>
+      </div>
+      <div class="group-caption">
+        <span class="gc-index">02</span>
+        <div class="gc-body">
+          <p class="gc-label">Activation</p>
+          <p class="gc-text">Mit einem interaktiven Social Game, das per Shazam gescannt und gespielt werden konnte, aktivierten wir die Zielgruppe in Fußballkneipen und über Printanzeigen.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="audio-section">
+  <div class="audio-wrap">
+    <div class="audio-index">03</div>
+    <div class="audio-content-area">
+      <p class="audio-section-label">Funkspot</p>
+      <div class="audio-player" id="audioPlayer">
+        <button class="audio-play-btn" id="playBtn" aria-label="Play/Pause">
+          <svg width="14" height="16" viewBox="0 0 14 16" xmlns="http://www.w3.org/2000/svg">
+            <polygon class="play-icon" points="2,1 13,8 2,15"/>
+            <g class="pause-icon">
+              <rect x="1" y="1" width="4" height="14"/>
+              <rect x="9" y="1" width="4" height="14"/>
+            </g>
+          </svg>
+        </button>
+        <div class="audio-info">
+          <p class="audio-title">Oddset – Das Quiz</p>
+          <p class="audio-meta">Radio Spot · 25 Sek.</p>
+        </div>
+        <div class="audio-progress-wrap">
+          <div class="audio-track" id="audioTrack">
+            <div class="audio-track-fill" id="trackFill"></div>
+          </div>
+          <div class="audio-times">
+            <span class="audio-time" id="timeElapsed">0:00</span>
+            <span class="audio-time" id="timeDuration">0:00</span>
+          </div>
+        </div>
+        <div class="audio-vol">
+          <svg class="vol-icon" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg">
+            <path fill="var(--black)" d="M9 1L4 5H1v6h3l5 4V1zm4.243 2.757a7 7 0 010 9.9l-.707-.707a6 6 0 000-8.486l.707-.707z"/>
+          </svg>
+          <input type="range" class="vol-slider" id="volSlider" min="0" max="1" step="0.01" value="1">
+        </div>
+      </div>
+      <audio id="audioEl" src="images/CaseOddset/oddset-wm2018-spot.mp3" preload="metadata"></audio>
+    </div>
+  </div>
+</div>
+
+<div class="more-cases">
+  <div class="more-header">
+    <span class="more-label">Weitere Cases</span>
+    <a href="work.html" class="more-all">Alle Cases →</a>
+  </div>
+  <a class="project-row" href="case-invest-in-bavaria.html"><span class="pr-index">01</span><span class="pr-title">Don't believe everything</span><span class="pr-client">Invest in Bavaria</span><span class="pr-type">Campaign</span></a>
+  <a class="project-row" href="case-andere-eltern-s1.html"><span class="pr-index">02</span><span class="pr-title">Eltern an die Macht</span><span class="pr-client">TNT Comedy, Andere Eltern</span><span class="pr-type">Campaign</span></a>
+  <a class="project-row" href="case-porsche-communities.html"><span class="pr-index">03</span><span class="pr-title">The Porsche Circles</span><span class="pr-client">Porsche</span><span class="pr-type">Brand Community</span></a>
+</div>
+
+<div class="case-contact">
+  <div class="case-contact-left">
+    <h2 class="contact-h2">HAT'S<br>AHA<br>GEMACHT?</h2>
+  </div>
+  <div class="case-contact-right">
+    <p class="contact-sub">Egal ob dieser spezielle Case oder eine aktuelle Herausforderung — ich freue mich über den persönlichen Austausch.</p>
+    <a href="mailto:info@lucasgros.de" class="contact-email">MAIL ME.</a>
+  </div>
+</div>
+
+<footer>
+  <address style="font-style:normal;display:contents;"><span class="footer-copy">© 2026 <a href="https://www.lucasgros.de" rel="author" style="color:inherit;text-decoration:none;">Dr. Lucas Gros</a>, München</span></address>
+  <ul class="footer-links">
+    <li><a href="impressum.html">Impressum</a></li>
+  </ul>
+</footer>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "CreativeWork",
+  "name": "Oddset WM 2018 – Kampagne & Konzept",
+  "url": "https://www.lucasgros.de/case-oddset.html",
+  "description": "Dr. Lucas Gros entwickelte für Oddset die integrierte Kampagne zur WM 2018 – inklusive OOH, Social Media Activation und Funkspots.",
+  "keywords": ["Kampagne", "Konzept", "Text", "Oddset", "WM 2018", "Sportwetten", "Werbung"],
+  "inLanguage": "de",
+  "author": {
+    "@type": "Person",
+    "name": "Dr. Lucas Gros",
+    "url": "https://www.lucasgros.de",
+    "email": "info@lucasgros.de",
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "München",
+      "addressCountry": "DE"
+    },
+    "sameAs": "https://linkedin.com/in/lucasvgros"
+  },
+  "provider": {
+    "@type": "Organization",
+    "name": "Oddset"
+  }
+}
+</script>
+
+<script>
+(function() {
+  var cursor = document.getElementById('cursor');
+  document.addEventListener('mousemove', function(e) {
+    cursor.style.left = e.clientX + 'px';
+    cursor.style.top = e.clientY + 'px';
+  });
+  function updateHovers() {
+    document.querySelectorAll('a, button, .img-item, .project-row, .audio-track, .vol-slider').forEach(function(el) {
+      el.addEventListener('mouseenter', function() {
+        if (el.classList.contains('img-item') || el.classList.contains('project-row')) {
+          cursor.classList.add('zoom');
+        } else {
+          cursor.classList.add('hover');
+        }
+      });
+      el.addEventListener('mouseleave', function() {
+        cursor.classList.remove('hover', 'zoom');
+      });
+    });
+  }
+  updateHovers();
+
+  var lightbox = document.getElementById('lightbox');
+  var lbImg = document.getElementById('lb-img');
+  var lbCtr = document.getElementById('lb-counter');
+  var items = Array.from(document.querySelectorAll('.img-item[data-lb]'));
+  var current = 0;
+  function updateLb() {
+    var targetImg = items[current].querySelector('img');
+    lbImg.src = targetImg.src;
+    lbImg.alt = targetImg.alt;
+    lbCtr.textContent = (current + 1) + ' / ' + items.length;
+  }
+  items.forEach(function(el, i) {
+    el.addEventListener('click', function() {
+      current = i;
+      updateLb();
+      lightbox.classList.add('open');
+      document.body.style.overflow = 'hidden';
+    });
+  });
+  document.getElementById('lb-close').addEventListener('click', function() {
+    lightbox.classList.remove('open');
+    document.body.style.overflow = '';
+  });
+  document.getElementById('lb-prev').addEventListener('click', function(e) {
+    e.stopPropagation();
+    current = (current - 1 + items.length) % items.length;
+    updateLb();
+  });
+  document.getElementById('lb-next').addEventListener('click', function(e) {
+    e.stopPropagation();
+    current = (current + 1) % items.length;
+    updateLb();
+  });
+  lightbox.addEventListener('click', function(e) {
+    if (e.target === lightbox) { lightbox.classList.remove('open'); document.body.style.overflow = ''; }
+  });
+  document.addEventListener('keydown', function(e) {
+    if (!lightbox.classList.contains('open')) return;
+    if (e.key === 'Escape') { lightbox.classList.remove('open'); document.body.style.overflow = ''; }
+    if (e.key === 'ArrowRight') { current = (current + 1) % items.length; updateLb(); }
+    if (e.key === 'ArrowLeft') { current = (current - 1 + items.length) % items.length; updateLb(); }
+  });
+
+  var audio = document.getElementById('audioEl');
+  var playBtn = document.getElementById('playBtn');
+  var trackFill = document.getElementById('trackFill');
+  var trackEl = document.getElementById('audioTrack');
+  var timeEl = document.getElementById('timeElapsed');
+  var durEl = document.getElementById('timeDuration');
+  var volSlider = document.getElementById('volSlider');
+  function fmt(s) {
+    var m = Math.floor(s / 60);
+    var sec = Math.floor(s % 60);
+    return m + ':' + (sec < 10 ? '0' : '') + sec;
+  }
+  audio.addEventListener('loadedmetadata', function() { durEl.textContent = fmt(audio.duration); });
+  audio.addEventListener('timeupdate', function() {
+    var pct = audio.duration ? (audio.currentTime / audio.duration) * 100 : 0;
+    trackFill.style.width = pct + '%';
+    timeEl.textContent = fmt(audio.currentTime);
+  });
+  audio.addEventListener('ended', function() { playBtn.classList.remove('playing'); trackFill.style.width = '0%'; timeEl.textContent = '0:00'; });
+  playBtn.addEventListener('click', function() {
+    if (audio.paused) { audio.play(); playBtn.classList.add('playing'); } else { audio.pause(); playBtn.classList.remove('playing'); }
+  });
+  trackEl.addEventListener('click', function(e) {
+    if (!audio.duration) return;
+    var rect = trackEl.getBoundingClientRect();
+    var pct = (e.clientX - rect.left) / rect.width;
+    audio.currentTime = pct * audio.duration;
+  });
+  volSlider.addEventListener('input', function() { audio.volume = volSlider.value; });
+})();
+</script>
+
+</body>
+</html>
