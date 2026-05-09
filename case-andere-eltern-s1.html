@@ -7,6 +7,7 @@
 <meta name="description" content="Dr. Lucas Gros konzipierte und texte die preisgekrönte Kampagne zu Andere Eltern Staffel 1 auf TNT Comedy – Gold bei den Eyes & Ears Awards 2020.">
 <meta name="author" content="Dr. Lucas Gros">
 <meta name="robots" content="index, follow">
+<link rel="icon" type="image/png" href="images/logo.png">
 <link rel="canonical" href="https://www.lucasgros.de/case-andere-eltern-s1.html">
 <meta property="og:title" content="Andere Eltern, Staffel 1 – Kampagne & Creative Direction | Dr. Lucas Gros">
 <meta property="og:description" content="Preisgekrönte Kampagne zur Impro-Comedy-Serie Andere Eltern auf TNT Comedy. Konzept, Text und Creative Direction von Dr. Lucas Gros, München.">
@@ -116,7 +117,7 @@ nav{position:fixed;top:0;left:0;right:0;z-index:200;background:var(--white);disp
 /* Lightbox */
 .lightbox{position:fixed;inset:0;z-index:8000;background:rgba(12,12,12,.95);display:flex;align-items:center;justify-content:center;opacity:0;pointer-events:none;transition:opacity .3s;}
 .lightbox.open{opacity:1;pointer-events:all;}
-.lightbox img{max-width:92vw;max-height:90vh;object-fit:contain;display:block;}
+.lightbox img, .lightbox video{max-width:92vw;max-height:90vh;object-fit:contain;display:block;}
 .lightbox-close{position:absolute;top:1.5rem;right:2rem;font-size:1.5rem;font-weight:300;color:rgba(245,245,242,.7);background:none;border:none;cursor:none;}
 .lightbox-nav{position:absolute;top:50%;transform:translateY(-50%);font-size:1.2rem;font-weight:300;color:rgba(245,245,242,.5);background:none;border:none;cursor:none;padding:.75rem 1.25rem;}
 .lightbox-prev{left:1rem;}
@@ -172,7 +173,10 @@ footer{display:flex;justify-content:space-between;align-items:center;padding:2re
 <div class="lightbox" id="lightbox">
   <button class="lightbox-close" id="lb-close">×</button>
   <button class="lightbox-nav lightbox-prev" id="lb-prev">←</button>
-  <img src="" alt="" id="lb-img">
+  <div id="lb-content" style="display:contents;">
+      <img src="" alt="" id="lb-img">
+      <video src="" id="lb-vid" autoplay loop muted playsinline style="display:none;"></video>
+  </div>
   <button class="lightbox-nav lightbox-next" id="lb-next">→</button>
   <span class="lightbox-counter" id="lb-counter"></span>
 </div>
@@ -188,7 +192,6 @@ footer{display:flex;justify-content:space-between;align-items:center;padding:2re
   </ul>
 </nav>
 
-<!-- ── HEADER ── -->
 <div class="case-header">
   <img class="case-cover"
     src="images/CaseAndereElternS1/andere-eltern-header.jpg"
@@ -202,7 +205,6 @@ footer{display:flex;justify-content:space-between;align-items:center;padding:2re
   </div>
 </div>
 
-<!-- ── INTRO ── -->
 <div class="case-intro">
   <div>
     <p class="case-eyebrow">Andere Eltern, Staffel 1</p>
@@ -224,14 +226,12 @@ footer{display:flex;justify-content:space-between;align-items:center;padding:2re
   </div>
 </div>
 
-<!-- ── STATS ── -->
 <div class="case-stats">
   <div class="stat-cell"><div class="stat-number">2.6M</div><div class="stat-label">Kontakte gesamt</div></div>
   <div class="stat-cell"><div class="stat-number">700k+</div><div class="stat-label">Interaktionen</div></div>
   <div class="stat-cell"><div class="stat-number">27%</div><div class="stat-label">Interaktionsrate</div></div>
 </div>
 
-<!-- ── VIDEO + CAPTION 1 ── -->
 <div class="case-video">
   <div class="yt-wrap" id="yt-wrap">
     <div id="preview-layer" style="position:absolute;inset:0;z-index:20;">
@@ -257,7 +257,6 @@ footer{display:flex;justify-content:space-between;align-items:center;padding:2re
     </div>
   </div>
 
-  <!-- Caption nach Film (1. Caption) -->
   <div class="video-caption">
     <div class="case-story-caption">
       <span class="caption-index">01</span>
@@ -269,24 +268,20 @@ footer{display:flex;justify-content:space-between;align-items:center;padding:2re
   </div>
 </div>
 
-<!-- ── BILDER 1–7 ── -->
 <div class="case-images" id="case-images">
 
-  <!-- Bild 1 -->
   <div class="case-img-block">
     <div class="case-img-wrap" data-index="0">
       <img src="images/CaseAndereElternS1/andere-eltern-01.jpg" alt="Bild 1">
     </div>
   </div>
 
-  <!-- Bild 2 -->
   <div class="case-img-block">
     <div class="case-img-wrap" data-index="1">
-      <img src="images/CaseAndereElternS1/andere-eltern-02.mp4" alt="Bild 2">
+      <video src="images/CaseAndereElternS1/andere-eltern-02.mp4" autoplay loop muted playsinline></video>
     </div>
   </div>
 
-  <!-- Caption nach Bildern 1+2 (2. Caption) -->
   <div class="group-caption">
     <div class="case-story-caption">
       <span class="caption-index">02</span>
@@ -297,28 +292,24 @@ footer{display:flex;justify-content:space-between;align-items:center;padding:2re
     </div>
   </div>
 
-  <!-- Bild 3 -->
   <div class="case-img-block">
     <div class="case-img-wrap" data-index="2">
       <img src="images/CaseAndereElternS1/andere-eltern-03.jpg" alt="Bild 3">
     </div>
   </div>
 
-  <!-- Bild 4 -->
   <div class="case-img-block">
     <div class="case-img-wrap" data-index="3">
       <img src="images/CaseAndereElternS1/andere-eltern-04.jpg" alt="Bild 4">
     </div>
   </div>
 
-  <!-- Bild 5 -->
   <div class="case-img-block">
     <div class="case-img-wrap" data-index="4">
-      <img src="images/CaseAndereElternS1/andere-eltern-05.mp4" alt="Bild 5">
+      <video src="images/CaseAndereElternS1/andere-eltern-05.mp4" autoplay loop muted playsinline></video>
     </div>
   </div>
 
-  <!-- Caption nach Bildern 3+4+5 (3. Caption) -->
   <div class="group-caption">
     <div class="case-story-caption">
       <span class="caption-index">03</span>
@@ -329,14 +320,12 @@ footer{display:flex;justify-content:space-between;align-items:center;padding:2re
     </div>
   </div>
 
-  <!-- Bild 6 -->
   <div class="case-img-block">
     <div class="case-img-wrap" data-index="5">
-      <img src="images/CaseAndereElternS1/andere-eltern-06.mp4" alt="Bild 6">
+      <video src="images/CaseAndereElternS1/andere-eltern-06.mp4" autoplay loop muted playsinline></video>
     </div>
   </div>
 
-  <!-- Caption nach Bild 7 (4. Caption) -->
   <div class="group-caption">
     <div class="case-story-caption">
       <span class="caption-index">04</span>
@@ -349,7 +338,6 @@ footer{display:flex;justify-content:space-between;align-items:center;padding:2re
 
 </div>
 
-<!-- ── MORE CASES ── -->
 <div class="more-cases">
   <div class="more-header">
     <span class="more-label">Weitere Cases</span>
@@ -360,7 +348,6 @@ footer{display:flex;justify-content:space-between;align-items:center;padding:2re
   <a class="project-row" href="case-bmw-ixperience.html"><span class="pr-index">03</span><span class="pr-title">BMW iXperience</span><span class="pr-client">BMW</span><span class="pr-type">Digital</span></a>
 </div>
 
-<!-- ── CONTACT ── -->
 <div class="case-contact">
   <div class="case-contact-left">
     <h2 class="contact-h2">HAT'S<br>AHA<br>GEMACHT?</h2>
@@ -420,23 +407,49 @@ footer{display:flex;justify-content:space-between;align-items:center;padding:2re
     if (video.requestFullscreen) video.requestFullscreen(); else if (video.webkitRequestFullscreen) video.webkitRequestFullscreen();
   });
 
-  // Lightbox
-  var lightbox = document.getElementById('lightbox'), lbImg = document.getElementById('lb-img'), lbCtr = document.getElementById('lb-counter');
+  // Lightbox (ERWEITERT FÜR VIDEO-SUPPORT)
+  var lightbox = document.getElementById('lightbox'), 
+      lbImg = document.getElementById('lb-img'), 
+      lbVid = document.getElementById('lb-vid'),
+      lbCtr = document.getElementById('lb-counter');
   var wraps = Array.from(document.querySelectorAll('.case-img-wrap[data-index]'));
-  var srcs = wraps.map(function(w) { return { src: w.querySelector('img').src, alt: w.querySelector('img').alt }; });
+  
+  var srcs = wraps.map(function(w) { 
+    var media = w.querySelector('img, video');
+    return { 
+      src: media.src, 
+      isVid: media.tagName.toLowerCase() === 'video'
+    }; 
+  });
+  
   var current = 0;
 
-  function updateLb() { lbImg.src=srcs[current].src; lbCtr.textContent=(current+1)+' / '+srcs.length; }
+  function updateLb() { 
+    var item = srcs[current];
+    if(item.isVid) {
+        lbImg.style.display = 'none';
+        lbVid.style.display = 'block';
+        lbVid.src = item.src;
+    } else {
+        lbVid.style.display = 'none';
+        lbVid.src = '';
+        lbImg.style.display = 'block';
+        lbImg.src = item.src;
+    }
+    lbCtr.textContent=(current+1)+' / '+srcs.length; 
+  }
+
   wraps.forEach(function(w,i) {
     w.addEventListener('click', function() { current=i; updateLb(); lightbox.classList.add('open'); document.body.style.overflow='hidden'; });
   });
 
-  document.getElementById('lb-close').addEventListener('click', function() { lightbox.classList.remove('open'); document.body.style.overflow=''; });
+  document.getElementById('lb-close').addEventListener('click', function() { lightbox.classList.remove('open'); lbVid.src=''; document.body.style.overflow=''; });
 document.addEventListener('keydown', function(e) {
-  if (!lightbox.classList.contains('open')) return; // Nur ausführen, wenn offen
+  if (!lightbox.classList.contains('open')) return;
 
   if (e.key === "Escape") {
     lightbox.classList.remove('open');
+    lbVid.src='';
     document.body.style.overflow = '';
   } else if (e.key === "ArrowRight") {
     current = (current + 1) % srcs.length;
