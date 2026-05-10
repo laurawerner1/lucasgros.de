@@ -4,6 +4,9 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>SchachMax – TV-Show & Formatentwicklung | Dr. Lucas Gros</title>
+<link rel="icon" type="image/png" href="images/logo.png">
+<link rel="apple-touch-icon" href="images/logo.png">
+<meta name="keywords" content="Formatentwicklung TV, Storytelling Strategie, SchachMax, Dr. Lucas Gros, Max von Milland, RAI Südtirol, TV-Format Konzeption, Kreativdirektion München, Marken-Storytelling, Formatentwicklung, Unterhaltungsformate entwickeln, Show-Konzeption, Creative Strategy TV, Content Entwicklung, Medienstrategie, Entertainment Marketing, Storytelling Experte München, Dr. Lucas Gros Case Study">
 <meta name="description" content="Dr. Lucas Gros konzipierte für Max von Milland und RAI Südtirol das TV-Format 'SchachMax' – von der ersten Idee bis zur erfolgreichen Formatentwicklung.">
 <meta name="author" content="Dr. Lucas Gros">
 <meta name="robots" content="index, follow">
@@ -402,6 +405,11 @@ footer{display:flex;justify-content:space-between;align-items:center;padding:2re
     lbCtr.textContent = (current + 1) + ' / ' + items.length;
   }
 
+  function closeLb() {
+    lightbox.classList.remove('open');
+    document.body.style.overflow = '';
+  }
+
   items.forEach(function(el, i) {
     el.onclick = function() {
       current = i; updateLb(); lightbox.classList.add('open');
@@ -409,9 +417,21 @@ footer{display:flex;justify-content:space-between;align-items:center;padding:2re
     };
   });
 
-  document.getElementById('lb-close').onclick = function() { lightbox.classList.remove('open'); document.body.style.overflow = ''; };
+  document.getElementById('lb-close').onclick = closeLb;
   document.getElementById('lb-prev').onclick = function() { current = (current - 1 + items.length) % items.length; updateLb(); };
   document.getElementById('lb-next').onclick = function() { current = (current + 1) % items.length; updateLb(); };
+
+  // Keydown Support (ESC, Arrows)
+  document.addEventListener('keydown', function(e) {
+    if (!lightbox.classList.contains('open')) return;
+    if (e.key === 'Escape')     closeLb();
+    if (e.key === 'ArrowLeft')  { current = (current - 1 + items.length) % items.length; updateLb(); }
+    if (e.key === 'ArrowRight') { current = (current + 1) % items.length; updateLb(); }
+  });
+
+  // Click outside to close
+  lightbox.onclick = function(e) { if (e.target === lightbox) closeLb(); };
+
 })();
 </script>
 </body>

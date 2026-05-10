@@ -8,6 +8,9 @@
 <meta name="author" content="Dr. Lucas Gros">
 <meta name="robots" content="index, follow">
 <link rel="canonical" href="https://www.lucasgros.de/case-cartier.html">
+<link rel="icon" type="image/png" href="images/logo.png">
+<link rel="apple-touch-icon" href="images/logo.png">
+<meta name="keywords" content="Corporate Language, Sprachdesign, Sprachstrategie, Markenkommunikation, Cartier, Luxusmarketing, Brand Tone of Voice, Copywriting, Dr. Lucas Gros, Markenidentität, High-End Branding, Kundenkommunikation, Pressekommunikation, Luxury Branding Strategy">
 <meta property="og:title" content="Cartier Panthère – Corporate Language & Sprachdesign | Dr. Lucas Gros">
 <meta property="og:description" content="Sprachdesign und Markenkommunikation für eine der begehrtesten Luxusmarken der Welt. Ein Case von Dr. Lucas Gros, München.">
 <meta property="og:image" content="https://www.lucasgros.de/images/CaseCartier/cartier-header.jpg">
@@ -66,8 +69,8 @@ nav{position:fixed;top:0;left:0;right:0;z-index:200;background:var(--white);disp
 .img-wrap{max-width:calc(1000px + 4rem);margin:0 auto;width:100%;display:flex;flex-direction:column;gap:0;}
 .img-group{display:flex;flex-direction:column;gap:2px;margin-bottom:0;}
 .img-item{overflow:hidden;position:relative;cursor:none;}
-.img-item img{width:100%;height:100%;object-fit:cover;display:block;filter:grayscale(10%);transition:filter .4s,transform .5s;}
-.img-item:hover img{filter:grayscale(0%);transform:scale(1.03);}
+.img-item img, .img-item video{width:100%;height:100%;object-fit:cover;display:block;filter:grayscale(10%);transition:filter .4s,transform .5s;}
+.img-item:hover img, .img-item:hover video{filter:grayscale(0%);transform:scale(1.03);}
 .img-item.ratio-full{aspect-ratio:16/9;}
 
 /* Caption below a group */
@@ -96,7 +99,7 @@ nav{position:fixed;top:0;left:0;right:0;z-index:200;background:var(--white);disp
 /* Lightbox */
 .lightbox{position:fixed;inset:0;z-index:8000;background:rgba(12,12,12,.95);display:flex;align-items:center;justify-content:center;opacity:0;pointer-events:none;transition:opacity .3s;}
 .lightbox.open{opacity:1;pointer-events:all;}
-.lightbox img{max-width:92vw;max-height:90vh;object-fit:contain;display:block;}
+.lightbox img, .lightbox video{max-width:92vw;max-height:90vh;object-fit:contain;display:block;}
 .lightbox-close, .lightbox-nav{position:absolute;background:none;border:none;color:white;cursor:none;transition:opacity .2s;}
 .lightbox-close{top:1.5rem;right:2rem;font-size:1.5rem;font-weight:300;}
 .lightbox-nav{top:50%;transform:translateY(-50%);font-size:1.2rem;padding:1rem;}
@@ -134,7 +137,7 @@ footer{display:flex;justify-content:space-between;align-items:center;padding:2re
 <div class="lightbox" id="lightbox">
   <button class="lightbox-close" id="lb-close">×</button>
   <button class="lightbox-nav lightbox-prev" id="lb-prev">←</button>
-  <img src="" alt="" id="lb-img">
+  <div id="lb-content"></div>
   <button class="lightbox-nav lightbox-next" id="lb-next">→</button>
   <span class="lightbox-counter" id="lb-counter"></span>
 </div>
@@ -199,7 +202,7 @@ footer{display:flex;justify-content:space-between;align-items:center;padding:2re
         <img src="images/CaseCartier/cartier-1.jpg" alt="Cartier Social Media Ad – Corporate Language Dr. Lucas Gros" loading="lazy">
       </div>
       <div style="margin-top:40px;" class="img-item ratio-full" data-lb>
-        <img src="images/CaseCartier/cartier-3.mp4" alt="Cartier Digital-Kampagne – Markenkommunikation von Dr. Lucas Gros" loading="lazy">
+        <video src="images/CaseCartier/cartier-3.mp4" muted autoplay loop playsinline></video>
       </div>
    <div style="margin-top:40px;" class="img-item ratio-full" data-lb>
         <img src="images/CaseCartier/cartier-5.jpg" alt="Cartier Produkttext Digital – Sprachstrategie Dr. Lucas Gros" loading="lazy">
@@ -215,7 +218,7 @@ footer{display:flex;justify-content:space-between;align-items:center;padding:2re
 
    <div class="img-group">
       <div class="img-item ratio-full" data-lb>
-        <img src="images/CaseCartier/cartier-4.mp4" alt="Cartier Newsletter – Kundenkommunikation Boutique, Dr. Lucas Gros" loading="lazy">
+        <video src="images/CaseCartier/cartier-4.mp4" muted autoplay loop playsinline></video>
       </div>
       <div style="margin-top:40px;" class="img-item ratio-full" data-lb>
         <img src="images/CaseCartier/cartier-6.jpg" alt="Cartier How-to-Video – Sprachstrategie für Boutique-Kommunikation" loading="lazy">
@@ -317,15 +320,31 @@ footer{display:flex;justify-content:space-between;align-items:center;padding:2re
 
   // Lightbox
   var lightbox = document.getElementById('lightbox');
-  var lbImg = document.getElementById('lb-img');
+  var lbContent = document.getElementById('lb-content');
   var lbCtr = document.getElementById('lb-counter');
   var items = Array.from(document.querySelectorAll('.img-item[data-lb]'));
   var current = 0;
 
   function updateLb() {
-    var targetImg = items[current].querySelector('img');
-    lbImg.src = targetImg.src;
-    lbImg.alt = targetImg.alt;
+    lbContent.innerHTML = ''; // Clear current content
+    var sourceEl = items[current].querySelector('img, video');
+    var isVideo = sourceEl.tagName.toLowerCase() === 'video';
+    
+    if (isVideo) {
+      var video = document.createElement('video');
+      video.src = sourceEl.src;
+      video.autoplay = true;
+      video.loop = true;
+      video.muted = true;
+      video.playsInline = true;
+      lbContent.appendChild(video);
+    } else {
+      var img = document.createElement('img');
+      img.src = sourceEl.src;
+      img.alt = sourceEl.alt;
+      lbContent.appendChild(img);
+    }
+    
     lbCtr.textContent = (current + 1) + ' / ' + items.length;
   }
 
@@ -340,6 +359,7 @@ footer{display:flex;justify-content:space-between;align-items:center;padding:2re
 
   document.getElementById('lb-close').addEventListener('click', function() {
     lightbox.classList.remove('open');
+    lbContent.innerHTML = '';
     document.body.style.overflow = '';
   });
 
@@ -356,12 +376,20 @@ footer{display:flex;justify-content:space-between;align-items:center;padding:2re
   });
 
   lightbox.addEventListener('click', function(e) {
-    if (e.target === lightbox) { lightbox.classList.remove('open'); document.body.style.overflow = ''; }
+    if (e.target === lightbox) { 
+      lightbox.classList.remove('open'); 
+      lbContent.innerHTML = '';
+      document.body.style.overflow = ''; 
+    }
   });
 
   document.addEventListener('keydown', function(e) {
     if (!lightbox.classList.contains('open')) return;
-    if (e.key === 'Escape') { lightbox.classList.remove('open'); document.body.style.overflow = ''; }
+    if (e.key === 'Escape') { 
+      lightbox.classList.remove('open'); 
+      lbContent.innerHTML = '';
+      document.body.style.overflow = ''; 
+    }
     if (e.key === 'ArrowRight') { current = (current + 1) % items.length; updateLb(); }
     if (e.key === 'ArrowLeft') { current = (current - 1 + items.length) % items.length; updateLb(); }
   });

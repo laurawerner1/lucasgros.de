@@ -9,6 +9,9 @@
 <meta name="robots" content="index, follow">
 <link rel="canonical" href="https://www.lucasgros.de/case-mini-paulsmith.html">
 
+<link rel="icon" type="image/png" href="images/logo.png">
+<link rel="apple-touch-icon" href="images/logo.png">
+<meta name="keywords" content="MINI x Paul Smith, Brand Activation Tokyo, Global Launch Event, Dr. Lucas Gros, Experiential Marketing MINI, Markeninszenierung Tokyo, Guerilla Marketing Tokyo, Influencer Event MINI, Paul Smith Sondermodell Launch, Brand Experience Design, Kreativstrategie Automotive, Creative Strategist München, Brand Activation Deutschland, Eventkonzeption Tokyo, Kooperation MINI Paul Smith, Community Activation, Kuratierte Marken-Experience, Marketing Automotive Case Study">
 <meta property="og:title" content="MINI x Paul Smith – Brand Activation & Global Launch | Dr. Lucas Gros">
 <meta property="og:description" content="Brand Activation und Guerilla Marketing für die Zusammenarbeit zweier britischer Ikonen in Tokyo. Ein Case von Dr. Lucas Gros.">
 <meta property="og:image" content="https://www.lucasgros.de/images/CaseMiniPaulSmith/mini-paulsmith-header.jpg">
@@ -75,8 +78,8 @@ a.meta-cell:hover{background:var(--faint);}
 /* Images & Layouts */
 .wide-image-outer{padding:0 2rem;display:flex;justify-content:center;}
 .wide-image{width:100%;max-width:1000px;aspect-ratio:16/9;overflow:hidden;position:relative;background:var(--faint);cursor:none;}
-.wide-image img{width:100%;height:100%;object-fit:cover;display:block;filter:grayscale(10%);transition:filter .4s,transform .5s;}
-.wide-image:hover img{filter:grayscale(0%);transform:scale(1.015);}
+.wide-image img, .wide-image video{width:100%;height:100%;object-fit:cover;display:block;filter:grayscale(10%);transition:filter .4s,transform .5s;}
+.wide-image:hover img, .wide-image:hover video{filter:grayscale(0%);transform:scale(1.015);}
 
 .wide-stack {display: flex; flex-direction: column; gap: 40px; width: 100%; max-width: 1000px;}
 
@@ -95,14 +98,18 @@ a.meta-cell:hover{background:var(--faint);}
     background: var(--faint);
     cursor: none;
 }
-.gallery-item img{width:100%;height:100%;object-fit:cover;display:block;filter:grayscale(10%);transition:filter .4s,transform .5s;}
-.gallery-item:hover img{filter:grayscale(0%);transform:scale(1.015);}
+.gallery-item img, .gallery-item video{width:100%;height:100%;object-fit:cover;display:block;filter:grayscale(10%);transition:filter .4s,transform .5s;}
+.gallery-item:hover img, .gallery-item:hover video{filter:grayscale(0%);transform:scale(1.015);}
 
 /* Lightbox */
 .lightbox{position:fixed;inset:0;z-index:8000;background:rgba(12,12,12,.95);display:flex;align-items:center;justify-content:center;opacity:0;pointer-events:none;transition:opacity .3s;}
 .lightbox.open{opacity:1;pointer-events:all;}
-.lightbox img{max-width:92vw;max-height:90vh;object-fit:contain;display:block;}
+.lightbox img, .lightbox video{max-width:92vw;max-height:90vh;object-fit:contain;display:block;}
 .lightbox-close{position:absolute;top:1.5rem;right:2rem;font-size:1.5rem;color:rgba(245,245,242,.7);background:none;border:none;cursor:none;}
+.lightbox-nav{position:absolute;top:50%;transform:translateY(-50%);font-size:1.2rem;font-weight:300;color:rgba(245,245,242,.5);background:none;border:none;cursor:none;padding:.75rem 1.25rem;}
+.lightbox-prev{left:1rem;}
+.lightbox-next{right:1rem;}
+.lightbox-counter{position:absolute;bottom:1.75rem;left:50%;transform:translateX(-50%);font-size:.6rem;color:rgba(245,245,242,.4);letter-spacing:.18em;text-transform:uppercase;}
 
 /* More Cases & Footer */
 .more-cases{margin-top:6rem;}
@@ -148,7 +155,13 @@ footer{display:flex;justify-content:space-between;align-items:center;padding:2re
 
 <div class="lightbox" id="lightbox">
     <button class="lightbox-close" id="lb-close">×</button>
-    <img src="" alt="" id="lb-img">
+    <button class="lightbox-nav lightbox-prev" id="lb-prev">←</button>
+    <div id="lb-content" style="display:flex; align-items:center; justify-content:center;">
+        <img src="" alt="" id="lb-img" style="display:none;">
+        <video src="" id="lb-video" autoplay muted loop playsinline style="display:none; max-width:92vw; max-height:90vh;"></video>
+    </div>
+    <button class="lightbox-nav lightbox-next" id="lb-next">→</button>
+    <span class="lightbox-counter" id="lb-counter"></span>
 </div>
 
 <nav>
@@ -186,7 +199,11 @@ footer{display:flex;justify-content:space-between;align-items:center;padding:2re
 <div class="wide-image-outer">
     <div class="wide-stack">
         <div class="wide-image" data-lb-src="images/CaseMiniPaulSmith/mini-paulsmith-2.jpg"><img src="images/CaseMiniPaulSmith/mini-paulsmith-2.jpg" alt="MINI Paul Smith Edition Design Details" loading="lazy"></div>
-        <div class="wide-image" data-lb-src="images/CaseMiniPaulSmith/mini-paulsmith-1.mp4"><img src="images/CaseMiniPaulSmith/mini-paulsmith-1.mp4" alt="MINI Paul Smith Kampagnenvideo" loading="lazy"></div>
+        <div class="wide-image" data-lb-src="images/CaseMiniPaulSmith/mini-paulsmith-1.mp4">
+            <video autoplay muted loop playsinline poster="images/CaseMiniPaulSmith/mini-paulsmith-header.jpg">
+                <source src="images/CaseMiniPaulSmith/mini-paulsmith-1.mp4" type="video/mp4">
+            </video>
+        </div>
     </div>
 </div>
 
@@ -223,15 +240,27 @@ footer{display:flex;justify-content:space-between;align-items:center;padding:2re
 
 <div class="wide-image-outer">
     <div class="wide-stack">
-        <div class="wide-image" data-lb-src="images/CaseMiniPaulSmith/mini-paulsmith-7.mp4"><img src="images/CaseMiniPaulSmith/mini-paulsmith-7.mp4" alt="Influencer Experience Video" loading="lazy"></div>
+        <div class="wide-image" data-lb-src="images/CaseMiniPaulSmith/mini-paulsmith-7.mp4">
+            <video autoplay muted loop playsinline>
+                <source src="images/CaseMiniPaulSmith/mini-paulsmith-7.mp4" type="video/mp4">
+            </video>
+        </div>
         <div class="gallery-3-col">
             <div class="gallery-item" data-lb-src="images/CaseMiniPaulSmith/mini-paulsmith-8.jpg"><img src="images/CaseMiniPaulSmith/mini-paulsmith-8.jpg" alt="Global Voices in Tokyo 1" loading="lazy"></div>
             <div class="gallery-item" data-lb-src="images/CaseMiniPaulSmith/mini-paulsmith-9.jpg"><img src="images/CaseMiniPaulSmith/mini-paulsmith-9.jpg" alt="Global Voices in Tokyo 2" loading="lazy"></div>
             <div class="gallery-item" data-lb-src="images/CaseMiniPaulSmith/mini-paulsmith-10.jpg"><img src="images/CaseMiniPaulSmith/mini-paulsmith-10.jpg" alt="Global Voices in Tokyo 3" loading="lazy"></div>
         </div>
         <div class="wide-image" data-lb-src="images/CaseMiniPaulSmith/mini-paulsmith-11.jpg"><img src="images/CaseMiniPaulSmith/mini-paulsmith-11.jpg" alt="Tokyo City Experience" loading="lazy"></div>
-        <div class="wide-image" data-lb-src="images/CaseMiniPaulSmith/mini-paulsmith-12.mp4"><img src="images/CaseMiniPaulSmith/mini-paulsmith-12.mp4" alt="City Drive Tokyo" loading="lazy"></div>
-        <div class="wide-image" data-lb-src="images/CaseMiniPaulSmith/mini-paulsmith-17.mp4"><img src="images/CaseMiniPaulSmith/mini-paulsmith-17.mp4" alt="Night Experience Tokyo" loading="lazy"></div>
+        <div class="wide-image" data-lb-src="images/CaseMiniPaulSmith/mini-paulsmith-12.mp4">
+            <video autoplay muted loop playsinline>
+                <source src="images/CaseMiniPaulSmith/mini-paulsmith-12.mp4" type="video/mp4">
+            </video>
+        </div>
+        <div class="wide-image" data-lb-src="images/CaseMiniPaulSmith/mini-paulsmith-17.mp4">
+            <video autoplay muted loop playsinline>
+                <source src="images/CaseMiniPaulSmith/mini-paulsmith-17.mp4" type="video/mp4">
+            </video>
+        </div>
     </div>
 </div>
 
@@ -250,7 +279,11 @@ footer{display:flex;justify-content:space-between;align-items:center;padding:2re
         <div class="wide-image" data-lb-src="images/CaseMiniPaulSmith/mini-paulsmith-13.jpg"><img src="images/CaseMiniPaulSmith/mini-paulsmith-13.jpg" alt="Content Creation Shoot Tokyo" loading="lazy"></div>
         <div class="gallery-3-col">
             <div class="gallery-item" data-lb-src="images/CaseMiniPaulSmith/mini-paulsmith-14.jpg"><img src="images/CaseMiniPaulSmith/mini-paulsmith-14.jpg" alt="Influencer Shoot Detail 1" loading="lazy"></div>
-            <div class="gallery-item" data-lb-src="images/CaseMiniPaulSmith/mini-paulsmith-15.mp4"><img src="images/CaseMiniPaulSmith/mini-paulsmith-15.mp4" alt="Influencer Shoot Video" loading="lazy"></div>
+            <div class="gallery-item" data-lb-src="images/CaseMiniPaulSmith/mini-paulsmith-15.mp4">
+                <video autoplay muted loop playsinline>
+                    <source src="images/CaseMiniPaulSmith/mini-paulsmith-15.mp4" type="video/mp4">
+                </video>
+            </div>
             <div class="gallery-item" data-lb-src="images/CaseMiniPaulSmith/mini-paulsmith-16.jpg"><img src="images/CaseMiniPaulSmith/mini-paulsmith-16.jpg" alt="Influencer Shoot Detail 2" loading="lazy"></div>
         </div>
     </div>
@@ -338,19 +371,66 @@ footer{display:flex;justify-content:space-between;align-items:center;padding:2re
 
     const lightbox = document.getElementById('lightbox');
     const lbImg = document.getElementById('lb-img');
-    const closeLb = () => { lightbox.classList.remove('open'); document.body.style.overflow = ''; };
+    const lbVideo = document.getElementById('lb-video');
+    const lbCtr = document.getElementById('lb-counter');
+    
+    // Alle klickbaren Assets indexieren
+    const items = Array.from(document.querySelectorAll('[data-lb-src]'));
+    const srcs = items.map(el => el.dataset.lbSrc);
+    let current = 0;
 
-    document.querySelectorAll('[data-lb-src]').forEach(el => {
+    function updateLb() {
+        const src = srcs[current];
+        lbVideo.pause();
+        
+        if (src.toLowerCase().endsWith('.mp4')) {
+            lbVideo.src = src;
+            lbVideo.style.display = 'block';
+            lbImg.style.display = 'none';
+            lbVideo.play();
+        } else {
+            lbImg.src = src;
+            lbImg.style.display = 'block';
+            lbVideo.style.display = 'none';
+        }
+        lbCtr.textContent = (current + 1) + ' / ' + srcs.length;
+    }
+
+    const closeLb = () => { 
+        lightbox.classList.remove('open'); 
+        document.body.style.overflow = ''; 
+        lbVideo.pause();
+    };
+
+    items.forEach((el, i) => {
         el.addEventListener('click', () => {
-            lbImg.src = el.dataset.lbSrc;
+            current = i;
+            updateLb();
             lightbox.classList.add('open');
             document.body.style.overflow = 'hidden';
         });
     });
 
     document.getElementById('lb-close').addEventListener('click', closeLb);
-    document.addEventListener('keydown', e => { if (e.key === 'Escape') closeLb(); });
-    lightbox.addEventListener('click', e => { if (e.target === lightbox) closeLb(); });
+    document.getElementById('lb-prev').addEventListener('click', (e) => { 
+        e.stopPropagation();
+        current = (current - 1 + srcs.length) % srcs.length; 
+        updateLb(); 
+    });
+    document.getElementById('lb-next').addEventListener('click', (e) => { 
+        e.stopPropagation();
+        current = (current + 1) % srcs.length; 
+        updateLb(); 
+    });
+
+    document.addEventListener('keydown', e => { 
+        if (!lightbox.classList.contains('open')) return;
+        if (e.key === 'Escape') closeLb(); 
+        if (e.key === 'ArrowLeft') { current = (current - 1 + srcs.length) % srcs.length; updateLb(); }
+        if (e.key === 'ArrowRight') { current = (current + 1) % srcs.length; updateLb(); }
+    });
+    
+    lightbox.addEventListener('click', e => { if (e.target === lightbox || e.target.id === 'lb-content') closeLb(); });
 })();
 </script>
 </body>

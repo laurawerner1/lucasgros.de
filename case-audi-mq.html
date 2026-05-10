@@ -8,6 +8,9 @@
 <meta name="author" content="Dr. Lucas Gros">
 <meta name="robots" content="index, follow">
 <link rel="canonical" href="https://www.lucasgros.de/case-audi-mq.html">
+<link rel="icon" type="image/png" href="images/logo.png">
+<link rel="apple-touch-icon" href="images/logo.png">
+<meta name="keywords" content="Audi MQ!, The Mobility Quotient, Creative Strategy Audi, Konferenzformat Audi, Mobility Conference, Dr. Lucas Gros, Markenstrategie München, Social Media Storytelling, Experiential Marketing, Brand Activation Audi, Zukunft der Mobilität, Innovationskonferenz, Konzeptioner München, Strategisches Copywriting, Creative Strategist Bayern, Corporate Storytelling, Automotive Marketing, Mobility Quotient Audi, Event Strategie, Kommunikationskonzept">
 <meta property="og:title" content="Audi MQ! – Never Stop Questioning | Dr. Lucas Gros">
 <meta property="og:description" content="Strategische Konzeption und Copywriting für das internationale Konferenzformat von Audi. Ein Case von Dr. Lucas Gros, München.">
 <meta property="og:image" content="https://www.lucasgros.de/images/CaseAudiMQ/audi-mq-header.jpg">
@@ -96,8 +99,8 @@ nav{position:fixed;top:0;left:0;right:0;z-index:200;background:var(--white);disp
 .social-stack{padding:4rem 2rem 0;display:flex;flex-direction:column;align-items:center;}
 .social-stack-inner{width:100%;max-width:1000px;display:flex;flex-direction:column;gap:40px;}
 .social-item{width:100%;overflow:hidden;cursor:none;}
-.social-item img,.social-item video{width:100%;display:block;transition:transform .5s;}
-.social-item:hover img,.social-item:hover video{transform:scale(1.01);}
+.social-item img, .social-item video{width:100%;display:block;transition:transform .5s;}
+.social-item:hover img, .social-item:hover video{transform:scale(1.01);}
 
 /* ── EVENT BLOCK ── */
 .event-outer{padding:4rem 2rem 0;display:flex;justify-content:center;}
@@ -113,7 +116,7 @@ nav{position:fixed;top:0;left:0;right:0;z-index:200;background:var(--white);disp
 /* Lightbox */
 .lightbox{position:fixed;inset:0;z-index:8000;background:rgba(12,12,12,.95);display:flex;align-items:center;justify-content:center;opacity:0;pointer-events:none;transition:opacity .3s;}
 .lightbox.open{opacity:1;pointer-events:all;}
-.lightbox img{max-width:92vw;max-height:90vh;object-fit:contain;display:block;}
+.lightbox img, .lightbox video{max-width:92vw;max-height:90vh;object-fit:contain;display:block;}
 .lightbox-close{position:absolute;top:1.5rem;right:2rem;font-size:1.5rem;font-weight:300;color:rgba(245,245,242,.7);background:none;border:none;cursor:none;}
 .lightbox-nav{position:absolute;top:50%;transform:translateY(-50%);font-size:1.2rem;font-weight:300;color:rgba(245,245,242,.5);background:none;border:none;cursor:none;padding:.75rem 1.25rem;}
 .lightbox-prev{left:1rem;}
@@ -166,7 +169,10 @@ footer{display:flex;justify-content:space-between;align-items:center;padding:2re
 <div class="lightbox" id="lightbox">
   <button class="lightbox-close" id="lb-close">×</button>
   <button class="lightbox-nav lightbox-prev" id="lb-prev">←</button>
-  <img src="" alt="" id="lb-img">
+  <div id="lb-content" style="display:flex; align-items:center; justify-content:center; width:100%; height:100%;">
+    <img src="" alt="" id="lb-img">
+    <video src="" id="lb-video" autoplay muted loop playsinline style="display:none; max-width:92vw; max-height:90vh;"></video>
+  </div>
   <button class="lightbox-nav lightbox-next" id="lb-next">→</button>
   <span class="lightbox-counter" id="lb-counter"></span>
 </div>
@@ -218,7 +224,7 @@ footer{display:flex;justify-content:space-between;align-items:center;padding:2re
 <div class="case-video">
   <div class="yt-wrap" id="yt-wrap">
     <div id="preview-layer" style="position:absolute;inset:0;z-index:20;">
-      <img class="yt-thumb" src="images/CaseAudiMQ/audi-mq-video-thumb.jpg" alt="Audi MQ! Highlight Film Vorschau">
+      <img class="yt-thumb" src="images/CaseAudiMQ/audi-mq-video-thumb.jpg" alt="Audi MQ Highlight Film Vorschau">
       <div class="yt-play" id="start-video">
         <div class="yt-play-circle"><div class="yt-play-icon"></div></div>
         <span class="yt-label">Film ansehen</span>
@@ -260,8 +266,8 @@ footer{display:flex;justify-content:space-between;align-items:center;padding:2re
     <div class="social-item" data-lb-src="images/CaseAudiMQ/audi-mq-social-mockup-2.jpg">
       <img src="images/CaseAudiMQ/audi-mq-social-mockup-2.jpg" alt="Audi MQ Social Media Strategie Phase 2" loading="lazy">
     </div>
-    <div class="social-item">
-      <img src="images/CaseAudiMQ/audi-mq-social-mockup-3.mp4" alt="Audi MQ Social Media Animation" loading="lazy">
+    <div class="social-item" data-lb-src="images/CaseAudiMQ/audi-mq-social-mockup-3.mp4">
+      <video src="images/CaseAudiMQ/audi-mq-social-mockup-3.mp4" autoplay muted loop playsinline></video>
     </div>
   </div>
 </div>
@@ -309,10 +315,10 @@ footer{display:flex;justify-content:space-between;align-items:center;padding:2re
 <div class="social-stack">
   <div class="social-stack-inner">
     <div class="social-item" data-lb-src="images/CaseAudiMQ/audi-mq-website.mp4">
-      <img src="images/CaseAudiMQ/audi-mq-website.mp4" alt="Audi MQ Website Design" loading="lazy">
+      <video src="images/CaseAudiMQ/audi-mq-website.mp4" autoplay muted loop playsinline></video>
     </div>
     <div class="social-item" data-lb-src="images/CaseAudiMQ/audi-mq-app.mp4">
-      <img src="images/CaseAudiMQ/audi-mq-app.mp4" alt="Audi MQ Konferenz App" loading="lazy">
+      <video src="images/CaseAudiMQ/audi-mq-app.mp4" autoplay muted loop playsinline></video>
     </div>
   </div>
 </div>
@@ -398,21 +404,43 @@ footer{display:flex;justify-content:space-between;align-items:center;padding:2re
   });
 
   var preview = document.getElementById('preview-layer'), video = document.getElementById('main-video'), controls = document.getElementById('video-controls'), startBtn = document.getElementById('start-video'), pauseIcon = document.getElementById('pause-icon'), playIcon = document.getElementById('play-icon'), progressFill = document.getElementById('progress-fill'), progressBar = document.getElementById('progress-bar');
-  startBtn.addEventListener('click', function() { preview.style.display = 'none'; video.style.display = 'block'; controls.style.display = 'flex'; video.play(); });
+  if(startBtn) {
+    startBtn.addEventListener('click', function() { preview.style.display = 'none'; video.style.display = 'block'; controls.style.display = 'flex'; video.play(); });
+  }
   document.getElementById('play-pause-btn').addEventListener('click', function() { if (video.paused) { video.play(); playIcon.style.display = 'none'; pauseIcon.style.display = 'flex'; } else { video.pause(); playIcon.style.display = 'block'; pauseIcon.style.display = 'none'; } });
   document.getElementById('mute-btn').addEventListener('click', function() { video.muted = !video.muted; document.getElementById('icon-sound').style.display = video.muted ? 'none' : 'block'; document.getElementById('icon-muted').style.display = video.muted ? 'block' : 'none'; });
   video.addEventListener('timeupdate', function() { if (video.duration) progressFill.style.width = (video.currentTime / video.duration * 100) + '%'; });
   progressBar.addEventListener('click', function(e) { var rect = progressBar.getBoundingClientRect(); var ratio = (e.clientX - rect.left) / rect.width; video.currentTime = ratio * video.duration; });
   document.getElementById('fullscreen-btn').addEventListener('click', function() { if (video.requestFullscreen) video.requestFullscreen(); else if (video.webkitRequestFullscreen) video.webkitRequestFullscreen(); });
 
-  var lightbox = document.getElementById('lightbox'), lbImg = document.getElementById('lb-img'), lbCtr = document.getElementById('lb-counter'), lbItems = Array.from(document.querySelectorAll('[data-lb-src]')), srcs = lbItems.map(function(el) { return { src: el.dataset.lbSrc, alt: (el.querySelector('img') || {}).alt || '' }; }), current = 0;
-  function updateLb() { lbImg.src = srcs[current].src; lbImg.alt = srcs[current].alt; lbCtr.textContent = (current + 1) + ' / ' + srcs.length; }
+  // Lightbox-Logik angepasst für Bilder UND Videos
+  var lightbox = document.getElementById('lightbox'), lbImg = document.getElementById('lb-img'), lbVid = document.getElementById('lb-video'), lbCtr = document.getElementById('lb-counter'), lbItems = Array.from(document.querySelectorAll('[data-lb-src]')), srcs = lbItems.map(function(el) { 
+    var mediaType = el.dataset.lbSrc.toLowerCase().endsWith('.mp4') ? 'video' : 'image';
+    return { src: el.dataset.lbSrc, type: mediaType, alt: (el.querySelector('img') || {}).alt || '' }; 
+  }), current = 0;
+
+  function updateLb() { 
+    var item = srcs[current];
+    if(item.type === 'video') {
+        lbImg.style.display = 'none';
+        lbVid.src = item.src;
+        lbVid.style.display = 'block';
+    } else {
+        lbVid.style.display = 'none';
+        lbVid.src = '';
+        lbImg.src = item.src;
+        lbImg.alt = item.alt;
+        lbImg.style.display = 'block';
+    }
+    lbCtr.textContent = (current + 1) + ' / ' + srcs.length; 
+  }
+
   lbItems.forEach(function(el, i) { el.addEventListener('click', function() { current = i; updateLb(); lightbox.classList.add('open'); document.body.style.overflow = 'hidden'; }); });
-  document.getElementById('lb-close').addEventListener('click', function() { lightbox.classList.remove('open'); document.body.style.overflow = ''; });
+  document.getElementById('lb-close').addEventListener('click', function() { lightbox.classList.remove('open'); lbVid.src = ''; document.body.style.overflow = ''; });
   document.getElementById('lb-prev').addEventListener('click', function() { current = (current - 1 + srcs.length) % srcs.length; updateLb(); });
   document.getElementById('lb-next').addEventListener('click', function() { current = (current + 1) % srcs.length; updateLb(); });
-  lightbox.addEventListener('click', function(e) { if (e.target === lightbox) { lightbox.classList.remove('open'); document.body.style.overflow = ''; } });
-  document.addEventListener('keydown', function(e) { if (!lightbox.classList.contains('open')) return; if (e.key === 'Escape') { lightbox.classList.remove('open'); document.body.style.overflow = ''; } if (e.key === 'ArrowLeft') { current = (current - 1 + srcs.length) % srcs.length; updateLb(); } if (e.key === 'ArrowRight') { current = (current + 1) % srcs.length; updateLb(); } });
+  lightbox.addEventListener('click', function(e) { if (e.target === lightbox || e.target.id === 'lb-content') { lightbox.classList.remove('open'); lbVid.src = ''; document.body.style.overflow = ''; } });
+  document.addEventListener('keydown', function(e) { if (!lightbox.classList.contains('open')) return; if (e.key === 'Escape') { lightbox.classList.remove('open'); lbVid.src = ''; document.body.style.overflow = ''; } if (e.key === 'ArrowLeft') { current = (current - 1 + srcs.length) % srcs.length; updateLb(); } if (e.key === 'ArrowRight') { current = (current + 1) % srcs.length; updateLb(); } });
 })();
 </script>
 </body>

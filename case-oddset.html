@@ -9,6 +9,9 @@
 <meta name="robots" content="index, follow">
 <link rel="canonical" href="https://www.lucasgros.de/case-oddset.html">
 
+<link rel="icon" type="image/png" href="images/logo.png">
+<link rel="apple-touch-icon" href="images/logo.png">
+<meta name="keywords" content="Oddset, WM 2018, Sportwetten Kampagne, Dr. Lucas Gros, Werbeagentur München, Creative Copywriting, Werbetext, Kampagnenkonzept, Matrjoschka Kampagne, OOH Werbung, Social Media Activation, Funkspot, Radio-Werbung, Shazam Game, Fußballweltmeisterschaft Marketing, Sportmarketing">
 <meta property="og:title" content="Oddset WM 2018 – Kampagne & Konzept | Dr. Lucas Gros">
 <meta property="og:description" content="Konzept und Text für die Oddset Weltmeisterschafts-Kampagne 2018. Ein Case von Dr. Lucas Gros, München.">
 <meta property="og:image" content="https://www.lucasgros.de/images/CaseOddset/oddset-header.jpg">
@@ -70,8 +73,9 @@ nav{position:fixed;top:0;left:0;right:0;z-index:200;background:var(--white);disp
 .img-grid-2{display:grid;grid-template-columns:1fr 1fr;gap:40px;}
 .img-grid-1{display:grid;grid-template-columns:1fr;gap:0px;}
 .img-item{overflow:hidden;position:relative;cursor:none;}
-.img-item img{width:100%;height:100%;object-fit:cover;display:block;filter:grayscale(10%);transition:filter .4s,transform .5s;}
-.img-item:hover img{filter:grayscale(0%);transform:scale(1.03);}
+/* Updated selector to include video */
+.img-item img, .img-item video{width:100%;height:100%;object-fit:cover;display:block;filter:grayscale(10%);transition:filter .4s,transform .5s;}
+.img-item:hover img, .img-item:hover video{filter:grayscale(0%);transform:scale(1.03);}
 .img-item.ratio-wide{aspect-ratio:16/9;}
 .img-item.ratio-square{aspect-ratio:1/1;}
 .img-item.ratio-full{aspect-ratio:16/9;}
@@ -235,7 +239,7 @@ footer{display:flex;justify-content:space-between;align-items:center;padding:2re
       </div>
       <div class="img-grid-1" style="margin-top:2px;">
         <div class="img-item ratio-full" data-lb>
-          <img src="images/CaseOddset/oddset-4.mp4" alt="Oddset Kampagne Detailansicht" loading="lazy">
+          <video src="images/CaseOddset/oddset-4.mp4" autoplay muted loop playsinline poster="images/CaseOddset/oddset-header.jpg"></video>
         </div>
       </div>
       <div class="group-caption">
@@ -255,7 +259,7 @@ footer{display:flex;justify-content:space-between;align-items:center;padding:2re
       </div>
       <div class="img-grid-1" style="margin-top:2px;">
         <div class="img-item ratio-full" data-lb>
-          <img src="images/CaseOddset/oddset-6.mp4" alt="Oddset Social Mockup GIF" loading="lazy">
+          <video src="images/CaseOddset/oddset-6.mp4" autoplay muted loop playsinline></video>
         </div>
       </div>
       <div class="group-caption">
@@ -393,9 +397,10 @@ footer{display:flex;justify-content:space-between;align-items:center;padding:2re
   var items = Array.from(document.querySelectorAll('.img-item[data-lb]'));
   var current = 0;
   function updateLb() {
-    var targetImg = items[current].querySelector('img');
-    lbImg.src = targetImg.src;
-    lbImg.alt = targetImg.alt;
+    // UPDATED: handle both img and video in lightbox trigger
+    var target = items[current].querySelector('img, video');
+    lbImg.src = target.src;
+    lbImg.alt = target.alt || "";
     lbCtr.textContent = (current + 1) + ' / ' + items.length;
   }
   items.forEach(function(el, i) {

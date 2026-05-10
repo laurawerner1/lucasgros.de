@@ -4,6 +4,9 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Volkswagen Electric For All – PR-Kampagne & Konzept | Dr. Lucas Gros</title>
+<link rel="icon" type="image/png" href="images/logo.png">
+<link rel="apple-touch-icon" href="images/logo.png">
+<meta name="keywords" content="Volkswagen, Electric For All, PR-Kampagne, Kommunikationsstrategie, Dr. Lucas Gros, E-Mobilität PR, Automotive Marketing, Keynote Storytelling, Markenkommunikation, Strategisches Konzept, Mobilität der Zukunft, Campaign Launch, International PR, Workshop Moderation, Creative Strategy München">
 <meta name="description" content="Dr. Lucas Gros entwickelte für Volkswagen das Konzept und die PR-Strategie für 'Electric For All' – von der Keynote bis zur internationalen Pressekommunikation.">
 <meta name="author" content="Dr. Lucas Gros">
 <meta name="robots" content="index, follow">
@@ -60,7 +63,7 @@ nav{position:fixed;top:0;left:0;right:0;z-index:200;background:var(--white);disp
 .case-body{font-size:1.5rem;font-weight:300;line-height:1.7;color:#444;}
 .case-body+.case-body{margin-top:.65rem;}
 
-/* VIDEO MODUL */
+/* VIDEO MODUL (Main Video - bleibt unverändert) */
 .case-video{padding:0 2rem 0;display:flex;flex-direction:column;align-items:center;}
 .yt-wrap{width:100%;max-width:calc(1000px + 4rem);aspect-ratio:16/9;position:relative;background:#000;overflow:hidden;}
 .yt-thumb{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block;filter:grayscale(10%);transition:filter .3s;z-index:10;}
@@ -87,8 +90,8 @@ nav{position:fixed;top:0;left:0;right:0;z-index:200;background:var(--white);disp
 .img-grid-2{display:grid;grid-template-columns:1fr 1fr;gap:40px;}
 
 .img-item{overflow:hidden;position:relative;cursor:none;}
-.img-item img{width:100%;height:100%;object-fit:cover;display:block;filter:grayscale(10%);transition:filter .4s,transform .5s;}
-.img-item:hover img{filter:grayscale(0%);transform:scale(1.03);}
+.img-item img, .img-item video{width:100%;height:100%;object-fit:cover;display:block;filter:grayscale(10%);transition:filter .4s,transform .5s;}
+.img-item:hover img, .img-item:hover video{filter:grayscale(0%);transform:scale(1.03);}
 .img-item.ratio-wide{aspect-ratio:16/9;}
 .img-item.ratio-portrait{aspect-ratio:3/4;}
 
@@ -117,7 +120,8 @@ nav{position:fixed;top:0;left:0;right:0;z-index:200;background:var(--white);disp
 /* Lightbox */
 .lightbox{position:fixed;inset:0;z-index:8000;background:rgba(12,12,12,.98);display:flex;align-items:center;justify-content:center;opacity:0;pointer-events:none;transition:opacity .3s;}
 .lightbox.open{opacity:1;pointer-events:all;}
-.lightbox img{max-width:92vw;max-height:90vh;object-fit:contain;display:block;}
+.lightbox img, .lightbox video{max-width:92vw;max-height:90vh;object-fit:contain;display:none;}
+.lightbox img.active, .lightbox video.active{display:block;}
 .lightbox-close{position:absolute;top:1.5rem;right:2rem;font-size:1.5rem;font-weight:300;color:rgba(245,245,242,.7);background:none;border:none;cursor:none;}
 .lightbox-nav{position:absolute;top:50%;transform:translateY(-50%);font-size:1.2rem;font-weight:300;color:rgba(245,245,242,.5);background:none;border:none;cursor:none;padding:.75rem 1.25rem;}
 .lightbox-prev{left:1rem;}
@@ -156,6 +160,7 @@ footer{display:flex;justify-content:space-between;align-items:center;padding:2re
   <button class="lightbox-close" id="lb-close">×</button>
   <button class="lightbox-nav lightbox-prev" id="lb-prev">←</button>
   <img src="" alt="" id="lb-img">
+  <video src="" id="lb-video" muted loop autoplay playsinline></video>
   <button class="lightbox-nav lightbox-next" id="lb-next">→</button>
   <span class="lightbox-counter" id="lb-counter"></span>
 </div>
@@ -364,7 +369,7 @@ footer{display:flex;justify-content:space-between;align-items:center;padding:2re
     });
   });
 
-  // Video Player
+  // Video Player (Main)
   var preview  = document.getElementById('preview-layer');
   var video    = document.getElementById('main-video');
   var controls = document.getElementById('video-controls');
@@ -406,9 +411,10 @@ footer{display:flex;justify-content:space-between;align-items:center;padding:2re
     }
   });
 
-  // Lightbox
+  // Lightbox logic mit Video-Support
   var lightbox = document.getElementById('lightbox');
   var lbImg    = document.getElementById('lb-img');
+  var lbVid    = document.getElementById('lb-video');
   var lbCtr    = document.getElementById('lb-counter');
   var lbItems  = Array.from(document.querySelectorAll('[data-lb-src]'));
   var srcs     = lbItems.map(function(el) {
@@ -421,8 +427,21 @@ footer{display:flex;justify-content:space-between;align-items:center;padding:2re
 
   function updateLb() {
     if (srcs.length === 0) return;
-    lbImg.src = srcs[current].src;
-    lbImg.alt = srcs[current].alt;
+    var currentItem = srcs[current];
+    var isVideo = currentItem.src.toLowerCase().endsWith('.mp4');
+
+    if(isVideo) {
+      lbImg.classList.remove('active');
+      lbVid.src = currentItem.src;
+      lbVid.classList.add('active');
+      lbVid.play();
+    } else {
+      lbVid.classList.remove('active');
+      lbVid.pause();
+      lbImg.src = currentItem.src;
+      lbImg.alt = currentItem.alt;
+      lbImg.classList.add('active');
+    }
     lbCtr.textContent = (current + 1) + ' / ' + srcs.length;
   }
 
@@ -437,6 +456,7 @@ footer{display:flex;justify-content:space-between;align-items:center;padding:2re
 
   document.getElementById('lb-close').addEventListener('click', function() {
     lightbox.classList.remove('open');
+    lbVid.pause();
     document.body.style.overflow = '';
   });
 
@@ -455,13 +475,14 @@ footer{display:flex;justify-content:space-between;align-items:center;padding:2re
   lightbox.addEventListener('click', function(e) {
     if (e.target === lightbox) {
       lightbox.classList.remove('open');
+      lbVid.pause();
       document.body.style.overflow = '';
     }
   });
 
   document.addEventListener('keydown', function(e) {
     if (!lightbox.classList.contains('open')) return;
-    if (e.key === 'Escape') { lightbox.classList.remove('open'); document.body.style.overflow = ''; }
+    if (e.key === 'Escape') { lightbox.classList.remove('open'); lbVid.pause(); document.body.style.overflow = ''; }
     if (e.key === 'ArrowLeft') { current = (current - 1 + srcs.length) % srcs.length; updateLb(); }
     if (e.key === 'ArrowRight') { current = (current + 1) % srcs.length; updateLb(); }
   });

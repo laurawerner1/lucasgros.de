@@ -8,6 +8,9 @@
 <meta name="author" content="Dr. Lucas Gros">
 <meta name="robots" content="index, follow">
 <link rel="canonical" href="https://www.lucasgros.de/case-monstershack.html">
+<link rel="icon" type="image/png" href="images/logo.png">
+<link rel="apple-touch-icon" href="images/logo.png">
+<meta name="keywords" content="MonsterShack, Markenpositionierung, Markenstrategie, Digital Health, Kindergesundheit, Brand Identity, Dr. Lucas Gros, Creative Strategy München, Gesundheits-App für Kinder, Gamification Health, Branding Case Study, UX Design Digital Health, Markenidentität Entwicklung, Kommunikationsstrategie, Kindermarketing, Gesunde Routinen spielerisch, Brand Design Gesundheit, Startup Branding München, Storytelling für Marken, Strategische Markenberatung">
 <meta property="og:title" content="MonsterShack – Markenpositionierung & Strategie | Dr. Lucas Gros">
 <meta property="og:description" content="Markenanalyse und Strategie für Digital Health: Wie MonsterShack gesunde Routinen für Kinder zum Abenteuer macht. Ein Case von Dr. Lucas Gros.">
 <meta property="og:image" content="https://www.lucasgros.de/images/CaseMonsterShack/monstershack-cover.jpg">
@@ -67,8 +70,8 @@ nav{position:fixed;top:0;left:0;right:0;z-index:200;background:var(--white);disp
 .img-grid-2{display:grid;grid-template-columns:1fr 1fr;gap:40px;}
 .img-grid-1{display:grid;grid-template-columns:1fr;gap:0;}
 .img-item{overflow:hidden;position:relative;cursor:none;}
-.img-item img{width:100%;height:100%;object-fit:cover;display:block;filter:grayscale(10%);transition:filter .4s,transform .5s;}
-.img-item:hover img{filter:grayscale(0%);transform:scale(1.03);}
+.img-item img, .img-item video{width:100%;height:100%;object-fit:cover;display:block;filter:grayscale(10%);transition:filter .4s,transform .5s;}
+.img-item:hover img, .img-item:hover video{filter:grayscale(0%);transform:scale(1.03);}
 .img-item.ratio-full{aspect-ratio:16/9;}
 
 /* Caption below a group */
@@ -97,7 +100,8 @@ nav{position:fixed;top:0;left:0;right:0;z-index:200;background:var(--white);disp
 /* Lightbox */
 .lightbox{position:fixed;inset:0;z-index:8000;background:rgba(12,12,12,.95);display:flex;align-items:center;justify-content:center;opacity:0;pointer-events:none;transition:opacity .3s;}
 .lightbox.open{opacity:1;pointer-events:all;}
-.lightbox img{max-width:92vw;max-height:90vh;object-fit:contain;display:block;}
+.lightbox img, .lightbox video{max-width:92vw;max-height:90vh;object-fit:contain;display:none;}
+.lightbox img.active, .lightbox video.active{display:block;}
 .lightbox-close, .lightbox-nav{position:absolute;background:none;border:none;color:white;cursor:none;transition:opacity .2s;}
 .lightbox-close{top:1.5rem;right:2rem;font-size:1.5rem;font-weight:300;}
 .lightbox-nav{top:50%;transform:translateY(-50%);font-size:1.2rem;padding:1rem;}
@@ -138,6 +142,7 @@ footer{display:flex;justify-content:space-between;align-items:center;padding:2re
   <button class="lightbox-close" id="lb-close">×</button>
   <button class="lightbox-nav lightbox-prev" id="lb-prev">←</button>
   <img src="" alt="" id="lb-img">
+  <video src="" id="lb-video" autoplay loop muted playsinline></video>
   <button class="lightbox-nav lightbox-next" id="lb-next">→</button>
   <span class="lightbox-counter" id="lb-counter"></span>
 </div>
@@ -191,7 +196,9 @@ footer{display:flex;justify-content:space-between;align-items:center;padding:2re
     <div class="img-group">
       <div class="img-grid-1">
         <div class="img-item ratio-full" data-lb>
-          <img src="images/CaseMonsterShack/monstershack-1.mp4" alt="MonsterShack Markenanalyse Showcase" loading="lazy">
+          <video autoplay loop muted playsinline poster="images/CaseMonsterShack/monstershack-2.jpg">
+            <source src="images/CaseMonsterShack/monstershack-1.mp4" type="video/mp4">
+          </video>
         </div>
       </div>
       <div class="img-grid-1" style="margin-top:0;">
@@ -201,7 +208,9 @@ footer{display:flex;justify-content:space-between;align-items:center;padding:2re
       </div>
       <div class="img-grid-1" style="margin-top:0;">
         <div class="img-item ratio-full" data-lb>
-          <img src="images/CaseMonsterShack/monstershack-3.mp4" alt="MonsterShack App-Konzept ItchyMonsters" loading="lazy">
+          <video autoplay loop muted playsinline poster="images/CaseMonsterShack/monstershack-2.jpg">
+            <source src="images/CaseMonsterShack/monstershack-3.mp4" type="video/mp4">
+          </video>
         </div>
       </div>
       <div class="group-caption">
@@ -321,14 +330,29 @@ footer{display:flex;justify-content:space-between;align-items:center;padding:2re
 
   var lightbox = document.getElementById('lightbox');
   var lbImg = document.getElementById('lb-img');
+  var lbVid = document.getElementById('lb-video');
   var lbCtr = document.getElementById('lb-counter');
   var items = Array.from(document.querySelectorAll('.img-item[data-lb]'));
   var current = 0;
 
   function updateLb() {
-    var targetImg = items[current].querySelector('img');
-    lbImg.src = targetImg.src;
-    lbImg.alt = targetImg.alt;
+    var target = items[current].querySelector('img, video');
+    var isVideo = target.tagName.toLowerCase() === 'video';
+    
+    lbImg.classList.remove('active');
+    lbVid.classList.remove('active');
+
+    if (isVideo) {
+      var source = target.querySelector('source') ? target.querySelector('source').src : target.src;
+      lbVid.src = source;
+      lbVid.classList.add('active');
+      lbVid.play();
+    } else {
+      lbImg.src = target.src;
+      lbImg.alt = target.alt;
+      lbImg.classList.add('active');
+    }
+    
     lbCtr.textContent = (current + 1) + ' / ' + items.length;
   }
 
@@ -341,10 +365,14 @@ footer{display:flex;justify-content:space-between;align-items:center;padding:2re
     });
   });
 
-  document.getElementById('lb-close').addEventListener('click', function() {
+  function closeLb() {
     lightbox.classList.remove('open');
     document.body.style.overflow = '';
-  });
+    lbVid.pause();
+    lbVid.src = "";
+  }
+
+  document.getElementById('lb-close').addEventListener('click', closeLb);
   document.getElementById('lb-prev').addEventListener('click', function(e) {
     e.stopPropagation();
     current = (current - 1 + items.length) % items.length;
@@ -356,11 +384,11 @@ footer{display:flex;justify-content:space-between;align-items:center;padding:2re
     updateLb();
   });
   lightbox.addEventListener('click', function(e) {
-    if (e.target === lightbox) { lightbox.classList.remove('open'); document.body.style.overflow = ''; }
+    if (e.target === lightbox) { closeLb(); }
   });
   document.addEventListener('keydown', function(e) {
     if (!lightbox.classList.contains('open')) return;
-    if (e.key === 'Escape') { lightbox.classList.remove('open'); document.body.style.overflow = ''; }
+    if (e.key === 'Escape') { closeLb(); }
     if (e.key === 'ArrowLeft') { current = (current - 1 + items.length) % items.length; updateLb(); }
     if (e.key === 'ArrowRight') { current = (current + 1) % items.length; updateLb(); }
   });

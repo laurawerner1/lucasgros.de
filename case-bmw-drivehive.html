@@ -8,6 +8,9 @@
 <meta name="author" content="Dr. Lucas Gros">
 <meta name="robots" content="index, follow">
 <link rel="canonical" href="https://www.lucasgros.de/case-bmw-drivehive.html">
+<link rel="icon" type="image/png" href="images/logo.png">
+<link rel="apple-touch-icon" href="images/logo.png">
+<meta name="keywords" content="BMW Golfsport, #DriveHive, Community Building, Content Strategie, Dr. Lucas Gros, Markenkommunikation, Influencer Marketing, Community Marketing, Sport Marketing, Brand Activation, Golf Marketing, Visionary Community">
 <meta property="og:title" content="BMW Golfsport #DriveHive – Community & Content Strategie | Dr. Lucas Gros">
 <meta property="og:description" content="Strategie und Markenkommunikation für BMW Golfsport. Ein Case von Dr. Lucas Gros, München.">
 <meta property="og:image" content="https://www.lucasgros.de/images/CaseBMWDriveHive/drivehive-header.jpg">
@@ -60,11 +63,11 @@ nav{position:fixed;top:0;left:0;right:0;z-index:200;background:var(--white);disp
 .case-body{font-size:1.5rem;font-weight:300;line-height:1.7;color:#444;}
 .case-body+.case-body{margin-top:.65rem;}
 
-/* Image Stack */
+/* Image/Video Stack */
 .case-images{padding:0 2rem 5rem;display:flex;flex-direction:column;gap:40px;max-width:calc(1000px + 4rem);margin:0 auto;width:100%;}
-.case-image-wrap{overflow:hidden;width:100%;}
-.case-image-wrap img{width:100%;display:block;filter:grayscale(10%);transition:filter .4s;}
-.case-image-wrap:hover img{filter:grayscale(0%);}
+.case-image-wrap{overflow:hidden;width:100%;position:relative;}
+.case-image-wrap img, .case-image-wrap video{width:100%;display:block;filter:grayscale(10%);transition:filter .4s;}
+.case-image-wrap:hover img, .case-image-wrap:hover video{filter:grayscale(0%);}
 
 /* More Cases & Rows */
 .more-cases{margin-top:5rem;}
@@ -85,7 +88,8 @@ nav{position:fixed;top:0;left:0;right:0;z-index:200;background:var(--white);disp
 /* Lightbox */
 .lightbox{position:fixed;inset:0;z-index:8000;background:rgba(12,12,12,.95);display:flex;align-items:center;justify-content:center;opacity:0;pointer-events:none;transition:opacity .3s;}
 .lightbox.open{opacity:1;pointer-events:all;}
-.lightbox img{max-width:92vw;max-height:90vh;object-fit:contain;display:block;}
+.lightbox img, .lightbox video{max-width:92vw;max-height:90vh;object-fit:contain;display:none;}
+.lightbox.open img.active, .lightbox.open video.active{display:block;}
 .lightbox-close{position:absolute;top:1.5rem;right:2rem;font-size:1.5rem;font-weight:300;color:rgba(245,245,242,.7);background:none;border:none;cursor:none;}
 .lightbox-nav{position:absolute;top:50%;transform:translateY(-50%);font-size:1.2rem;font-weight:300;color:rgba(245,245,242,.5);background:none;border:none;cursor:none;padding:.75rem 1.25rem;}
 .lightbox-prev{left:1rem;}
@@ -114,7 +118,7 @@ footer{display:flex;justify-content:space-between;align-items:center;padding:2re
 .case-gallery-3col .case-image-wrap {
   aspect-ratio: 9 / 16;
 }
-.case-gallery-3col img {
+.case-gallery-3col img, .case-gallery-3col video {
   width: 100%;
   height: 100%;
   object-fit: cover;
@@ -146,6 +150,7 @@ footer{display:flex;justify-content:space-between;align-items:center;padding:2re
   <button class="lightbox-close" id="lb-close">×</button>
   <button class="lightbox-nav lightbox-prev" id="lb-prev">←</button>
   <img src="" alt="" id="lb-img">
+  <video id="lb-video" autoplay loop muted playsinline src=""></video>
   <button class="lightbox-nav lightbox-next" id="lb-next">→</button>
   <span class="lightbox-counter" id="lb-counter"></span>
 </div>
@@ -208,13 +213,13 @@ footer{display:flex;justify-content:space-between;align-items:center;padding:2re
   </div>
 
   <div class="case-image-wrap img-item" data-lb>
-    <img src="images/CaseBMWDriveHive/drivehive-1.mp4" alt="BMW #DriveHive – Social Film Mockup Markenerlebnis" loading="lazy">
+    <video src="images/CaseBMWDriveHive/drivehive-1.mp4" autoplay loop muted playsinline alt="BMW #DriveHive – Social Film Mockup Markenerlebnis"></video>
   </div>
   <div class="case-image-wrap img-item" data-lb>
     <img src="images/CaseBMWDriveHive/drivehive-2.jpg" alt="BMW #DriveHive – Social Media Content Design" loading="lazy">
   </div>
   <div class="case-image-wrap img-item" data-lb>
-    <img src="images/CaseBMWDriveHive/drivehive-3.mp4" alt="BMW #DriveHive – Digital Brand Activation" loading="lazy">
+    <video src="images/CaseBMWDriveHive/drivehive-3.mp4" autoplay loop muted playsinline alt="BMW #DriveHive – Digital Brand Activation"></video>
   </div>
 </div>  
 
@@ -293,15 +298,32 @@ footer{display:flex;justify-content:space-between;align-items:center;padding:2re
 
   var lightbox = document.getElementById('lightbox');
   var lbImg    = document.getElementById('lb-img');
+  var lbVid    = document.getElementById('lb-video');
   var lbCtr    = document.getElementById('lb-counter');
   var items    = Array.from(document.querySelectorAll('.img-item[data-lb]'));
   var current = 0;
 
   function updateLb() {
     if (items.length === 0) return;
-    var targetImg = items[current].querySelector('img');
-    lbImg.src = targetImg.src;
-    lbImg.alt = targetImg.alt;
+    
+    // Deaktiviere beide
+    lbImg.classList.remove('active');
+    lbVid.classList.remove('active');
+    lbVid.pause();
+
+    var target = items[current].querySelector('img, video');
+    var isVideo = target.tagName.toLowerCase() === 'video';
+
+    if (isVideo) {
+      lbVid.src = target.src;
+      lbVid.classList.add('active');
+      lbVid.play();
+    } else {
+      lbImg.src = target.src;
+      lbImg.alt = target.alt;
+      lbImg.classList.add('active');
+    }
+    
     lbCtr.textContent = (current + 1) + ' / ' + items.length;
   }
 
@@ -316,6 +338,7 @@ footer{display:flex;justify-content:space-between;align-items:center;padding:2re
 
   document.getElementById('lb-close').addEventListener('click', function() {
     lightbox.classList.remove('open');
+    lbVid.pause();
     document.body.style.overflow = '';
   });
 
@@ -332,12 +355,20 @@ footer{display:flex;justify-content:space-between;align-items:center;padding:2re
   });
 
   lightbox.addEventListener('click', function(e) {
-    if (e.target === lightbox) { lightbox.classList.remove('open'); document.body.style.overflow = ''; }
+    if (e.target === lightbox) { 
+      lightbox.classList.remove('open'); 
+      lbVid.pause();
+      document.body.style.overflow = ''; 
+    }
   });
 
   document.addEventListener('keydown', function(e) {
     if (!lightbox.classList.contains('open')) return;
-    if (e.key === 'Escape') { lightbox.classList.remove('open'); document.body.style.overflow = ''; }
+    if (e.key === 'Escape') { 
+      lightbox.classList.remove('open'); 
+      lbVid.pause();
+      document.body.style.overflow = ''; 
+    }
     if (e.key === 'ArrowLeft') { current = (current - 1 + items.length) % items.length; updateLb(); }
     if (e.key === 'ArrowRight') { current = (current + 1) % items.length; updateLb(); }
   });

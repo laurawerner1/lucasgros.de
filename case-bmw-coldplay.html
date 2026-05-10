@@ -4,6 +4,9 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>BMW × Coldplay – The Power of Action | Brand Partnership | Dr. Lucas Gros</title>
+<link rel="icon" type="image/png" href="images/logo.png">
+<link rel="apple-touch-icon" href="images/logo.png">
+<meta name="keywords" content="BMW Coldplay, Brand Partnership, Nachhaltigkeit Kommunikation, The Power of Action, Creative Strategy München, Dr. Lucas Gros, Storytelling BMW, Music Marketing, Brand Activation, Experiential Marketing, Nachhaltige Neupositionierung, BMW Elektromobilität, Coldplay Kooperation, Kreativ-Konzeption München, Automotive Marketing, Green Marketing, Kreation Nachhaltigkeit, Markenstrategie München, Kampagnenentwicklung, Corporate Language">
 <meta name="description" content="BMW × Coldplay: Eine preisgekrönte Brand Partnership über Freude und Nachhaltigkeit. Konzeption und Storytelling von Dr. Lucas Gros.">
 <meta name="author" content="Dr. Lucas Gros">
 <meta name="robots" content="index, follow">
@@ -94,18 +97,11 @@ nav{position:fixed;top:0;left:0;right:0;z-index:200;background:var(--white);disp
 .case-img-wrap:hover img, .case-img-wrap:hover video{filter:grayscale(0%);transform:scale(1.015);}
 .case-img-wrap.is-gif img, .case-img-wrap.is-gif video{filter:grayscale(0%);}
 
-/* Caption – Option A */
-.case-story-caption{padding:1.75rem 0 0;width:100%;display:grid;grid-template-columns:48px 1fr;align-items:start;gap:0;}
-.caption-index{font-size:.58rem;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:var(--light);border-top:1px solid var(--border);padding-top:.9rem;padding-right:1rem;}
-.caption-body{border-top:1px solid var(--black);padding-top:.9rem;}
-.story-caption-label{font-size:.58rem;font-weight:500;letter-spacing:.2em;text-transform:uppercase;color:var(--light);margin-bottom:.5rem;}
-.story-caption-text{font-size:1.15rem;font-weight:300;line-height:1.55;color:#444;max-width:560px;margin-bottom:2.5rem;}
-.story-caption-text strong{font-weight:600;color:var(--black);}
-
 /* Lightbox */
 .lightbox{position:fixed;inset:0;z-index:8000;background:rgba(12,12,12,.95);display:flex;align-items:center;justify-content:center;opacity:0;pointer-events:none;transition:opacity .3s;}
 .lightbox.open{opacity:1;pointer-events:all;}
-.lightbox img{max-width:92vw;max-height:90vh;object-fit:contain;display:block;}
+.lightbox img, .lightbox video{max-width:92vw;max-height:90vh;object-fit:contain;display:none;}
+.lightbox img.active, .lightbox video.active{display:block;}
 .lightbox-close{position:absolute;top:1.5rem;right:2rem;font-size:1.5rem;font-weight:300;color:rgba(245,245,242,.7);background:none;border:none;cursor:none;}
 .lightbox-nav{position:absolute;top:50%;transform:translateY(-50%);font-size:1.2rem;font-weight:300;color:rgba(245,245,242,.5);background:none;border:none;cursor:none;padding:.75rem 1.25rem;}
 .lightbox-prev{left:1rem;}
@@ -128,7 +124,14 @@ nav{position:fixed;top:0;left:0;right:0;z-index:200;background:var(--white);disp
 .pr-type{font-size:.65rem;font-weight:300;color:var(--mid);text-align:right;letter-spacing:.06em;}
 .project-row:hover .pr-index,.project-row:hover .pr-client,.project-row:hover .pr-type{color:rgba(245,245,242,.38);}
 
-/* Contact & Footer */
+/* Caption */
+.case-story-caption{padding:1.75rem 0 0;width:100%;display:grid;grid-template-columns:48px 1fr;align-items:start;gap:0;}
+.caption-index{font-size:.58rem;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:var(--light);border-top:1px solid var(--border);padding-top:.9rem;padding-right:1rem;}
+.caption-body{border-top:1px solid var(--black);padding-top:.9rem;}
+.story-caption-label{font-size:.58rem;font-weight:500;letter-spacing:.2em;text-transform:uppercase;color:var(--light);margin-bottom:.5rem;}
+.story-caption-text{font-size:1.15rem;font-weight:300;line-height:1.55;color:#444;max-width:560px;margin-bottom:2.5rem;}
+.story-caption-text strong{font-weight:600;color:var(--black);}
+
 .case-contact{display:grid;grid-template-columns:1fr 1fr;margin-top:6rem;padding:0 2rem 6rem;}
 .contact-h2{font-size:clamp(2.8rem,7vw,8rem);font-weight:700;text-transform:uppercase;line-height:.88;letter-spacing:-.025em;}
 .case-contact-right{padding-left:1rem;display:flex;flex-direction:column;justify-content:flex-end;gap:1.75rem;}
@@ -164,6 +167,7 @@ footer{display:flex;justify-content:space-between;align-items:center;padding:2re
   <button class="lightbox-close" id="lb-close">×</button>
   <button class="lightbox-nav lightbox-prev" id="lb-prev">←</button>
   <img src="" alt="" id="lb-img">
+  <video id="lb-video" src="" loop muted playsinline autoplay></video>
   <button class="lightbox-nav lightbox-next" id="lb-next">→</button>
   <span class="lightbox-counter" id="lb-counter"></span>
 </div>
@@ -258,13 +262,13 @@ footer{display:flex;justify-content:space-between;align-items:center;padding:2re
   </div>
 
   <div class="case-img-block">
-    <div class="case-img-wrap is-gif" data-no-lb="true">
+    <div class="case-img-wrap" data-index="1">
       <video src="images/CaseBMWxColdplay/bmw-coldplay-joytopia.mp4" loop muted playsinline autoplay aria-label="Coldplay Concert in BMW Metaverse Joytopia"></video>
     </div>
   </div>
 
   <div class="case-img-block">
-    <div class="case-img-wrap" data-index="1"><img src="images/CaseBMWxColdplay/bmw-coldplay-social-2.jpg" alt="Coldplay concert in BMW Metaverse Joytopia"></div>
+    <div class="case-img-wrap" data-index="2"><img src="images/CaseBMWxColdplay/bmw-coldplay-social-2.jpg" alt="Coldplay concert in BMW Metaverse Joytopia"></div>
     <div class="case-story-caption">
       <span class="caption-index">02</span>
       <div class="caption-body">
@@ -275,11 +279,11 @@ footer{display:flex;justify-content:space-between;align-items:center;padding:2re
   </div>
 
   <div class="case-img-block">
-    <div class="case-img-wrap" data-index="2"><img src="images/CaseBMWxColdplay/bmw-coldplay-spheres-tour.jpg" alt="BMW i3 batteries powering Coldplay Music of the Spheres World Tour"></div>
+    <div class="case-img-wrap" data-index="3"><img src="images/CaseBMWxColdplay/bmw-coldplay-spheres-tour.jpg" alt="BMW i3 batteries powering Coldplay Music of the Spheres World Tour"></div>
   </div>
 
   <div class="case-img-block">
-    <div class="case-img-wrap" data-index="3"><img src="images/CaseBMWxColdplay/bmw-coldplay-social-3.jpg" alt="Sustainable world tour partnership BMW and Coldplay"></div>
+    <div class="case-img-wrap" data-index="4"><img src="images/CaseBMWxColdplay/bmw-coldplay-social-3.jpg" alt="Sustainable world tour partnership BMW and Coldplay"></div>
     <div class="case-story-caption">
       <span class="caption-index">03</span>
       <div class="caption-body">
@@ -317,36 +321,6 @@ footer{display:flex;justify-content:space-between;align-items:center;padding:2re
   </ul>
 </footer>
 
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "CreativeWork",
-  "name": "BMW × Coldplay – The Power of Action",
-  "url": "https://www.lucasgros.de/case-bmw-coldplay.html",
-  "description": "Nachhaltige Neupositionierung von BMW durch die erste Brand Partnership von Coldplay. Strategisches Storytelling in drei Dimensionen: Product, Entertainment und Impact.",
-  "keywords": ["BMW", "Coldplay", "Brand Partnership", "Nachhaltigkeit", "Joytopia", "Storytelling", "Konzeption"],
-  "inLanguage": "de",
-  "author": {
-    "@type": "Person",
-    "name": "Dr. Lucas Gros",
-    "url": "https://www.lucasgros.de",
-    "email": "info@lucasgros.de",
-    "address": {
-      "@type": "PostalAddress",
-      "addressLocality": "München",
-      "addressCountry": "DE"
-    },
-    "sameAs": "https://linkedin.com/in/lucasvgros"
-  },
-  "provider": {
-    "@type": "Organization",
-    "name": "BMW",
-    "url": "https://www.bmw.com"
-  },
-  "award": "Gold, German Brand Award"
-}
-</script>
-
 <script>
 (function() {
   // Cursor
@@ -357,18 +331,20 @@ footer{display:flex;justify-content:space-between;align-items:center;padding:2re
     el.addEventListener('mouseleave', function() { cursor.classList.remove('hover','zoom'); });
   });
 
-  // VIDEO LOGIK
+  // VIDEO LOGIK (Haupt-Spot)
   var preview = document.getElementById('preview-layer');
   var video = document.getElementById('main-video');
   var controls = document.getElementById('video-controls');
   var start = document.getElementById('start-video-trigger');
   
-  start.addEventListener('click', function() {
-    preview.style.display = 'none';
-    video.style.display = 'block';
-    controls.style.display = 'flex';
-    video.play();
-  });
+  if(start) {
+    start.addEventListener('click', function() {
+      preview.style.display = 'none';
+      video.style.display = 'block';
+      controls.style.display = 'flex';
+      video.play();
+    });
+  }
 
   document.getElementById('play-pause-btn').addEventListener('click', function() {
     if (video.paused) { video.play(); document.getElementById('play-icon').style.display='none'; document.getElementById('pause-icon').style.display='flex'; }
@@ -389,32 +365,74 @@ footer{display:flex;justify-content:space-between;align-items:center;padding:2re
     if (video.requestFullscreen) video.requestFullscreen(); else if (video.webkitRequestFullscreen) video.webkitRequestFullscreen();
   });
 
-  // Lightbox
-  var lightbox = document.getElementById('lightbox'), lbImg = document.getElementById('lb-img'), lbCtr = document.getElementById('lb-counter');
-  var wraps = Array.from(document.querySelectorAll('.case-img-wrap:not([data-no-lb])'));
-  var srcs = wraps.map(function(w) { return { src: w.querySelector('img').src, alt: w.querySelector('img').alt }; });
+  // Lightbox Logik (erweitert für Video-Unterstützung)
+  var lightbox = document.getElementById('lightbox'), 
+      lbImg = document.getElementById('lb-img'), 
+      lbVid = document.getElementById('lb-video'),
+      lbCtr = document.getElementById('lb-counter');
+  
+  var wraps = Array.from(document.querySelectorAll('.case-img-wrap'));
+  var sources = wraps.map(function(w) {
+    var img = w.querySelector('img');
+    var vid = w.querySelector('video');
+    return {
+      type: img ? 'image' : 'video',
+      src: img ? img.src : vid.src,
+      alt: img ? img.alt : (vid.getAttribute('aria-label') || '')
+    };
+  });
   var current = 0;
 
-  function updateLb() { lbImg.src=srcs[current].src; lbCtr.textContent=(current+1)+' / '+srcs.length; }
-  wraps.forEach(function(w,i) { w.addEventListener('click', function() { current=i; updateLb(); lightbox.classList.add('open'); document.body.style.overflow='hidden'; }); });
-  
-  document.getElementById('lb-close').addEventListener('click', function() { lightbox.classList.remove('open'); document.body.style.overflow=''; });
-document.addEventListener('keydown', function(e) {
-  if (!lightbox.classList.contains('open')) return; 
+  function updateLb() {
+    var data = sources[current];
+    lbImg.classList.remove('active');
+    lbVid.classList.remove('active');
+    lbVid.pause();
 
-  if (e.key === "Escape") {
-    lightbox.classList.remove('open');
-    document.body.style.overflow = '';
-  } else if (e.key === "ArrowRight") {
-    current = (current + 1) % srcs.length;
-    updateLb();
-  } else if (e.key === "ArrowLeft") {
-    current = (current - 1 + srcs.length) % srcs.length;
-    updateLb();
+    if (data.type === 'image') {
+      lbImg.src = data.src;
+      lbImg.alt = data.alt;
+      lbImg.classList.add('active');
+    } else {
+      lbVid.src = data.src;
+      lbVid.classList.add('active');
+      lbVid.play();
+    }
+    lbCtr.textContent = (current + 1) + ' / ' + sources.length;
   }
-});
-  document.getElementById('lb-prev').addEventListener('click', function() { current=(current-1+srcs.length)%srcs.length; updateLb(); });
-  document.getElementById('lb-next').addEventListener('click', function() { current=(current+1)%srcs.length; updateLb(); });
+
+  wraps.forEach(function(w, i) {
+    w.addEventListener('click', function() {
+      current = i;
+      updateLb();
+      lightbox.classList.add('open');
+      document.body.style.overflow = 'hidden';
+    });
+  });
+  
+  document.getElementById('lb-close').addEventListener('click', function() {
+    lightbox.classList.remove('open');
+    lbVid.pause();
+    document.body.style.overflow = '';
+  });
+
+  document.addEventListener('keydown', function(e) {
+    if (!lightbox.classList.contains('open')) return; 
+    if (e.key === "Escape") {
+      lightbox.classList.remove('open');
+      lbVid.pause();
+      document.body.style.overflow = '';
+    } else if (e.key === "ArrowRight") {
+      current = (current + 1) % sources.length;
+      updateLb();
+    } else if (e.key === "ArrowLeft") {
+      current = (current - 1 + sources.length) % sources.length;
+      updateLb();
+    }
+  });
+
+  document.getElementById('lb-prev').addEventListener('click', function() { current = (current - 1 + sources.length) % sources.length; updateLb(); });
+  document.getElementById('lb-next').addEventListener('click', function() { current = (current + 1) % sources.length; updateLb(); });
 })();
 </script>
 </body>

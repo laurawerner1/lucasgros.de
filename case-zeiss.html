@@ -4,6 +4,8 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>ZEISS Employer Branding – PR & Storytelling | Dr. Lucas Gros</title>
+<link rel="icon" type="image/png" href="images/logo.png">
+<link rel="apple-touch-icon" href="images/logo.png">
 <meta name="description" content="Dr. Lucas Gros entwickelte für ZEISS eine Employer Branding PR-Strategie, um hochqualifizierte Talente durch gezieltes Storytelling und Media Relations zu gewinnen.">
 <meta name="author" content="Dr. Lucas Gros">
 <meta name="robots" content="index, follow">
@@ -86,11 +88,15 @@ a.meta-cell:hover{background:var(--faint);}
 .opening-stack{display:flex;flex-direction:column;gap:40px;width:100%;max-width:1000px;}
 .section-stack{display:flex;flex-direction:column;gap:40px;width:100%;max-width:1000px;}
 
-/* Lightbox */
+/* Lightbox (BMW Style) */
 .lightbox{position:fixed;inset:0;z-index:8000;background:rgba(12,12,12,.95);display:flex;align-items:center;justify-content:center;opacity:0;pointer-events:none;transition:opacity .3s;}
 .lightbox.open{opacity:1;pointer-events:all;}
 .lightbox img{max-width:92vw;max-height:90vh;object-fit:contain;display:block;}
-.lightbox-close{position:absolute;top:1.5rem;right:2rem;font-size:1.5rem;color:rgba(245,245,242,.7);background:none;border:none;cursor:none;}
+.lightbox-close{position:absolute;top:1.5rem;right:2rem;font-size:1.5rem;font-weight:300;color:rgba(245,245,242,.7);background:none;border:none;cursor:none;}
+.lightbox-nav{position:absolute;top:50%;transform:translateY(-50%);font-size:1.2rem;font-weight:300;color:rgba(245,245,242,.5);background:none;border:none;cursor:none;padding:.75rem 1.25rem;}
+.lightbox-prev{left:1rem;}
+.lightbox-next{right:1rem;}
+.lightbox-counter{position:absolute;bottom:1.75rem;left:50%;transform:translateX(-50%);font-size:.6rem;color:rgba(245,245,242,.4);letter-spacing:.18em;text-transform:uppercase;}
 
 /* More Cases & Footer */
 .more-cases{margin-top:6rem;}
@@ -133,7 +139,10 @@ footer{display:flex;justify-content:space-between;align-items:center;padding:2re
 
 <div class="lightbox" id="lightbox">
     <button class="lightbox-close" id="lb-close">×</button>
+    <button class="lightbox-nav lightbox-prev" id="lb-prev">←</button>
     <img src="" alt="" id="lb-img">
+    <button class="lightbox-nav lightbox-next" id="lb-next">→</button>
+    <span class="lightbox-counter" id="lb-counter"></span>
 </div>
 
 <nav>
@@ -177,20 +186,20 @@ footer{display:flex;justify-content:space-between;align-items:center;padding:2re
 
 <div class="wide-image-outer">
     <div class="section-stack">
-        <div class="wide-image ratio-16-9" data-lb-src="images/CaseZeiss/zeiss-3.jpg">
-            <img src="images/CaseZeiss/zeiss-3.jpg" alt="ZEISS Employer Branding Podcast – Audio Storytelling" loading="lazy">
+        <div class="wide-image ratio-16-9" data-lb-index="0">
+            <img src="images/CaseZeiss/Zeiss-3.jpg" alt="ZEISS Employer Branding Podcast – Audio Storytelling" loading="lazy">
         </div>
-        <div class="wide-image ratio-16-9" data-lb-src="images/CaseZeiss/zeiss-4.jpg">
-            <img src="images/CaseZeiss/zeiss-4.jpg" alt="ZEISS Recruiting Kampagne Online Kanäle" loading="lazy">
+        <div class="wide-image ratio-16-9" data-lb-index="1">
+            <img src="images/CaseZeiss/Zeiss-4.jpg" alt="ZEISS Recruiting Kampagne Online Kanäle" loading="lazy">
         </div>
- 	    <div class="wide-image ratio-16-9" data-lb-src="images/CaseZeiss/zeiss-5.jpg">
-            <img src="images/CaseZeiss/zeiss-5.jpg" alt="Employer Branding im Print – Fachpublikationen ZEISS" loading="lazy">
+ 	    <div class="wide-image ratio-16-9" data-lb-index="2">
+            <img src="images/CaseZeiss/Zeiss-5.jpg" alt="Employer Branding im Print – Fachpublikationen ZEISS" loading="lazy">
         </div>
- 	    <div class="wide-image ratio-16-9" data-lb-src="images/CaseZeiss/zeiss-6.jpg">
-            <img src="images/CaseZeiss/zeiss-6.jpg" alt="Live Kommunikation und Events für ZEISS Recruiting" loading="lazy">
+ 	    <div class="wide-image ratio-16-9" data-lb-index="3">
+            <img src="images/CaseZeiss/Zeiss-6.jpg" alt="Live Kommunikation und Events für ZEISS Recruiting" loading="lazy">
         </div>
-        <div class="wide-image ratio-5-1" data-lb-src="images/CaseZeiss/zeiss-medien.jpg">
-            <img src="images/CaseZeiss/zeiss-medien.jpg" alt="Medienübersicht der ZEISS Employer Branding Strategie" loading="lazy">
+        <div class="wide-image ratio-5-1" data-lb-index="4">
+            <img src="images/CaseZeiss/Zeiss-medien.jpg" alt="Medienübersicht der ZEISS Employer Branding Strategie" loading="lazy">
         </div>
     </div>
 </div>
@@ -207,11 +216,11 @@ footer{display:flex;justify-content:space-between;align-items:center;padding:2re
 
 <div class="wide-image-outer">
     <div class="opening-stack">
-        <div class="wide-image ratio-16-9" data-lb-src="images/CaseZeiss/zeiss-1.jpg">
-            <img src="images/CaseZeiss/zeiss-1.jpg" alt="ZEISS Strategische Employer Kommunikation – Case Study Dr. Lucas Gros" loading="lazy">
+        <div class="wide-image ratio-16-9" data-lb-index="5">
+            <img src="images/CaseZeiss/Zeiss-1.jpg" alt="ZEISS Strategische Employer Kommunikation – Case Study Dr. Lucas Gros" loading="lazy">
         </div>
-        <div class="wide-image ratio-16-9" data-lb-src="images/CaseZeiss/zeiss-2.jpg">
-            <img src="images/CaseZeiss/zeiss-2.jpg" alt="Employer Branding Kampagne ZEISS – Recruitment PR" loading="lazy">
+        <div class="wide-image ratio-16-9" data-lb-index="6">
+            <img src="images/CaseZeiss/Zeiss-2.jpg" alt="Employer Branding Kampagne ZEISS – Recruitment PR" loading="lazy">
         </div>
     </div>
 </div>
@@ -253,35 +262,6 @@ footer{display:flex;justify-content:space-between;align-items:center;padding:2re
     </ul>
 </footer>
 
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "CreativeWork",
-  "name": "ZEISS Employer Branding – PR & Storytelling",
-  "url": "https://www.lucasgros.de/case-zeiss.html",
-  "description": "Dr. Lucas Gros entwickelte für ZEISS eine Employer Branding PR-Strategie, um hochqualifizierte Zielgruppen durch authentisches Storytelling und gezielte Media Relations zu erreichen.",
-  "keywords": ["Employer Branding", "PR Strategie", "Storytelling", "Recruitment PR", "ZEISS", "Personalmarketing"],
-  "inLanguage": "de",
-  "author": {
-    "@type": "Person",
-    "name": "Dr. Lucas Gros",
-    "url": "https://www.lucasgros.de",
-    "email": "info@lucasgros.de",
-    "address": {
-      "@type": "PostalAddress",
-      "addressLocality": "München",
-      "addressCountry": "DE"
-    },
-    "sameAs": "https://linkedin.com/in/lucasvgros"
-  },
-  "provider": {
-    "@type": "Organization",
-    "name": "ZEISS",
-    "url": "https://www.zeiss.de"
-  }
-}
-</script>
-
 <script>
 (function() {
     const cursor = document.getElementById('cursor');
@@ -290,31 +270,62 @@ footer{display:flex;justify-content:space-between;align-items:center;padding:2re
         cursor.style.top = e.clientY + 'px';
     });
 
-    document.querySelectorAll('a, button, .gallery-item, .wide-image, .project-row').forEach(el => {
+    document.querySelectorAll('a, button, .wide-image, .project-row').forEach(el => {
         el.addEventListener('mouseenter', () => cursor.classList.add(
-            el.classList.contains('gallery-item') || el.classList.contains('wide-image') ? 'zoom' : 'hover'
+            el.classList.contains('wide-image') ? 'zoom' : 'hover'
         ));
         el.addEventListener('mouseleave', () => cursor.classList.remove('hover', 'zoom'));
     });
 
+    // Lightbox Logic (Analog zu BMW iXperience)
     const lightbox = document.getElementById('lightbox');
     const lbImg = document.getElementById('lb-img');
-    const closeLb = () => { lightbox.classList.remove('open'); document.body.style.overflow = ''; };
+    const lbCtr = document.getElementById('lb-counter');
+    const items = Array.from(document.querySelectorAll('.wide-image'));
+    const srcs = items.map(el => {
+        const img = el.querySelector('img');
+        return { src: img.src, alt: img.alt };
+    });
+    let current = 0;
 
-    document.querySelectorAll('[data-lb-src]').forEach(el => {
+    function updateLb() {
+        lbImg.src = srcs[current].src;
+        lbImg.alt = srcs[current].alt;
+        lbCtr.textContent = (current + 1) + ' / ' + srcs.length;
+    }
+
+    function closeLb() {
+        lightbox.classList.remove('open');
+        document.body.style.overflow = '';
+    }
+
+    items.forEach((el, i) => {
         el.addEventListener('click', () => {
-            const src = el.dataset.lbSrc;
-            if (src && src !== '#') {
-                lbImg.src = src;
-                lightbox.classList.add('open');
-                document.body.style.overflow = 'hidden';
-            }
+            current = i;
+            updateLb();
+            lightbox.classList.add('open');
+            document.body.style.overflow = 'hidden';
         });
     });
 
     document.getElementById('lb-close').addEventListener('click', closeLb);
-    document.addEventListener('keydown', e => { if (e.key === 'Escape') closeLb(); });
+    document.getElementById('lb-prev').addEventListener('click', () => { 
+        current = (current - 1 + srcs.length) % srcs.length; 
+        updateLb(); 
+    });
+    document.getElementById('lb-next').addEventListener('click', () => { 
+        current = (current + 1) % srcs.length; 
+        updateLb(); 
+    });
+
     lightbox.addEventListener('click', e => { if (e.target === lightbox) closeLb(); });
+    
+    document.addEventListener('keydown', e => {
+        if (!lightbox.classList.contains('open')) return;
+        if (e.key === 'Escape') closeLb();
+        if (e.key === 'ArrowLeft') { current = (current - 1 + srcs.length) % srcs.length; updateLb(); }
+        if (e.key === 'ArrowRight') { current = (current + 1) % srcs.length; updateLb(); }
+    });
 })();
 </script>
 </body>

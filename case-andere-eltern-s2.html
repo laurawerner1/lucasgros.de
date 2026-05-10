@@ -8,6 +8,10 @@
 <meta name="author" content="Dr. Lucas Gros">
 <meta name="robots" content="index, follow">
 <link rel="canonical" href="https://www.lucasgros.de/case-andere-eltern-s2.html">
+
+<link rel="icon" type="image/png" href="images/logo.png">
+<link rel="apple-touch-icon" href="images/logo.png">
+<meta name="keywords" content="Andere Eltern Staffel 2, TNT Comedy, Kampagnenkonzept, Social Media Assets, Creative Direction München, Dr. Lucas Gros, Content Strategie, Serienmarketing, Social Media Kampagne, Comedy Serie, Warner TV Comedy, Branding München, Konzeptioner München, Copywriter München, Digital Creative, Markenkommunikation, Entertainment Marketing, Fan Engagement, Creative Strategy, München">
 <meta property="og:title" content="Andere Eltern Staffel 2 – Kampagnenkonzept & Social Media | Dr. Lucas Gros">
 <meta property="og:description" content="Konzept, Text und Creative Direction für die TNT-Comedy-Kampagne zu Andere Eltern S2. Ein Case von Dr. Lucas Gros, München.">
 <meta property="og:image" content="https://www.lucasgros.de/images/CaseAndereElternS2/andere-eltern-s2-header.jpg">
@@ -68,8 +72,8 @@ nav{position:fixed;top:0;left:0;right:0;z-index:200;background:var(--white);disp
 .img-grid-2{display:grid;grid-template-columns:1fr 1fr;gap:40px;}
 
 .img-item{overflow:hidden;position:relative;cursor:none;}
-.img-item img{width:100%;height:100%;object-fit:cover;display:block;filter:grayscale(10%);transition:filter .4s,transform .5s;}
-.img-item:hover img{filter:grayscale(0%);transform:scale(1.03);}
+.img-item img, .img-item video{width:100%;height:100%;object-fit:cover;display:block;filter:grayscale(10%);transition:filter .4s,transform .5s;}
+.img-item:hover img, .img-item:hover video{filter:grayscale(0%);transform:scale(1.03);}
 .img-item.ratio-wide{aspect-ratio:16/9;}
 
 /* VIDEO MODUL (Adapted from S1) */
@@ -250,7 +254,7 @@ footer{display:flex;justify-content:space-between;align-items:center;padding:2re
     <div class="img-group">
       <div class="img-grid-1">
         <div class="img-item ratio-wide" data-lb-src="images/CaseAndereElternS2/andere-eltern-s2-social-1.mp4">
-          <img src="images/CaseAndereElternS2/andere-eltern-s2-social-1.mp4" alt="Andere Eltern S2 Social Video Asset – Kampagne Dr. Lucas Gros für TNT Comedy" loading="lazy">
+          <video src="images/CaseAndereElternS2/andere-eltern-s2-social-1.mp4" autoplay muted loop playsinline></video>
         </div>
       </div>
       <div class="img-grid-1" style="margin-top:0;">
@@ -273,7 +277,7 @@ footer{display:flex;justify-content:space-between;align-items:center;padding:2re
 
       <div class="img-grid-1">
         <div class="img-item ratio-wide" data-lb-src="images/CaseAndereElternS2/andere-eltern-s2-social-5.mp4">
-          <img src="images/CaseAndereElternS2/andere-eltern-s2-social-5.mp4" alt="Andere Eltern S2 Social Video Asset – Teaser TNT Comedy, Dr. Lucas Gros" loading="lazy">
+          <video src="images/CaseAndereElternS2/andere-eltern-s2-social-5.mp4" autoplay muted loop playsinline></video>
         </div>
       </div>
 
@@ -409,7 +413,7 @@ footer{display:flex;justify-content:space-between;align-items:center;padding:2re
   var srcs     = lbItems.map(function(el) {
     return {
       src: el.getAttribute('data-lb-src'),
-      alt: (el.querySelector('img') || {}).alt || ''
+      alt: (el.querySelector('img') || el.querySelector('video') || {}).alt || ''
     };
   });
   var current = 0;

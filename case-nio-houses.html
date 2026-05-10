@@ -4,6 +4,9 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>NIO House – Markteintritt & Strategie Berlin | Dr. Lucas Gros</title>
+<link rel="icon" type="image/png" href="images/logo.png">
+<link rel="apple-touch-icon" href="images/logo.png">
+<meta name="keywords" content="NIO House, Markteintritt Deutschland, Dr. Lucas Gros, NIO Berlin, Markenaktivierung, Markteintritt Kommunikationsstrategie, Automotive Marketing, Flagship Opening, Community Building, Cultural Hub, NIO Düsseldorf, NIO Frankfurt, NIO Hamburg, Brand Experience, Strategische Beratung München, Case Study Automotive">
 <meta name="description" content="Skalierbare Markteintrittsstrategie für NIO in Deutschland. Dr. Lucas Gros entwickelte das Konzept 'Welcome Home' für die NIO Houses in Berlin, Düsseldorf, Frankfurt und Hamburg.">
 <meta name="author" content="Dr. Lucas Gros">
 <meta name="robots" content="index, follow">
@@ -91,11 +94,11 @@ a.meta-cell:hover{background:var(--faint);}
 .gc-label{font-size:.58rem;font-weight:500;letter-spacing:.2em;text-transform:uppercase;color:var(--light);margin-bottom:.5rem;}
 .gc-text{font-size:1.15rem;font-weight:300;line-height:1.55;color:#444;max-width:560px;}
 
-/* Wide Single Image */
+/* Wide Single Image / Video Block */
 .wide-image-outer{padding:0 2rem;display:flex;justify-content:center;}
 .wide-image{width:100%;max-width:1000px;aspect-ratio:16/9;overflow:hidden;position:relative;background:var(--faint);cursor:none;}
-.wide-image img{width:100%;height:100%;object-fit:cover;display:block;filter:grayscale(10%);transition:filter .4s,transform .5s;}
-.wide-image:hover img{filter:grayscale(0%);transform:scale(1.015);}
+.wide-image img, .wide-image video{width:100%;height:100%;object-fit:cover;display:block;filter:grayscale(10%);transition:filter .4s,transform .5s;}
+.wide-image:hover img, .wide-image:hover video{filter:grayscale(0%);transform:scale(1.015);}
 
 /* Gallery */
 .gallery-outer{padding:40px 2rem 0;display:flex;justify-content:center;}
@@ -125,8 +128,12 @@ a.meta-cell:hover{background:var(--faint);}
 /* Lightbox */
 .lightbox{position:fixed;inset:0;z-index:8000;background:rgba(12,12,12,.95);display:flex;align-items:center;justify-content:center;opacity:0;pointer-events:none;transition:opacity .3s;}
 .lightbox.open{opacity:1;pointer-events:all;}
-.lightbox img{max-width:92vw;max-height:90vh;object-fit:contain;display:block;}
+.lightbox img, .lightbox video{max-width:92vw;max-height:90vh;object-fit:contain;display:block;}
 .lightbox-close{position:absolute;top:1.5rem;right:2rem;font-size:1.5rem;color:rgba(245,245,242,.7);background:none;border:none;cursor:none;}
+.lightbox-nav{position:absolute;top:50%;transform:translateY(-50%);font-size:1.2rem;font-weight:300;color:rgba(245,245,242,.5);background:none;border:none;cursor:none;padding:.75rem 1.25rem;}
+.lightbox-prev{left:1rem;}
+.lightbox-next{right:1rem;}
+.lightbox-counter{position:absolute;bottom:1.75rem;left:50%;transform:translateX(-50%);font-size:.6rem;color:rgba(245,245,242,.4);letter-spacing:.18em;text-transform:uppercase;}
 
 /* More Cases */
 .more-cases{margin-top:6rem;}
@@ -172,7 +179,12 @@ footer{display:flex;justify-content:space-between;align-items:center;padding:2re
 
 <div class="lightbox" id="lightbox">
     <button class="lightbox-close" id="lb-close">×</button>
-    <img src="" alt="" id="lb-img">
+    <button class="lightbox-nav lightbox-prev" id="lb-prev">←</button>
+    <div id="lb-content" style="display:contents;">
+        <img src="" alt="" id="lb-img">
+    </div>
+    <button class="lightbox-nav lightbox-next" id="lb-next">→</button>
+    <span class="lightbox-counter" id="lb-counter"></span>
 </div>
 
 <nav>
@@ -243,25 +255,25 @@ footer{display:flex;justify-content:space-between;align-items:center;padding:2re
 </div>
 
 <div class="wide-image-outer">
-    <div class="wide-image" data-lb-src="images/CaseNIOHouse/nio-house-1.jpg">
+    <div class="wide-image lb-trigger" data-lb-src="images/CaseNIOHouse/nio-house-1.jpg">
         <img src="images/CaseNIOHouse/nio-house-1.jpg" alt="Innenansicht NIO House Berlin – Community Space Strategie" loading="lazy">
     </div>
 </div>
 
 <div class="gallery-outer">
     <div class="gallery-3-col">
-        <div class="gallery-item" data-lb-src="images/CaseNIOHouse/nio-house-2.jpg"><img src="images/CaseNIOHouse/nio-house-2.jpg" alt="NIO House Event Aktivierung 1" loading="lazy"></div>
-        <div class="gallery-item" data-lb-src="images/CaseNIOHouse/nio-house-3.jpg"><img src="images/CaseNIOHouse/nio-house-3.jpg" alt="NIO House Event Aktivierung 2" loading="lazy"></div>
-        <div class="gallery-item" data-lb-src="images/CaseNIOHouse/nio-house-4.jpg"><img src="images/CaseNIOHouse/nio-house-4.jpg" alt="NIO House Event Aktivierung 3" loading="lazy"></div>
+        <div class="gallery-item lb-trigger" data-lb-src="images/CaseNIOHouse/nio-house-2.jpg"><img src="images/CaseNIOHouse/nio-house-2.jpg" alt="NIO House Event Aktivierung 1" loading="lazy"></div>
+        <div class="gallery-item lb-trigger" data-lb-src="images/CaseNIOHouse/nio-house-3.jpg"><img src="images/CaseNIOHouse/nio-house-3.jpg" alt="NIO House Event Aktivierung 2" loading="lazy"></div>
+        <div class="gallery-item lb-trigger" data-lb-src="images/CaseNIOHouse/nio-house-4.jpg"><img src="images/CaseNIOHouse/nio-house-4.jpg" alt="NIO House Event Aktivierung 3" loading="lazy"></div>
     </div>
 </div>
 
 <div class="wide-image-outer" style="padding-top: 40px;">
     <div class="wide-stack">
-        <div class="wide-image" data-lb-src="images/CaseNIOHouse/nio-house-5.jpg">
+        <div class="wide-image lb-trigger" data-lb-src="images/CaseNIOHouse/nio-house-5.jpg">
             <img src="images/CaseNIOHouse/nio-house-5.jpg" alt="NIO House Berlin Außenansicht Kurfürstendamm" loading="lazy">
         </div>
-        <div class="wide-image" data-lb-src="images/CaseNIOHouse/nio-house-6.jpg">
+        <div class="wide-image lb-trigger" data-lb-src="images/CaseNIOHouse/nio-house-6.jpg">
             <img src="images/CaseNIOHouse/nio-house-6.jpg" alt="NIO Brand Experience Center Deutschland" loading="lazy">
         </div>
     </div>
@@ -279,11 +291,11 @@ footer{display:flex;justify-content:space-between;align-items:center;padding:2re
 
 <div class="wide-image-outer" style="padding-top: 40px;">
     <div class="wide-stack">
-        <div class="wide-image" data-lb-src="images/CaseNIOHouse/nio-house-7.jpg">
+        <div class="wide-image lb-trigger" data-lb-src="images/CaseNIOHouse/nio-house-7.jpg">
             <img src="images/CaseNIOHouse/nio-house-7.jpg" alt="Lokale Aktivierung NIO House" loading="lazy">
         </div>
-        <div class="wide-image" data-lb-src="images/CaseNIOHouse/nio-house-8.mp4">
-            <img src="images/CaseNIOHouse/nio-house-8.mp4" alt="NIO Community Event Impressionen" loading="lazy">
+        <div class="wide-image lb-trigger" data-lb-src="images/CaseNIOHouse/nio-house-8.mp4">
+            <video src="images/CaseNIOHouse/nio-house-8.mp4" autoplay muted loop playsinline></video>
         </div>
     </div>
 </div>
@@ -324,35 +336,6 @@ footer{display:flex;justify-content:space-between;align-items:center;padding:2re
         <li><a href="impressum.html">Impressum</a></li>
     </ul>
 </footer>
-
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "CreativeWork",
-  "name": "NIO House Markteintrittsstrategie Deutschland",
-  "url": "https://www.lucasgros.de/case-nio-houses.html",
-  "description": "Dr. Lucas Gros entwickelte die skalierbare Markteintrittsstrategie 'Welcome Home' für NIO in Deutschland, umgesetzt in Berlin, Düsseldorf, Frankfurt und Hamburg.",
-  "keywords": ["NIO", "NIO House", "Markteintritt", "Automotive Strategie", "Berlin", "Markenaktivierung"],
-  "inLanguage": "de",
-  "author": {
-    "@type": "Person",
-    "name": "Dr. Lucas Gros",
-    "url": "https://www.lucasgros.de",
-    "email": "info@lucasgros.de",
-    "address": {
-      "@type": "PostalAddress",
-      "addressLocality": "München",
-      "addressCountry": "DE"
-    },
-    "sameAs": "https://linkedin.com/in/lucasvgros"
-  },
-  "provider": {
-    "@type": "Organization",
-    "name": "NIO",
-    "url": "https://www.nio.com"
-  }
-}
-</script>
 
 <script>
 (function() {
@@ -418,20 +401,71 @@ footer{display:flex;justify-content:space-between;align-items:center;padding:2re
         }
     });
 
+    // Lightbox System (Enhanced)
     const lightbox = document.getElementById('lightbox');
-    const lbImg = document.getElementById('lb-img');
-    const closeLb = () => { lightbox.classList.remove('open'); document.body.style.overflow = ''; };
+    const lbContent = document.getElementById('lb-content');
+    const lbCtr = document.getElementById('lb-counter');
+    const triggers = Array.from(document.querySelectorAll('.lb-trigger'));
+    const assets = triggers.map(el => ({
+        src: el.dataset.lbSrc,
+        type: el.dataset.lbSrc.endsWith('.mp4') ? 'video' : 'image'
+    }));
+    let currentIdx = 0;
 
-    document.querySelectorAll('[data-lb-src]').forEach(el => {
+    function updateLightbox() {
+        const asset = assets[currentIdx];
+        lbContent.innerHTML = '';
+        
+        if (asset.type === 'video') {
+            const videoEl = document.createElement('video');
+            videoEl.src = asset.src;
+            videoEl.autoplay = true;
+            videoEl.muted = true;
+            videoEl.loop = true;
+            videoEl.playsInline = true;
+            lbContent.appendChild(videoEl);
+        } else {
+            const imgEl = document.createElement('img');
+            imgEl.src = asset.src;
+            lbContent.appendChild(imgEl);
+        }
+        lbCtr.textContent = (currentIdx + 1) + ' / ' + assets.length;
+    }
+
+    const closeLb = () => { 
+        lightbox.classList.remove('open'); 
+        lbContent.innerHTML = ''; 
+        document.body.style.overflow = ''; 
+    };
+
+    triggers.forEach((el, index) => {
         el.addEventListener('click', () => {
-            lbImg.src = el.dataset.lbSrc;
+            currentIdx = index;
+            updateLightbox();
             lightbox.classList.add('open');
             document.body.style.overflow = 'hidden';
         });
     });
 
     document.getElementById('lb-close').addEventListener('click', closeLb);
-    document.addEventListener('keydown', e => { if (e.key === 'Escape') closeLb(); });
+    document.getElementById('lb-prev').addEventListener('click', (e) => {
+        e.stopPropagation();
+        currentIdx = (currentIdx - 1 + assets.length) % assets.length;
+        updateLightbox();
+    });
+    document.getElementById('lb-next').addEventListener('click', (e) => {
+        e.stopPropagation();
+        currentIdx = (currentIdx + 1) % assets.length;
+        updateLightbox();
+    });
+
+    document.addEventListener('keydown', e => { 
+        if (!lightbox.classList.contains('open')) return;
+        if (e.key === 'Escape') closeLb(); 
+        if (e.key === 'ArrowLeft') { currentIdx = (currentIdx - 1 + assets.length) % assets.length; updateLightbox(); }
+        if (e.key === 'ArrowRight') { currentIdx = (currentIdx + 1) % assets.length; updateLightbox(); }
+    });
+    
     lightbox.addEventListener('click', e => { if (e.target === lightbox) closeLb(); });
 })();
 </script>

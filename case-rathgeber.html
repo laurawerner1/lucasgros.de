@@ -9,6 +9,9 @@
 <meta name="robots" content="index, follow">
 <link rel="canonical" href="https://www.lucasgros.de/case-rathgeber.html">
 
+<link rel="icon" type="image/png" href="images/logo.png">
+<link rel="apple-touch-icon" href="images/logo.png">
+<meta name="keywords" content="Markenpositionierung, Markenstrategie, Markenkern, Claim Entwicklung, Markenanalyse, Rathgeber, Dr. Lucas Gros, B2B Branding, Kennzeichnungslösungen, Corporate Identity, Differenzierung, Brand Strategy Munich">
 <meta property="og:title" content="Rathgeber – Markenpositionierung & Markenstrategie | Dr. Lucas Gros">
 <meta property="og:description" content="Markenanalyse und Neupositionierung für einen international führenden Hersteller von Kennzeichnungslösungen. Ein Case von Dr. Lucas Gros, München.">
 <meta property="og:image" content="https://www.lucasgros.de/images/CaseRathgeber/rathgeber-cover.jpg">
@@ -70,8 +73,8 @@ nav{position:fixed;top:0;left:0;right:0;z-index:200;background:var(--white);disp
 .img-grid-2{display:grid;grid-template-columns:1fr 1fr;gap:40px;}
 .img-grid-1{display:grid;grid-template-columns:1fr;gap:0;}
 .img-item{overflow:hidden;position:relative;cursor:none;}
-.img-item img{width:100%;height:100%;object-fit:cover;display:block;filter:grayscale(10%);transition:filter .4s,transform .5s;}
-.img-item:hover img{filter:grayscale(0%);transform:scale(1.03);}
+.img-item img, .img-item video{width:100%;height:100%;object-fit:cover;display:block;filter:grayscale(10%);transition:filter .4s,transform .5s;}
+.img-item:hover img, .img-item:hover video{filter:grayscale(0%);transform:scale(1.03);}
 .img-item.ratio-wide{aspect-ratio:16/9;}
 .img-item.ratio-full{aspect-ratio:16/9;}
 
@@ -102,7 +105,7 @@ nav{position:fixed;top:0;left:0;right:0;z-index:200;background:var(--white);disp
 /* Lightbox */
 .lightbox{position:fixed;inset:0;z-index:8000;background:rgba(12,12,12,.95);display:flex;align-items:center;justify-content:center;opacity:0;pointer-events:none;transition:opacity .3s;}
 .lightbox.open{opacity:1;pointer-events:all;}
-.lightbox img{max-width:92vw;max-height:90vh;object-fit:contain;display:block;}
+.lightbox img, .lightbox video{max-width:92vw;max-height:90vh;object-fit:contain;display:block;}
 .lightbox-close{position:absolute;top:1.5rem;right:2rem;font-size:1.5rem;font-weight:300;color:rgba(245,245,242,.7);background:none;border:none;cursor:none;}
 .lightbox-nav{position:absolute;top:50%;transform:translateY(-50%);font-size:1.2rem;font-weight:300;color:rgba(245,245,242,.5);background:none;border:none;cursor:none;padding:.75rem 1.25rem;}
 .lightbox-prev{left:1rem;}
@@ -141,7 +144,9 @@ footer{display:flex;justify-content:space-between;align-items:center;padding:2re
 <div class="lightbox" id="lightbox">
   <button class="lightbox-close" id="lb-close">×</button>
   <button class="lightbox-nav lightbox-prev" id="lb-prev">←</button>
-  <img src="" alt="" id="lb-img">
+  <div id="lb-content" style="display:flex;align-items:center;justify-content:center;">
+    <img src="" alt="" id="lb-img">
+  </div>
   <button class="lightbox-nav lightbox-next" id="lb-next">→</button>
   <span class="lightbox-counter" id="lb-counter"></span>
 </div>
@@ -195,7 +200,9 @@ footer{display:flex;justify-content:space-between;align-items:center;padding:2re
        <div class="img-group">
       <div class="img-grid-1">
         <div class="img-item ratio-full" data-lb>
-          <img src="images/CaseRathgeber/rathgeber-1.mp4" alt="Rathgeber CI Umsetzung DACHCOM – Markenstrategie Dr. Lucas Gros" loading="lazy">
+          <video autoplay muted loop playsinline poster="images/CaseRathgeber/rathgeber-2.jpg">
+            <source src="images/CaseRathgeber/rathgeber-1.mp4" type="video/mp4">
+          </video>
         </div>
       </div>
 
@@ -242,7 +249,9 @@ footer{display:flex;justify-content:space-between;align-items:center;padding:2re
     <div class="img-group">
       <div class="img-grid-1">
         <div class="img-item ratio-full" data-lb>
-          <img src="images/CaseRathgeber/rathgeber-6.mp4" alt="Rathgeber Corporate Identity Umsetzung – Kooperation Dachcom" loading="lazy">
+          <video autoplay muted loop playsinline poster="images/CaseRathgeber/rathgeber-7.jpg">
+            <source src="images/CaseRathgeber/rathgeber-6.mp4" type="video/mp4">
+          </video>
         </div>
       </div>
 
@@ -347,18 +356,36 @@ footer{display:flex;justify-content:space-between;align-items:center;padding:2re
 
   // Lightbox
   var lightbox = document.getElementById('lightbox');
+  var lbContent = document.getElementById('lb-content');
   var lbImg    = document.getElementById('lb-img');
   var lbCtr    = document.getElementById('lb-counter');
   var items    = Array.from(document.querySelectorAll('.img-item[data-lb]'));
-  var srcs     = items.map(function(el) {
-    var img = el.querySelector('img');
-    return { src: img.src, alt: img.alt };
+  
+  var srcs = items.map(function(el) {
+    var media = el.querySelector('img, video');
+    var isVideo = media.tagName.toLowerCase() === 'video';
+    var src = isVideo ? media.querySelector('source').src : media.src;
+    return { src: src, alt: isVideo ? '' : media.alt, isVideo: isVideo };
   });
+  
   var current = 0;
 
   function updateLb() {
-    lbImg.src = srcs[current].src;
-    lbImg.alt = srcs[current].alt;
+    lbContent.innerHTML = ''; // Clear
+    if (srcs[current].isVideo) {
+      var video = document.createElement('video');
+      video.src = srcs[current].src;
+      video.autoplay = true;
+      video.muted = true;
+      video.loop = true;
+      video.playsInline = true;
+      lbContent.appendChild(video);
+    } else {
+      var img = document.createElement('img');
+      img.src = srcs[current].src;
+      img.alt = srcs[current].alt;
+      lbContent.appendChild(img);
+    }
     lbCtr.textContent = (current + 1) + ' / ' + srcs.length;
   }
 
@@ -386,7 +413,7 @@ footer{display:flex;justify-content:space-between;align-items:center;padding:2re
     updateLb();
   });
   lightbox.addEventListener('click', function(e) {
-    if (e.target === lightbox) { lightbox.classList.remove('open'); document.body.style.overflow = ''; }
+    if (e.target === lightbox || e.target === lbContent) { lightbox.classList.remove('open'); document.body.style.overflow = ''; }
   });
   document.addEventListener('keydown', function(e) {
     if (!lightbox.classList.contains('open')) return;

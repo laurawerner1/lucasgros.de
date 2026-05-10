@@ -9,6 +9,9 @@
 <meta name="robots" content="index, follow">
 <link rel="canonical" href="https://www.lucasgros.de/case-mini-redbull.html">
 
+<link rel="icon" type="image/png" href="images/logo.png">
+<link rel="apple-touch-icon" href="images/logo.png">
+<meta name="keywords" content="MINI Red Bull Case Study, Brand Strategy Los Angeles, Dance Your Style 2025, Markenstrategie MINI, Red Bull Kooperation, Cultural Marketing MINI, Brand Activation Dance, Experiential Marketing Los Angeles, Dr. Lucas Gros, Creative Strategist München, Markenexperte Bayern, Strategic Partnership Automotive, Lifestyle Marketing Case, Red Bull Dance Your Style World Final, Brand Experience MINI, Creative Direction München, Kampagnenstrategie Automotive, Markenkommunikation Lifestyle, Urban Culture Marketing, Drive the Culture MINI">
 <meta property="og:title" content="MINI x Red Bull – Drive the Culture | Dr. Lucas Gros">
 <meta property="og:description" content="Markenstrategie und kulturelles Marketing für die Kooperation zwischen MINI und Red Bull in Los Angeles.">
 <meta property="og:image" content="https://www.lucasgros.de/images/CaseMiniRedBull/mini-redbull-header.jpg">
@@ -70,12 +73,12 @@ nav{position:fixed;top:0;left:0;right:0;z-index:200;background:var(--white);disp
 .gc-label{font-size:.58rem;font-weight:500;letter-spacing:.2em;text-transform:uppercase;color:var(--light);margin-bottom:.5rem;}
 .gc-text{font-size:1.15rem;font-weight:300;line-height:1.55;color:#444;max-width:560px;}
 
-/* Images */
+/* Images & Silent Videos */
 .wide-image-outer{padding:0 2rem;display:flex;justify-content:center;}
 .wide-stack{display:flex;flex-direction:column;gap:40px;width:100%;max-width:1000px;}
 .wide-image{width:100%;aspect-ratio:16/9;overflow:hidden;position:relative;background:var(--faint);cursor:none;}
-.wide-image img{width:100%;height:100%;object-fit:cover;display:block;filter:grayscale(10%);transition:filter .4s,transform .5s;}
-.wide-image:hover img{filter:grayscale(0%);transform:scale(1.015);}
+.wide-image img, .wide-image video{width:100%;height:100%;object-fit:cover;display:block;filter:grayscale(10%);transition:filter .4s,transform .5s;}
+.wide-image:hover img, .wide-image:hover video{filter:grayscale(0%);transform:scale(1.015);}
 
 /* Image grid helpers */
 .img-grid-3col{display:grid;grid-template-columns:1fr 1fr 1fr;gap:40px;}
@@ -85,7 +88,7 @@ nav{position:fixed;top:0;left:0;right:0;z-index:200;background:var(--white);disp
 .img-item.ratio-portrait{aspect-ratio:9/16;}
 @media(max-width:768px){.img-grid-3col{grid-template-columns:1fr;}}
 
-/* VIDEO MODULE */
+/* VIDEO MODULE (WITH CONTROLS) */
 .case-video{padding:0 2rem;display:flex;flex-direction:column;align-items:center;}
 .yt-wrap{width:100%;max-width:1000px;aspect-ratio:16/9;position:relative;background:#000;overflow:hidden;}
 .yt-thumb{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block;filter:grayscale(10%);transition:filter .3s;z-index:10;}
@@ -107,14 +110,14 @@ nav{position:fixed;top:0;left:0;right:0;z-index:200;background:var(--white);disp
 /* Lightbox */
 .lightbox{position:fixed;inset:0;z-index:8000;background:rgba(12,12,12,.98);display:flex;align-items:center;justify-content:center;opacity:0;pointer-events:none;transition:opacity .3s;}
 .lightbox.open{opacity:1;pointer-events:all;}
-.lightbox img{max-width:92vw;max-height:90vh;object-fit:contain;display:block;}
+.lightbox img, .lightbox video{max-width:92vw;max-height:90vh;object-fit:contain;display:block;}
 .lightbox-close{position:absolute;top:1.5rem;right:2rem;font-size:1.5rem;font-weight:300;color:rgba(245,245,242,.7);background:none;border:none;cursor:none;}
 .lightbox-nav{position:absolute;top:50%;transform:translateY(-50%);font-size:1.2rem;font-weight:300;color:rgba(245,245,242,.5);background:none;border:none;cursor:none;padding:.75rem 1.25rem;}
 .lightbox-prev{left:1rem;}
 .lightbox-next{right:1rem;}
 .lightbox-counter{position:absolute;bottom:1.75rem;left:50%;transform:translateX(-50%);font-size:.6rem;color:rgba(245,245,242,.4);letter-spacing:.18em;text-transform:uppercase;}
 
-/* More Cases - 1:1 Adapted from Cartier */
+/* More Cases */
 .more-cases{margin-top:6rem;}
 .more-header{display:flex;justify-content:space-between;align-items:center;padding:0 2rem 1.5rem;}
 .more-label{font-size:.6rem;font-weight:500;letter-spacing:.2em;text-transform:uppercase;color:var(--mid);}
@@ -156,7 +159,10 @@ footer{display:flex;justify-content:space-between;align-items:center;padding:2re
 <div class="lightbox" id="lightbox">
     <button class="lightbox-close" id="lb-close">×</button>
     <button class="lightbox-nav lightbox-prev" id="lb-prev">←</button>
-    <img src="" alt="" id="lb-img">
+    <div id="lb-content" style="display:contents;">
+        <img src="" alt="" id="lb-img">
+        <video id="lb-video" src="" autoplay muted loop playsinline style="display:none;"></video>
+    </div>
     <button class="lightbox-nav lightbox-next" id="lb-next">→</button>
     <span class="lightbox-counter" id="lb-counter"></span>
 </div>
@@ -235,7 +241,9 @@ footer{display:flex;justify-content:space-between;align-items:center;padding:2re
 
 <div class="wide-image-outer">
     <div class="wide-stack">
-        <div class="wide-image" data-lb-src="images/CaseMiniRedBull/mini-redbull-3.mp4"><img src="images/CaseMiniRedBull/mini-redbull-3.mp4" alt="MINI x Red Bull Umsetzung" loading="lazy"></div>
+        <div class="wide-image" data-lb-src="images/CaseMiniRedBull/mini-redbull-3.mp4">
+            <video src="images/CaseMiniRedBull/mini-redbull-3.mp4" autoplay muted loop playsinline></video>
+        </div>
         <div class="img-grid-3col">
             <div class="img-item ratio-portrait" data-lb-src="images/CaseMiniRedBull/mini-redbull-4.jpg"><img src="images/CaseMiniRedBull/mini-redbull-4.jpg" alt="MINI x Red Bull Kampagnendetail 1" loading="lazy"></div>
             <div class="img-item ratio-portrait" data-lb-src="images/CaseMiniRedBull/mini-redbull-5.jpg"><img src="images/CaseMiniRedBull/mini-redbull-5.jpg" alt="MINI x Red Bull Kampagnendetail 2" loading="lazy"></div>
@@ -309,35 +317,6 @@ footer{display:flex;justify-content:space-between;align-items:center;padding:2re
 <footer>
     <address style="font-style:normal;display:contents;"><span class="footer-copy">© 2026 <a href="https://www.lucasgros.de" rel="author" style="color:inherit;text-decoration:none;">Dr. Lucas Gros</a>, München</span></address>
 </footer>
-
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "CreativeWork",
-  "name": "MINI x Red Bull – Drive the Culture",
-  "url": "https://www.lucasgros.de/case-mini-redbull.html",
-  "description": "Dr. Lucas Gros entwickelte die Strategie für die globale Partnerschaft zwischen MINI und dem Red Bull Dance Your Style World Final in Los Angeles.",
-  "keywords": ["MINI", "Red Bull", "Brand Partnership", "Cultural Marketing", "Strategy", "Los Angeles"],
-  "inLanguage": "de",
-  "author": {
-    "@type": "Person",
-    "name": "Dr. Lucas Gros",
-    "url": "https://www.lucasgros.de",
-    "email": "info@lucasgros.de",
-    "address": {
-      "@type": "PostalAddress",
-      "addressLocality": "München",
-      "addressCountry": "DE"
-    },
-    "sameAs": "https://linkedin.com/in/lucasvgros"
-  },
-  "provider": {
-    "@type": "Organization",
-    "name": "MINI",
-    "url": "https://www.mini.com"
-  }
-}
-</script>
 
 <script>
 (function() {
@@ -424,28 +403,42 @@ footer{display:flex;justify-content:space-between;align-items:center;padding:2re
         });
     }
 
-    // Lightbox
+    // Lightbox Logic (Extended for Video Support)
     var lightbox = document.getElementById('lightbox');
     var lbImg    = document.getElementById('lb-img');
+    var lbVideo  = document.getElementById('lb-video');
     var lbCtr    = document.getElementById('lb-counter');
     var lbItems  = Array.from(document.querySelectorAll('[data-lb-src]'));
     var srcs     = lbItems.map(function(el) {
         return {
             src: el.getAttribute('data-lb-src'),
-            alt: (el.querySelector('img') || {}).alt || ''
+            alt: (el.querySelector('img') || {}).alt || '',
+            isVideo: el.getAttribute('data-lb-src').toLowerCase().endsWith('.mp4')
         };
     });
     var current = 0;
 
     function updateLb() {
         if (srcs.length === 0) return;
-        lbImg.src = srcs[current].src;
-        lbImg.alt = srcs[current].alt;
+        var item = srcs[current];
+        
+        if(item.isVideo) {
+            lbImg.style.display = 'none';
+            lbVideo.style.display = 'block';
+            lbVideo.src = item.src;
+        } else {
+            lbVideo.style.display = 'none';
+            lbImg.style.display = 'block';
+            lbImg.src = item.src;
+            lbImg.alt = item.alt;
+        }
         lbCtr.textContent = (current + 1) + ' / ' + srcs.length;
     }
 
     function closeLightbox() {
         lightbox.classList.remove('open');
+        lbVideo.pause();
+        lbVideo.src = "";
         document.body.style.overflow = '';
     }
 

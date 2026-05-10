@@ -4,6 +4,9 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>yfood Hot Bowls – Kampagne & Produktlaunch | Dr. Lucas Gros</title>
+<link rel="icon" type="image/png" href="images/logo.png">
+<link rel="apple-touch-icon" href="images/logo.png">
+<meta name="keywords" content="yfood Hot Bowls, Produktlaunch Kampagne, Dr. Lucas Gros, Creative Strategist München, Launch-Strategie Food, Copywriting Social Media, Markenkommunikation, Case Study Produktlaunch, Branding yfood, Konzeptioner München, Kampagnenentwicklung, Corporate Language Food, Markteinführung Strategie, Storytelling Marketing, Werbetexter München, Digitale Kampagne, Brand Activation, Aha statt Blabla, Creative Direction München, Healthy Fast Food Marketing">
 <meta name="description" content="Dr. Lucas Gros entwickelte die Launch-Kampagne für yfood Hot Bowls – von der Strategie und Konzeption bis zum markanten Copywriting für Social Media.">
 <meta name="author" content="Dr. Lucas Gros">
 <meta name="robots" content="index, follow">
@@ -63,8 +66,8 @@ nav{position:fixed;top:0;left:0;right:0;z-index:200;background:var(--white);disp
 /* Image Stack */
 .case-images{padding:0 2rem 5rem;display:flex;flex-direction:column;gap:40px;max-width:calc(1000px + 4rem);margin:0 auto;width:100%;}
 .case-image-wrap{overflow:hidden;width:100%;}
-.case-image-wrap img{width:100%;display:block;filter:grayscale(10%);transition:filter .4s;}
-.case-image-wrap:hover img{filter:grayscale(0%);}
+.case-image-wrap img, .case-image-wrap video{width:100%;display:block;filter:grayscale(10%);transition:filter .4s;}
+.case-image-wrap:hover img, .case-image-wrap:hover video{filter:grayscale(0%);}
 
 /* More Cases & Rows */
 .more-cases{margin-top:5rem;}
@@ -85,7 +88,7 @@ nav{position:fixed;top:0;left:0;right:0;z-index:200;background:var(--white);disp
 /* Lightbox Styling */
 .lightbox{position:fixed;inset:0;z-index:8000;background:rgba(12,12,12,.95);display:flex;align-items:center;justify-content:center;opacity:0;pointer-events:none;transition:opacity .3s;}
 .lightbox.open{opacity:1;pointer-events:all;}
-.lightbox img{max-width:92vw;max-height:90vh;object-fit:contain;display:block;}
+.lightbox img, .lightbox video{max-width:92vw;max-height:90vh;object-fit:contain;display:block;}
 .lightbox-close{position:absolute;top:1.5rem;right:2rem;font-size:1.5rem;font-weight:300;color:rgba(245,245,242,.7);background:none;border:none;cursor:none;}
 .lightbox-nav{position:absolute;top:50%;transform:translateY(-50%);font-size:1.2rem;font-weight:300;color:rgba(245,245,242,.5);background:none;border:none;cursor:none;padding:.75rem 1.25rem;}
 .lightbox-prev{left:1rem;}
@@ -124,7 +127,9 @@ footer{display:flex;justify-content:space-between;align-items:center;padding:2re
 <div class="lightbox" id="lightbox">
   <button class="lightbox-close" id="lb-close">×</button>
   <button class="lightbox-nav lightbox-prev" id="lb-prev">←</button>
-  <img src="" alt="" id="lb-img">
+  <div id="lb-content-container">
+      <img src="" alt="" id="lb-img">
+  </div>
   <button class="lightbox-nav lightbox-next" id="lb-next">→</button>
   <span class="lightbox-counter" id="lb-counter"></span>
 </div>
@@ -178,9 +183,11 @@ footer{display:flex;justify-content:space-between;align-items:center;padding:2re
   <div class="case-image-wrap img-item" data-lb>
     <img src="images/CaseYfoodHotBowls/yfood-hotbowls-1.jpg" alt="yfood Hot Bowls – Kampagnenmotiv Strategie Dr. Lucas Gros" loading="lazy">
   </div>
+  
   <div class="case-image-wrap img-item" data-lb>
-    <img src="images/CaseYfoodHotBowls/yfood-hotbowls-2.mp4" alt="yfood Hot Bowls – Social Media Assets Copywriting" loading="lazy">
+    <video src="images/CaseYfoodHotBowls/yfood-hotbowls-2.mp4" autoplay loop muted playsinline poster="images/CaseYfoodHotBowls/yfood-hotbowls-header.jpg"></video>
   </div>
+
   <div class="case-image-wrap img-item" data-lb>
     <img src="images/CaseYfoodHotBowls/yfood-hotbowls-3.jpg" alt="yfood Hot Bowls – Copywriting Samples Produktlaunch" loading="lazy">
   </div>
@@ -194,7 +201,7 @@ footer{display:flex;justify-content:space-between;align-items:center;padding:2re
     <span class="more-label">Weitere Cases</span>
     <a href="work.html" class="more-all">Alle Cases →</a>
   </div>
-  <a class="project-row" href="case-yfood-vegan.html"><span class="pr-index">01</span><span class="pr-title">Willkommen in der #Vegang</span><span class="pr-client">yfood</span><span class="pr-type">Campaign</span></a>
+  <a class="project-row" href="case-yfood-vegang.html"><span class="pr-index">01</span><span class="pr-title">Willkommen in der #Vegang</span><span class="pr-client">yfood</span><span class="pr-type">Campaign</span></a>
   <a class="project-row" href="case-audi-mq.html"><span class="pr-index">02</span><span class="pr-title">Never Stop Questioning</span><span class="pr-client">Audi MQ!</span><span class="pr-type">Experiential</span></a>
   <a class="project-row" href="case-prefa.html"><span class="pr-index">03</span><span class="pr-title">Jetzt ein Dach</span><span class="pr-client">Prefa</span><span class="pr-type">Campaign</span></a>
 </div>
@@ -266,19 +273,30 @@ footer{display:flex;justify-content:space-between;align-items:center;padding:2re
   updateCursorHovers();
 
   var lightbox = document.getElementById('lightbox');
-  var lbImg    = document.getElementById('lb-img');
+  var lbContainer = document.getElementById('lb-content-container');
   var lbCtr    = document.getElementById('lb-counter');
   var items    = Array.from(document.querySelectorAll('.img-item[data-lb]'));
+  
+  // Extrahiert src und alt von img oder video
   var srcs     = items.map(function(el) {
-    var img = el.querySelector('img');
-    return { src: img.src, alt: img.alt };
+    var media = el.querySelector('img, video');
+    return { src: media.src, alt: media.alt || 'yfood Hot Bowls Asset' };
   });
   var current = 0;
 
   function updateLb() {
     if (srcs.length === 0) return;
-    lbImg.src = srcs[current].src;
-    lbImg.alt = srcs[current].alt;
+    
+    var currentItem = srcs[current];
+    var isVideo = currentItem.src.toLowerCase().endsWith('.mp4');
+    
+    // Lightbox Inhalt chirurgisch austauschen (Video vs Image)
+    if(isVideo) {
+        lbContainer.innerHTML = '<video src="' + currentItem.src + '" autoplay loop muted playsinline style="max-width:92vw; max-height:90vh;"></video>';
+    } else {
+        lbContainer.innerHTML = '<img src="' + currentItem.src + '" alt="' + currentItem.alt + '" id="lb-img">';
+    }
+    
     lbCtr.textContent = (current + 1) + ' / ' + srcs.length;
   }
 
